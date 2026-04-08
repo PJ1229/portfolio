@@ -206,12 +206,9 @@ p {
   color: #fb3b2e;
 }
 
+.lab-page.lab-inspo .inspo-list a.is-red,
 .lab-page.lab-inspo .is-red {
   color: #ff2d2d;
-  font-weight: 700;
-  /* make it read visually heavier */
-  text-shadow: 0 0 0 currentColor;
-  -webkit-text-stroke: 0.25px currentColor;
 }
 
 /* lab blog list */
