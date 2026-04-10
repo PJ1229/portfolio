@@ -108,6 +108,7 @@ p {
   --subtext: rgba(58, 58, 68, 0.62);
   --lab-link: #1d8fd1;
   font-weight: 450;
+  text-transform: lowercase;
 }
 
 .lab-page .container {
