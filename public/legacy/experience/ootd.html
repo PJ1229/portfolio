@@ -143,9 +143,30 @@
     let currentSetKey = "v1";
     let inSeriesView = false;
 
+    function getStateFromUrl() {
+      const p = new URLSearchParams(window.location.search);
+      const tab = p.get("tab");
+      const series = p.get("series");
+      return {
+        tab: tab && linkSets[tab] ? tab : "v1",
+        series: series && seriesPages[series] ? series : null,
+      };
+    }
+
+    function setUrlState(next, { replace = false } = {}) {
+      const url = new URL(window.location.href);
+      url.searchParams.set("tab", next.tab);
+      if (next.series) url.searchParams.set("series", next.series);
+      else url.searchParams.delete("series");
+
+      const state = { tab: next.tab, series: next.series };
+      if (replace) window.history.replaceState(state, "", url);
+      else window.history.pushState(state, "", url);
+    }
+
     function setFooterLink() {
       if (inSeriesView) {
-        footerBackLink.href = "../experience/ootd.html?tab=mywork";
+        footerBackLink.href = "./ootd.html?tab=mywork";
         footerBackLink.textContent = "← back to deliverables";
       } else {
         footerBackLink.href = "../experience.html";
@@ -271,23 +292,59 @@
       });
     }
 
-    const params = new URLSearchParams(window.location.search);
-    const initialTab = params.get("tab");
-    if (initialTab && linkSets[initialTab]) renderSet(initialTab);
-    else renderSet("v1");
-    setFooterLink();
+    function renderFromUrl({ replace = false } = {}) {
+      const { tab, series } = getStateFromUrl();
+
+      // Ensure tab UI matches URL first.
+      showLinktree();
+      renderSet(tab);
+
+      // If series is present, force "mywork" context.
+      if (series) {
+        if (tab !== "mywork") {
+          renderSet("mywork");
+        }
+        showSeries(series);
+      }
+
+      // Keep URL canonical (e.g. drop invalid params).
+      setUrlState({ tab: currentSetKey, series: inSeriesView ? series : null }, { replace });
+      setFooterLink();
+    }
+
+    window.addEventListener("popstate", () => {
+      // Re-render when user hits browser back/forward.
+      renderFromUrl({ replace: true });
+    });
+
+    renderFromUrl({ replace: true });
 
     buttons.forEach(btn => {
       btn.addEventListener("click", () => {
+        const nextTab = btn.dataset.set;
+        if (!nextTab || !linkSets[nextTab]) return;
         if (inSeriesView) showLinktree();
-        renderSet(btn.dataset.set);
+        renderSet(nextTab);
+        setUrlState({ tab: nextTab, series: null });
       });
     });
 
     linksContainer.addEventListener("click", (e) => {
       const btn = e.target.closest("[data-series]");
       if (!btn) return;
-      showSeries(btn.dataset.series);
+      const seriesId = btn.dataset.series;
+      showSeries(seriesId);
+      setUrlState({ tab: "mywork", series: seriesId });
+    });
+
+    footerBackLink.addEventListener("click", (e) => {
+      if (!inSeriesView) return;
+      // When in a series view, treat footer back as an in-page navigation
+      // so browser back keeps working predictably.
+      e.preventDefault();
+      showLinktree();
+      renderSet("mywork");
+      setUrlState({ tab: "mywork", series: null });
     });
   </script>
 
