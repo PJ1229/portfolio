@@ -39,11 +39,22 @@ app.get("/", (req, res) => {
   sendLabIndex(res);
 });
 
+// Some pages use relative "index.html" back links.
+// In production this can resolve to "/index.html" (e.g. from "/dsa.html"),
+// so serve the lab index there too.
+app.get("/index.html", (req, res) => {
+  sendLabIndex(res);
+});
+
 app.get("/lab", (req, res) => {
   sendLabIndex(res);
 });
 
 app.get("/lab/", (req, res) => {
+  sendLabIndex(res);
+});
+
+app.get("/lab/index.html", (req, res) => {
   sendLabIndex(res);
 });
 
