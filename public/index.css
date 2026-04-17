@@ -187,6 +187,22 @@ p {
   margin-top: 18px;
 }
 
+/* vlog embed */
+.lab-page .lab-vlog {
+  --vlog-h: 560px;
+  --vlog-w: calc(var(--vlog-h) * 16 / 9);
+  height: var(--vlog-h);
+  width: min(100%, var(--vlog-w));
+}
+
+.lab-page .lab-vlog-video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center center;
+}
+
 .lab-page.lab-inspo .inspo-list li {
   display: flex;
   align-items: baseline;
