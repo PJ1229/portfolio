@@ -39,52 +39,78 @@
 
     <ul class="inspo-list">
       <li>
-        <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=we-e8m7T5uI&t=418s">
-          for the rational lover. (29 min)
-        </a>
-      </li>
-      <li>
-        <a target="_blank" rel="noopener noreferrer" href="https://letters.stevejobsarchive.com/">
-          letters to a young creator (website)
-        </a>
-      </li>
-      <li>
-        <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=oVaBgcJwkI4">
-          the climb back by j cole (song)
-        </a>
-      </li>
-      <li>
-        <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=2yfyPeAEV3A&t=1553s">
-          fred again rooftop live in naples (1hr 3min)
-        </a>
-      </li>
-      <li>
-        <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=JOYq7s_f-uw&t=451s">
-          when you should quit (12 mins)
-        </a>
-      </li>
-      <li>
-        <a class="is-red" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=BA-ZOaDIn58&list=LL&index=59">
-          to brooklyn and back (3 min)
-        </a>
-      </li>
-      <li>
-        <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=n81pWqqkNPs">
-          i don't want to forget this (21 mins)
-        </a>
-      </li>
-      <li>
         <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=tzSS7LjhTJs&t=1409s">
           dods world championship 2025 (31 mins)
         </a>
+        <span class="inspo-meta" data-date="2026-04-17">apr 17 2026</span>
       </li>
       <li>
         <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=xchmB7-fKSE">
           digital intimacy (10 min)
         </a>
+        <span class="inspo-meta" data-date="2026-04-17">apr 17 2026</span>
+      </li>
+      <li>
+        <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=n81pWqqkNPs">
+          i don't want to forget this (21 mins)
+        </a>
+        <span class="inspo-meta" data-date="2026-04-10">apr 10 2026</span>
+      </li>
+      <li>
+        <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=JOYq7s_f-uw&t=451s">
+          when you should quit (12 mins)
+        </a>
+        <span class="inspo-meta" data-date="2026-04-08">apr 8 2026</span>
+      </li>
+      <li>
+        <a class="is-red" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=BA-ZOaDIn58&list=LL&index=59">
+          to brooklyn and back (3 min)
+        </a>
+        <span class="inspo-meta" data-date="2026-03-17">mar 17 2026</span>
+      </li>
+      <li>
+        <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=2yfyPeAEV3A&t=1553s">
+          fred again rooftop live in naples (1hr 3min)
+        </a>
+        <span class="inspo-meta" data-date="2026-03-16">mar 16 2026</span>
+      </li>
+      <li>
+        <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=oVaBgcJwkI4">
+          the climb back by j cole (song)
+        </a>
+        <span class="inspo-meta" data-date="2026-03-16">mar 16 2026</span>
+      </li>
+      <li>
+        <a target="_blank" rel="noopener noreferrer" href="https://letters.stevejobsarchive.com/">
+          letters to a young creator (website)
+        </a>
+        <span class="inspo-meta" data-date="2026-03-16">mar 16 2026</span>
+      </li>
+      <li>
+        <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=we-e8m7T5uI&t=418s">
+          for the rational lover. (29 min)
+        </a>
+        <span class="inspo-meta" data-date="2026-03-16">mar 16 2026</span>
       </li>
     </ul>
   </div>
+
+  <script>
+    (function () {
+      const list = document.querySelector(".inspo-list");
+      if (!list) return;
+      const items = Array.from(list.querySelectorAll(":scope > li"));
+      if (!items.length) return;
+
+      items.sort((a, b) => {
+        const da = a.querySelector(".inspo-meta")?.getAttribute("data-date") || "";
+        const db = b.querySelector(".inspo-meta")?.getAttribute("data-date") || "";
+        return db.localeCompare(da);
+      });
+
+      items.forEach((li) => list.appendChild(li));
+    })();
+  </script>
 
   <script defer src="../js/theme.js"></script>
 </body>

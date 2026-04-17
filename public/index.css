@@ -188,7 +188,24 @@ p {
 }
 
 .lab-page.lab-inspo .inspo-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
   margin-bottom: 6px;
+}
+
+.lab-page.lab-inspo .inspo-list li > a {
+  flex: 1;
+  min-width: 0;
+}
+
+.lab-page.lab-inspo .inspo-meta {
+  font-size: 13px;
+  color: var(--subtext);
+  white-space: nowrap;
+  font-style: normal;
+  margin-left: auto;
+  text-align: right;
 }
 
 .lab-page.lab-inspo .inspo-list a {
