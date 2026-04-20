@@ -191,8 +191,11 @@ p {
 .lab-page .lab-vlog {
   --vlog-h: 560px;
   --vlog-w: calc(var(--vlog-h) * 16 / 9);
+  --vlog-zoom: 1.12; /* zoom in to remove letterboxing */
   height: var(--vlog-h);
   width: min(100%, var(--vlog-w));
+  position: relative;
+  overflow: hidden;
 }
 
 .lab-page .lab-vlog-video {
@@ -201,6 +204,14 @@ p {
   display: block;
   object-fit: cover;
   object-position: center center;
+}
+
+/* YouTube iframes need a manual "cover" zoom */
+.lab-page .lab-vlog iframe.lab-vlog-video {
+  position: absolute;
+  inset: 0;
+  transform: scale(var(--vlog-zoom));
+  transform-origin: center center;
 }
 
 /* lab disclosure (details/summary) */
