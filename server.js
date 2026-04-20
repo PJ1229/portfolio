@@ -67,6 +67,16 @@ app.get("/blog.html", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "lab", "blog.html"));
 });
 
+// Blog post permalinks at root: /blog/<slug>[.html]
+// The actual files live in public/lab/blog/*.html
+app.get("/blog/:post", (req, res, next) => {
+  const raw = String(req.params.post || "");
+  // Prevent path traversal; only allow a plain filename-like slug.
+  if (!/^[a-z0-9-]+(?:\.html)?$/i.test(raw)) return next();
+  const filename = raw.toLowerCase().endsWith(".html") ? raw : `${raw}.html`;
+  res.sendFile(path.join(__dirname, "public", "lab", "blog", filename));
+});
+
 app.get("/dsa.html", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "lab", "dsa.html"));
 });
