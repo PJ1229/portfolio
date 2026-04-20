@@ -189,10 +189,11 @@ p {
 
 /* vlog embed */
 .lab-page .lab-vlog {
-  --vlog-h: 560px;
-  --vlog-w: calc(var(--vlog-h) * 16 / 9);
-  height: var(--vlog-h);
-  width: min(100%, var(--vlog-w));
+  --vlog-max-h: 560px;
+  --vlog-max-w: calc(var(--vlog-max-h) * 16 / 9);
+  width: min(100%, var(--vlog-max-w));
+  aspect-ratio: 16 / 9;
+  position: relative;
 }
 
 .lab-page .lab-vlog-video {
@@ -201,6 +202,11 @@ p {
   display: block;
   object-fit: cover;
   object-position: center center;
+}
+
+.lab-page .lab-vlog iframe.lab-vlog-video {
+  position: absolute;
+  inset: 0;
 }
 
 /* lab disclosure (details/summary) */
