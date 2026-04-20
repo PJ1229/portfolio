@@ -203,6 +203,38 @@ p {
   object-position: center center;
 }
 
+/* lab disclosure (details/summary) */
+.lab-page details.lab-disclosure {
+  margin-top: 18px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.lab-page details.lab-disclosure > summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+.lab-page details.lab-disclosure > summary::-webkit-details-marker {
+  display: none;
+}
+
+.lab-page .lab-disclosure-hint {
+  color: var(--subtext);
+  font-size: 13px;
+  margin-left: 6px;
+}
+
+.lab-page .lab-disclosure-meta {
+  color: var(--subtext);
+  margin-top: 8px;
+}
+
+.lab-page .lab-disclosure-body > :first-child {
+  margin-top: 10px;
+}
+
 .lab-page.lab-inspo .inspo-list li {
   display: flex;
   align-items: baseline;
