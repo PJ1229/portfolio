@@ -211,7 +211,7 @@ p {
 
 /* lab disclosure (details/summary) */
 .lab-page details.lab-disclosure {
-  margin-top: 18px;
+  margin: 18px 0;
   padding: 12px 14px;
   border: 1px solid var(--border);
   border-radius: 12px;
