@@ -85,6 +85,10 @@ app.get("/guitar.html", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "lab", "guitar.html"));
 });
 
+app.get("/summer-series.html", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "lab", "summer-series.html"));
+});
+
 // --- Legacy site (v1) ---
 app.get("/legacy", (req, res) => {
   res.redirect("/legacy/");

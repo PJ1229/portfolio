@@ -321,6 +321,85 @@ p {
   font-style: normal;
 }
 
+/* pending slot label in lab log lists (e.g. summer series tba) */
+.lab-page.lab-log .dsa-items .dsa-muted {
+  color: var(--subtext);
+  font-style: italic;
+}
+
+/* summer series: spec block + week slots + current week */
+.lab-page.lab-log.summer-series .summer-spec {
+  margin: 0 0 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.lab-page.lab-log.summer-series .summer-spec-row {
+  display: grid;
+  grid-template-columns: 3.25rem minmax(0, 1fr);
+  column-gap: 14px;
+  align-items: baseline;
+}
+
+.lab-page.lab-log.summer-series .summer-spec-k {
+  color: var(--subtext);
+}
+
+.lab-page.lab-log.summer-series .summer-spec-v {
+  color: var(--text);
+  line-height: 1.55;
+}
+
+.lab-page.lab-log.summer-series .dsa-day.summer-week-current {
+  border-left: 2px solid var(--lab-link);
+  padding-left: 12px;
+  margin-left: -14px;
+}
+
+.lab-page.lab-log.summer-series .summer-slot {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 6px 18px;
+}
+
+.lab-page.lab-log.summer-series .summer-slot-what {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.lab-page.lab-log.summer-series .summer-dow {
+  color: var(--subtext);
+  margin-right: 0.35em;
+}
+
+.lab-page.lab-log.summer-series .summer-type {
+  color: var(--text);
+}
+
+.lab-page.lab-log.summer-series .summer-slot-link {
+  flex: 0 0 auto;
+  text-align: right;
+}
+
+.lab-page.lab-log.summer-series .summer-slot-link a {
+  font-weight: 500;
+}
+
+@media (max-width: 480px) {
+  .lab-page.lab-log.summer-series .summer-slot {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .lab-page.lab-log.summer-series .summer-slot-link {
+    text-align: left;
+    padding-left: 0;
+  }
+}
+
 
 a {
   text-decoration: none;

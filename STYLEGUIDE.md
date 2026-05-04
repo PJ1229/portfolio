@@ -7,7 +7,7 @@
 - **punctuation**: keep it clean; avoid extra exclamation points.
 
 ### lab nav microcopy
-- **format**: `back · yt channel · my inspo`
+- **format**: `back · yt channel · my inspo` (keep this strip to those three items; link other hub pages from body copy instead).
 - **links**: external links use `target="_blank"` + `rel="noopener noreferrer"`.
 
 ### lab writing page

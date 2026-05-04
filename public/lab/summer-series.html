@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../index.css">
+  <title>summer series 2026</title>
+  <link rel="icon" href="../images/logo.png" type="image/icon type">
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M0J8NYPG27"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-M0J8NYPG27');
+</script>
+
+<body class="lab-page lab-log summer-series">
+  <div class="container">
+    <p style="margin-bottom: 6px;">
+      <a href="index.html">back</a> ·
+      <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@pj.k1m">yt channel</a> ·
+      <a href="inspo.html">my inspo</a>
+    </p>
+
+    <h1>summer series 2026</h1>
+
+    <section class="summer-spec" aria-label="series cadence">
+      <div class="summer-spec-row">
+        <span class="summer-spec-k">run</span>
+        <span class="summer-spec-v">may 4 – aug 23, 2026</span>
+      </div>
+      <div class="summer-spec-row">
+        <span class="summer-spec-k">mon</span>
+        <span class="summer-spec-v">creative reel, short-form in progress</span>
+      </div>
+      <div class="summer-spec-row">
+        <span class="summer-spec-k">wed</span>
+        <span class="summer-spec-v">builder, ship logs and systems</span>
+      </div>
+      <div class="summer-spec-row">
+        <span class="summer-spec-k">fri</span>
+        <span class="summer-spec-v">vlog even weeks, second reel odd weeks</span>
+      </div>
+    </section>
+    <!-- links: set VIDEO_LINKS in the script at the bottom of this file -->
+
+    <div id="summer-weeks" class="dsa-list"></div>
+
+    <p class="dsa-muted dsa-stats" style="margin-top: 8px;">
+      8 vlogs · 16 creative reels · 16 builder posts · 40 total
+    </p>
+  </div>
+
+  <script>
+    (function () {
+      /**
+       * VIDEO_LINKS[weekNumber] = { mon?, wed?, fri? }
+       * each: string url, or { url, label }, or an array of those.
+       */
+      const VIDEO_LINKS = {
+        1: {
+          mon: [
+            { url: "https://www.instagram.com/p/DX5JeBWoI28/", label: "instagram" },
+            { url: "https://youtu.be/14UWJ3bIiNs", label: "youtube" },
+          ],
+        },
+      };
+
+      const DISPLAY_RANGES = [
+        "may 4–10", "may 11–17", "may 18–24", "may 25–31",
+        "jun 1–7", "jun 8–14", "jun 15–21", "jun 22–28",
+        "jun 29–jul 5", "jul 6–12", "jul 13–19", "jul 20–26",
+        "jul 27–aug 2", "aug 3–9", "aug 10–16", "aug 17–23"
+      ];
+
+      const WEEK_STARTS = [
+        "2026-05-04", "2026-05-11", "2026-05-18", "2026-05-25",
+        "2026-06-01", "2026-06-08", "2026-06-15", "2026-06-22",
+        "2026-06-29", "2026-07-06", "2026-07-13", "2026-07-20",
+        "2026-07-27", "2026-08-03", "2026-08-10", "2026-08-17"
+      ];
+
+      function localYmd(d) {
+        const y = d.getFullYear();
+        const m = String(d.getMonth() + 1).padStart(2, "0");
+        const day = String(d.getDate()).padStart(2, "0");
+        return y + "-" + m + "-" + day;
+      }
+
+      function addDaysYmd(ymd, delta) {
+        const p = ymd.split("-").map(Number);
+        const dt = new Date(p[0], p[1] - 1, p[2] + delta);
+        return localYmd(dt);
+      }
+
+      const todayStr = localYmd(new Date());
+
+      function normalizeLinkEntry(entry) {
+        if (entry == null || entry === "") return [];
+        if (typeof entry === "string") return [{ url: entry, label: "watch" }];
+        if (Array.isArray(entry)) return entry.flatMap(normalizeLinkEntry);
+        if (typeof entry === "object" && entry.url) {
+          return [{ url: entry.url, label: entry.label || "watch" }];
+        }
+        return [];
+      }
+
+      function appendSlotRow(ul, dow, typeLabel, links) {
+        const li = document.createElement("li");
+        li.className = "summer-slot";
+
+        const what = document.createElement("span");
+        what.className = "summer-slot-what";
+        const dowEl = document.createElement("span");
+        dowEl.className = "summer-dow";
+        dowEl.textContent = dow;
+        const typeEl = document.createElement("span");
+        typeEl.className = "summer-type";
+        typeEl.textContent = typeLabel;
+        what.appendChild(dowEl);
+        what.appendChild(document.createTextNode(" "));
+        what.appendChild(typeEl);
+
+        const linkCell = document.createElement("span");
+        linkCell.className = "summer-slot-link";
+        if (!links.length) {
+          const s = document.createElement("span");
+          s.className = "dsa-muted";
+          s.textContent = "tba";
+          linkCell.appendChild(s);
+        } else {
+          links.forEach((L, i) => {
+            if (i) linkCell.appendChild(document.createTextNode(" · "));
+            const a = document.createElement("a");
+            a.href = L.url;
+            a.target = "_blank";
+            a.rel = "noopener noreferrer";
+            a.textContent = L.label;
+            linkCell.appendChild(a);
+          });
+        }
+
+        li.appendChild(what);
+        li.appendChild(linkCell);
+        ul.appendChild(li);
+      }
+
+      const root = document.getElementById("summer-weeks");
+      if (!root) return;
+
+      let currentWeekIdx = -1;
+      for (let i = 0; i < WEEK_STARTS.length; i++) {
+        const end = addDaysYmd(WEEK_STARTS[i], 6);
+        if (todayStr >= WEEK_STARTS[i] && todayStr <= end) {
+          currentWeekIdx = i;
+          break;
+        }
+      }
+
+      const frag = document.createDocumentFragment();
+      for (let i = 0; i < 16; i++) {
+        const weekNum = i + 1;
+        const isOdd = weekNum % 2 === 1;
+        const friLabel = isOdd ? "creative reel" : "vlog";
+        const pack = VIDEO_LINKS[weekNum] || {};
+
+        const day = document.createElement("div");
+        day.className = "dsa-day";
+        if (i === currentWeekIdx) {
+          day.classList.add("summer-week-current");
+          day.setAttribute("aria-current", "true");
+        }
+
+        const title = document.createElement("div");
+        title.className = "dsa-day-title";
+        title.textContent = DISPLAY_RANGES[i] + " · " + (isOdd ? "odd" : "even");
+        day.appendChild(title);
+
+        const ul = document.createElement("ul");
+        ul.className = "dsa-items";
+
+        appendSlotRow(ul, "mon", "creative reel", normalizeLinkEntry(pack.mon));
+        appendSlotRow(ul, "wed", "builder", normalizeLinkEntry(pack.wed));
+        appendSlotRow(ul, "fri", friLabel, normalizeLinkEntry(pack.fri));
+
+        day.appendChild(ul);
+        frag.appendChild(day);
+      }
+      root.appendChild(frag);
+    })();
+  </script>
+
+  <script defer src="../js/theme.js"></script>
+</body>
+</html>
