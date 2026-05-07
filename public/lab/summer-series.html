@@ -38,7 +38,7 @@
       </div>
       <div class="summer-spec-row">
         <span class="summer-spec-k">thu</span>
-        <span class="summer-spec-v">creative reel (even weeks) · vlog drop (odd weeks)</span>
+        <span class="summer-spec-v">creative reel (odd weeks) · vlog drop (even weeks)</span>
       </div>
     </section>
     <!-- links: set VIDEO_LINKS in the script at the bottom of this file -->
@@ -160,7 +160,7 @@
       for (let i = 0; i < 16; i++) {
         const weekNum = i + 1;
         const isOdd = weekNum % 2 === 1;
-        const thuLabel = isOdd ? "vlog" : "creative reel";
+        const thuLabel = isOdd ? "creative reel" : "vlog";
         const pack = VIDEO_LINKS[weekNum] || {};
 
         const day = document.createElement("div");
