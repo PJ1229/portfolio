@@ -37,12 +37,8 @@
         <span class="summer-spec-v">creative reel, short-form in progress</span>
       </div>
       <div class="summer-spec-row">
-        <span class="summer-spec-k">wed</span>
-        <span class="summer-spec-v">builder, ship logs and systems</span>
-      </div>
-      <div class="summer-spec-row">
-        <span class="summer-spec-k">fri</span>
-        <span class="summer-spec-v">vlog even weeks, second reel odd weeks</span>
+        <span class="summer-spec-k">thu</span>
+        <span class="summer-spec-v">creative reel (even weeks) · vlog drop (odd weeks)</span>
       </div>
     </section>
     <!-- links: set VIDEO_LINKS in the script at the bottom of this file -->
@@ -50,14 +46,14 @@
     <div id="summer-weeks" class="dsa-list"></div>
 
     <p class="dsa-muted dsa-stats" style="margin-top: 8px;">
-      8 vlogs · 16 creative reels · 16 builder posts · 40 total
+      8 vlogs · 24 creative reels · 32 total
     </p>
   </div>
 
   <script>
     (function () {
       /**
-       * VIDEO_LINKS[weekNumber] = { mon?, wed?, fri? }
+       * VIDEO_LINKS[weekNumber] = { mon?, thu? }
        * each: string url, or { url, label }, or an array of those.
        */
       const VIDEO_LINKS = {
@@ -164,7 +160,7 @@
       for (let i = 0; i < 16; i++) {
         const weekNum = i + 1;
         const isOdd = weekNum % 2 === 1;
-        const friLabel = isOdd ? "creative reel" : "vlog";
+        const thuLabel = isOdd ? "vlog" : "creative reel";
         const pack = VIDEO_LINKS[weekNum] || {};
 
         const day = document.createElement("div");
@@ -183,8 +179,7 @@
         ul.className = "dsa-items";
 
         appendSlotRow(ul, "mon", "creative reel", normalizeLinkEntry(pack.mon));
-        appendSlotRow(ul, "wed", "builder", normalizeLinkEntry(pack.wed));
-        appendSlotRow(ul, "fri", friLabel, normalizeLinkEntry(pack.fri));
+        appendSlotRow(ul, "thu", thuLabel, normalizeLinkEntry(pack.thu));
 
         day.appendChild(ul);
         frag.appendChild(day);
