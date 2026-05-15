@@ -41,9 +41,7 @@
 
     <div id="summer-weeks" class="dsa-list"></div>
 
-    <p class="dsa-muted dsa-stats" style="margin-top: 8px;">
-      8 vlogs · 24 creative reels · 32 total
-    </p>
+    <p id="summer-stats" class="dsa-muted dsa-stats" style="margin-top: 8px;"></p>
   </div>
 
   <script>
@@ -163,6 +161,28 @@
         return [];
       }
 
+      function countPosted() {
+        let vlogs = 0;
+        let reels = 0;
+        for (const week of WEEKS) {
+          for (const post of week.posts || []) {
+            if (post.type === "vlog") vlogs++;
+            else if (post.type === "creative reel") reels++;
+          }
+        }
+        return { vlogs, reels, total: vlogs + reels };
+      }
+
+      function renderStats() {
+        const el = document.getElementById("summer-stats");
+        if (!el) return;
+        const { vlogs, reels, total } = countPosted();
+        const vlogLabel = vlogs === 1 ? "vlog" : "vlogs";
+        const reelLabel = reels === 1 ? "creative reel" : "creative reels";
+        el.textContent =
+          vlogs + " " + vlogLabel + " · " + reels + " " + reelLabel + " · " + total + " total";
+      }
+
       function appendPostRow(ul, typeLabel, dateLabel, links) {
         const li = document.createElement("li");
         li.className = "summer-slot";
@@ -252,6 +272,7 @@
         frag.appendChild(day);
       }
       root.appendChild(frag);
+      renderStats();
     })();
   </script>
 
