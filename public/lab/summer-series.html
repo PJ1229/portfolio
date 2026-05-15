@@ -38,7 +38,7 @@
       </div>
       <div class="summer-spec-row">
         <span class="summer-spec-k">thu</span>
-        <span class="summer-spec-v">creative reel (odd weeks) · vlog drop (even weeks)</span>
+        <span class="summer-spec-v">creative reel (even weeks) · vlog drop (odd weeks)</span>
       </div>
     </section>
     <!-- links: set VIDEO_LINKS in the script at the bottom of this file -->
@@ -66,6 +66,17 @@
           thu: [
             { url: "https://www.instagram.com/reel/DYDCGRIoORF/", label: "instagram" },
             { url: "https://www.tiktok.com/@pj.k1m/video/7637218915969535246", label: "tiktok" },
+          ],
+        },
+        2: {
+          mon: [
+            { url: "https://www.instagram.com/p/DYKqvQtIhSW/", label: "instagram" },
+            { url: "https://www.tiktok.com/@pj.k1m/video/7638332544320146702", label: "tiktok" },
+            { url: "https://www.youtube.com/watch?v=LgRWfT1wBRM", label: "youtube" },
+          ],
+          thu: [
+            { url: "https://www.tiktok.com/@pj.k1m/video/7640176389429202190", label: "tiktok" },
+            { url: "https://www.instagram.com/p/DYXfyIkIIZN/", label: "instagram" },
           ],
         },
       };
@@ -165,7 +176,7 @@
       for (let i = 0; i < 16; i++) {
         const weekNum = i + 1;
         const isOdd = weekNum % 2 === 1;
-        const thuLabel = isOdd ? "creative reel" : "vlog";
+        const thuLabel = isOdd ? "vlog" : "creative reel";
         const pack = VIDEO_LINKS[weekNum] || {};
 
         const day = document.createElement("div");
