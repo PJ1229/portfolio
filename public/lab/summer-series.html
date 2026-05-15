@@ -38,7 +38,7 @@
       </div>
       <div class="summer-spec-row">
         <span class="summer-spec-k">thu</span>
-        <span class="summer-spec-v">creative reel (even weeks) · vlog drop (odd weeks)</span>
+        <span class="summer-spec-v">creative reel or vlog — labeled per week (target: vlog odd, reel even)</span>
       </div>
     </section>
     <!-- links: set VIDEO_LINKS in the script at the bottom of this file -->
@@ -53,11 +53,13 @@
   <script>
     (function () {
       /**
-       * VIDEO_LINKS[weekNumber] = { mon?, thu? }
-       * each: string url, or { url, label }, or an array of those.
+       * VIDEO_LINKS[weekNumber] = { mon?, thu?, thuType? }
+       * thuType: "creative reel" | "vlog" — overrides odd/even default when posts drift
+       * each link: string url, or { url, label }, or an array of those.
        */
       const VIDEO_LINKS = {
         1: {
+          thuType: "creative reel",
           mon: [
             { url: "https://www.instagram.com/p/DX5JeBWoI28/", label: "instagram" },
             { url: "https://youtu.be/14UWJ3bIiNs", label: "youtube" },
@@ -69,6 +71,7 @@
           ],
         },
         2: {
+          thuType: "creative reel",
           mon: [
             { url: "https://www.instagram.com/p/DYKqvQtIhSW/", label: "instagram" },
             { url: "https://www.tiktok.com/@pj.k1m/video/7638332544320146702", label: "tiktok" },
@@ -118,6 +121,11 @@
           return [{ url: entry.url, label: entry.label || "watch" }];
         }
         return [];
+      }
+
+      function thuLabelForWeek(weekNum, pack) {
+        if (pack && pack.thuType) return pack.thuType;
+        return weekNum % 2 === 1 ? "vlog" : "creative reel";
       }
 
       function appendSlotRow(ul, dow, typeLabel, links) {
@@ -176,8 +184,8 @@
       for (let i = 0; i < 16; i++) {
         const weekNum = i + 1;
         const isOdd = weekNum % 2 === 1;
-        const thuLabel = isOdd ? "vlog" : "creative reel";
         const pack = VIDEO_LINKS[weekNum] || {};
+        const thuLabel = thuLabelForWeek(weekNum, pack);
 
         const day = document.createElement("div");
         day.className = "dsa-day";
