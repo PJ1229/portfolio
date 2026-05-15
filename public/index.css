@@ -332,23 +332,25 @@ p {
   margin: 0 0 22px;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 8px;
 }
 
 .lab-page.lab-log.summer-series .summer-spec-row {
   display: grid;
-  grid-template-columns: 3.25rem minmax(0, 1fr);
+  grid-template-columns: max-content minmax(0, 1fr);
   column-gap: 14px;
-  align-items: baseline;
+  align-items: start;
 }
 
 .lab-page.lab-log.summer-series .summer-spec-k {
   color: var(--subtext);
+  white-space: nowrap;
 }
 
 .lab-page.lab-log.summer-series .summer-spec-v {
   color: var(--text);
   line-height: 1.55;
+  overflow-wrap: break-word;
 }
 
 .lab-page.lab-log.summer-series .dsa-day.summer-week-current {
