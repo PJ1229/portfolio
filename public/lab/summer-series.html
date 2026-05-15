@@ -50,7 +50,8 @@
     (function () {
       /**
        * WEEKS[] = { range, start, posts? }
-       * posts[] = { type: "creative reel" | "vlog", links? }
+       * posts[] = { type, date?, links? }
+       * date: display label, e.g. "apr 29"
        * links: string url, { url, label }, or array of those
        */
       const WEEKS = [
@@ -60,6 +61,7 @@
           posts: [
             {
               type: "creative reel",
+              date: "apr 29",
               links: [
                 { url: "https://www.instagram.com/p/DXuEYcaBPmY/", label: "instagram" },
                 { url: "https://www.tiktok.com/@pj.k1m/video/7635004506035539214", label: "tiktok" },
@@ -67,6 +69,7 @@
             },
             {
               type: "vlog",
+              date: "may 2",
               links: [
                 { url: "https://www.youtube.com/watch?v=rSWE8zTIuQw&t=32s", label: "youtube" },
               ],
@@ -79,6 +82,7 @@
           posts: [
             {
               type: "creative reel",
+              date: "may 4",
               links: [
                 { url: "https://www.instagram.com/p/DX5JeBWoI28/", label: "instagram" },
                 { url: "https://youtu.be/14UWJ3bIiNs", label: "youtube" },
@@ -87,6 +91,7 @@
             },
             {
               type: "creative reel",
+              date: "may 7",
               links: [
                 { url: "https://www.instagram.com/reel/DYDCGRIoORF/", label: "instagram" },
                 { url: "https://www.tiktok.com/@pj.k1m/video/7637218915969535246", label: "tiktok" },
@@ -100,6 +105,7 @@
           posts: [
             {
               type: "creative reel",
+              date: "may 11",
               links: [
                 { url: "https://www.instagram.com/p/DYKqvQtIhSW/", label: "instagram" },
                 { url: "https://www.tiktok.com/@pj.k1m/video/7638332544320146702", label: "tiktok" },
@@ -108,6 +114,7 @@
             },
             {
               type: "creative reel",
+              date: "may 16",
               links: [
                 { url: "https://www.tiktok.com/@pj.k1m/video/7640176389429202190", label: "tiktok" },
                 { url: "https://www.instagram.com/p/DYXfyIkIIZN/", label: "instagram" },
@@ -156,12 +163,19 @@
         return [];
       }
 
-      function appendPostRow(ul, typeLabel, links) {
+      function appendPostRow(ul, typeLabel, dateLabel, links) {
         const li = document.createElement("li");
         li.className = "summer-slot";
 
         const what = document.createElement("span");
         what.className = "summer-slot-what";
+        if (dateLabel) {
+          const dateEl = document.createElement("span");
+          dateEl.className = "summer-date";
+          dateEl.textContent = dateLabel;
+          what.appendChild(dateEl);
+          what.appendChild(document.createTextNode(" "));
+        }
         const typeEl = document.createElement("span");
         typeEl.className = "summer-type";
         typeEl.textContent = typeLabel;
@@ -230,7 +244,7 @@
           ul.appendChild(li);
         } else {
           posts.forEach((post) => {
-            appendPostRow(ul, post.type, normalizeLinkEntry(post.links));
+            appendPostRow(ul, post.type, post.date || "", normalizeLinkEntry(post.links));
           });
         }
 

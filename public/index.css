@@ -370,7 +370,8 @@ p {
   min-width: 0;
 }
 
-.lab-page.lab-log.summer-series .summer-dow {
+.lab-page.lab-log.summer-series .summer-dow,
+.lab-page.lab-log.summer-series .summer-date {
   color: var(--subtext);
   margin-right: 0.35em;
 }
