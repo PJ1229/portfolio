@@ -30,18 +30,14 @@
     <section class="summer-spec" aria-label="series cadence">
       <div class="summer-spec-row">
         <span class="summer-spec-k">run</span>
-        <span class="summer-spec-v">may 4 – aug 23, 2026</span>
+        <span class="summer-spec-v">apr 27 – aug 23, 2026</span>
       </div>
       <div class="summer-spec-row">
-        <span class="summer-spec-k">mon</span>
-        <span class="summer-spec-v">creative reel, short-form in progress</span>
-      </div>
-      <div class="summer-spec-row">
-        <span class="summer-spec-k">thu</span>
-        <span class="summer-spec-v">creative reel or vlog — labeled per week (target: vlog odd, reel even)</span>
+        <span class="summer-spec-k">cadence</span>
+        <span class="summer-spec-v">~2 posts/week — creative reels + vlogs, days flex</span>
       </div>
     </section>
-    <!-- links: set VIDEO_LINKS in the script at the bottom of this file -->
+    <!-- posts: edit WEEKS in the script below -->
 
     <div id="summer-weeks" class="dsa-list"></div>
 
@@ -53,49 +49,79 @@
   <script>
     (function () {
       /**
-       * VIDEO_LINKS[weekNumber] = { mon?, thu?, thuType? }
-       * thuType: "creative reel" | "vlog" — overrides odd/even default when posts drift
-       * each link: string url, or { url, label }, or an array of those.
+       * WEEKS[] = { range, start, posts? }
+       * posts[] = { type: "creative reel" | "vlog", links? }
+       * links: string url, { url, label }, or array of those
        */
-      const VIDEO_LINKS = {
-        1: {
-          thuType: "creative reel",
-          mon: [
-            { url: "https://www.instagram.com/p/DX5JeBWoI28/", label: "instagram" },
-            { url: "https://youtu.be/14UWJ3bIiNs", label: "youtube" },
-            { url: "https://www.tiktok.com/@pj.k1m/video/7635808820257623310", label: "tiktok" },
-          ],
-          thu: [
-            { url: "https://www.instagram.com/reel/DYDCGRIoORF/", label: "instagram" },
-            { url: "https://www.tiktok.com/@pj.k1m/video/7637218915969535246", label: "tiktok" },
-          ],
-        },
-        2: {
-          thuType: "creative reel",
-          mon: [
-            { url: "https://www.instagram.com/p/DYKqvQtIhSW/", label: "instagram" },
-            { url: "https://www.tiktok.com/@pj.k1m/video/7638332544320146702", label: "tiktok" },
-            { url: "https://www.youtube.com/watch?v=LgRWfT1wBRM", label: "youtube" },
-          ],
-          thu: [
-            { url: "https://www.tiktok.com/@pj.k1m/video/7640176389429202190", label: "tiktok" },
-            { url: "https://www.instagram.com/p/DYXfyIkIIZN/", label: "instagram" },
+      const WEEKS = [
+        {
+          range: "apr 27 – may 3",
+          start: "2026-04-27",
+          posts: [
+            {
+              type: "vlog",
+              links: [
+                { url: "https://www.youtube.com/watch?v=rSWE8zTIuQw&t=32s", label: "youtube" },
+              ],
+            },
           ],
         },
-      };
-
-      const DISPLAY_RANGES = [
-        "may 4–10", "may 11–17", "may 18–24", "may 25–31",
-        "jun 1–7", "jun 8–14", "jun 15–21", "jun 22–28",
-        "jun 29–jul 5", "jul 6–12", "jul 13–19", "jul 20–26",
-        "jul 27–aug 2", "aug 3–9", "aug 10–16", "aug 17–23"
-      ];
-
-      const WEEK_STARTS = [
-        "2026-05-04", "2026-05-11", "2026-05-18", "2026-05-25",
-        "2026-06-01", "2026-06-08", "2026-06-15", "2026-06-22",
-        "2026-06-29", "2026-07-06", "2026-07-13", "2026-07-20",
-        "2026-07-27", "2026-08-03", "2026-08-10", "2026-08-17"
+        {
+          range: "may 4–10",
+          start: "2026-05-04",
+          posts: [
+            {
+              type: "creative reel",
+              links: [
+                { url: "https://www.instagram.com/p/DX5JeBWoI28/", label: "instagram" },
+                { url: "https://youtu.be/14UWJ3bIiNs", label: "youtube" },
+                { url: "https://www.tiktok.com/@pj.k1m/video/7635808820257623310", label: "tiktok" },
+              ],
+            },
+            {
+              type: "creative reel",
+              links: [
+                { url: "https://www.instagram.com/reel/DYDCGRIoORF/", label: "instagram" },
+                { url: "https://www.tiktok.com/@pj.k1m/video/7637218915969535246", label: "tiktok" },
+              ],
+            },
+          ],
+        },
+        {
+          range: "may 11–17",
+          start: "2026-05-11",
+          posts: [
+            {
+              type: "creative reel",
+              links: [
+                { url: "https://www.instagram.com/p/DYKqvQtIhSW/", label: "instagram" },
+                { url: "https://www.tiktok.com/@pj.k1m/video/7638332544320146702", label: "tiktok" },
+                { url: "https://www.youtube.com/watch?v=LgRWfT1wBRM", label: "youtube" },
+              ],
+            },
+            {
+              type: "creative reel",
+              links: [
+                { url: "https://www.tiktok.com/@pj.k1m/video/7640176389429202190", label: "tiktok" },
+                { url: "https://www.instagram.com/p/DYXfyIkIIZN/", label: "instagram" },
+              ],
+            },
+          ],
+        },
+        { range: "may 18–24", start: "2026-05-18" },
+        { range: "may 25–31", start: "2026-05-25" },
+        { range: "jun 1–7", start: "2026-06-01" },
+        { range: "jun 8–14", start: "2026-06-08" },
+        { range: "jun 15–21", start: "2026-06-15" },
+        { range: "jun 22–28", start: "2026-06-22" },
+        { range: "jun 29–jul 5", start: "2026-06-29" },
+        { range: "jul 6–12", start: "2026-07-06" },
+        { range: "jul 13–19", start: "2026-07-13" },
+        { range: "jul 20–26", start: "2026-07-20" },
+        { range: "jul 27–aug 2", start: "2026-07-27" },
+        { range: "aug 3–9", start: "2026-08-03" },
+        { range: "aug 10–16", start: "2026-08-10" },
+        { range: "aug 17–23", start: "2026-08-17" },
       ];
 
       function localYmd(d) {
@@ -123,25 +149,15 @@
         return [];
       }
 
-      function thuLabelForWeek(weekNum, pack) {
-        if (pack && pack.thuType) return pack.thuType;
-        return weekNum % 2 === 1 ? "vlog" : "creative reel";
-      }
-
-      function appendSlotRow(ul, dow, typeLabel, links) {
+      function appendPostRow(ul, typeLabel, links) {
         const li = document.createElement("li");
         li.className = "summer-slot";
 
         const what = document.createElement("span");
         what.className = "summer-slot-what";
-        const dowEl = document.createElement("span");
-        dowEl.className = "summer-dow";
-        dowEl.textContent = dow;
         const typeEl = document.createElement("span");
         typeEl.className = "summer-type";
         typeEl.textContent = typeLabel;
-        what.appendChild(dowEl);
-        what.appendChild(document.createTextNode(" "));
         what.appendChild(typeEl);
 
         const linkCell = document.createElement("span");
@@ -172,20 +188,18 @@
       if (!root) return;
 
       let currentWeekIdx = -1;
-      for (let i = 0; i < WEEK_STARTS.length; i++) {
-        const end = addDaysYmd(WEEK_STARTS[i], 6);
-        if (todayStr >= WEEK_STARTS[i] && todayStr <= end) {
+      for (let i = 0; i < WEEKS.length; i++) {
+        const end = addDaysYmd(WEEKS[i].start, 6);
+        if (todayStr >= WEEKS[i].start && todayStr <= end) {
           currentWeekIdx = i;
           break;
         }
       }
 
       const frag = document.createDocumentFragment();
-      for (let i = 0; i < 16; i++) {
-        const weekNum = i + 1;
-        const isOdd = weekNum % 2 === 1;
-        const pack = VIDEO_LINKS[weekNum] || {};
-        const thuLabel = thuLabelForWeek(weekNum, pack);
+      for (let i = 0; i < WEEKS.length; i++) {
+        const week = WEEKS[i];
+        const posts = week.posts || [];
 
         const day = document.createElement("div");
         day.className = "dsa-day";
@@ -196,14 +210,22 @@
 
         const title = document.createElement("div");
         title.className = "dsa-day-title";
-        title.textContent = DISPLAY_RANGES[i] + " · " + (isOdd ? "odd" : "even");
+        title.textContent = week.range;
         day.appendChild(title);
 
         const ul = document.createElement("ul");
         ul.className = "dsa-items";
 
-        appendSlotRow(ul, "mon", "creative reel", normalizeLinkEntry(pack.mon));
-        appendSlotRow(ul, "thu", thuLabel, normalizeLinkEntry(pack.thu));
+        if (!posts.length) {
+          const li = document.createElement("li");
+          li.className = "dsa-muted";
+          li.textContent = "tba";
+          ul.appendChild(li);
+        } else {
+          posts.forEach((post) => {
+            appendPostRow(ul, post.type, normalizeLinkEntry(post.links));
+          });
+        }
 
         day.appendChild(ul);
         frag.appendChild(day);
