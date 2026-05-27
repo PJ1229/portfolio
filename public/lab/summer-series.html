@@ -87,7 +87,6 @@
               title: "murph",
               links: [
                 { url: "https://www.instagram.com/p/DX5JeBWoI28/", label: "instagram" },
-                { url: "https://youtu.be/14UWJ3bIiNs", label: "youtube" },
                 { url: "https://www.tiktok.com/@pj.k1m/video/7635808820257623310", label: "tiktok" },
               ],
             },
@@ -178,6 +177,7 @@
               title: "movement personal edit",
               links: [
                 { url: "https://www.instagram.com/p/DYxPkKPoHMr/", label: "instagram" },
+                { url: "https://www.tiktok.com/@pj.k1m/video/7643931684638903565", label: "tiktok" },
               ],
             },
           ],
@@ -243,6 +243,16 @@
           vlogs + " " + vlogLabel + " · " + reels + " " + reelLabel + " · " + total + " total";
       }
 
+      function sortLinks(links) {
+        const order = { instagram: 0, tiktok: 1, youtube: 2 };
+        return (links || []).slice().sort((a, b) => {
+          const ao = order[a.label] ?? 999;
+          const bo = order[b.label] ?? 999;
+          if (ao !== bo) return ao - bo;
+          return String(a.label || "").localeCompare(String(b.label || ""));
+        });
+      }
+
       function appendPostRow(ul, typeLabel, dateLabel, titleLabel, links) {
         const li = document.createElement("li");
         li.className = "summer-slot";
@@ -275,7 +285,7 @@
           s.textContent = "tba";
           linkCell.appendChild(s);
         } else {
-          links.forEach((L, i) => {
+          sortLinks(links).forEach((L, i) => {
             if (i) linkCell.appendChild(document.createTextNode(" · "));
             const a = document.createElement("a");
             a.href = L.url;
