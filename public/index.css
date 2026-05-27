@@ -382,6 +382,12 @@ p {
   color: var(--text);
 }
 
+.lab-page.lab-log.summer-series .summer-title {
+  color: var(--subtext);
+  font-size: 0.9em;
+  font-weight: 400;
+}
+
 .lab-page.lab-log.summer-series .summer-slot-link {
   flex: 0 0 auto;
   text-align: right;

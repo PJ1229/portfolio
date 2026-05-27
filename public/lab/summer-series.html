@@ -48,8 +48,9 @@
     (function () {
       /**
        * WEEKS[] = { range, start, posts? }
-       * posts[] = { type, date?, links? }
+       * posts[] = { type, date?, title?, links? }
        * date: display label, e.g. "apr 29"
+       * title: short descriptor, shown in the log
        * links: string url, { url, label }, or array of those
        */
       const WEEKS = [
@@ -60,6 +61,7 @@
             {
               type: "creative reel",
               date: "apr 29",
+              title: "promo for summer series",
               links: [
                 { url: "https://www.instagram.com/p/DXuEYcaBPmY/", label: "instagram" },
                 { url: "https://www.tiktok.com/@pj.k1m/video/7635004506035539214", label: "tiktok" },
@@ -68,6 +70,7 @@
             {
               type: "vlog",
               date: "may 2",
+              title: "summer series ep 1",
               links: [
                 { url: "https://www.youtube.com/watch?v=rSWE8zTIuQw&t=32s", label: "youtube" },
               ],
@@ -81,6 +84,7 @@
             {
               type: "creative reel",
               date: "may 4",
+              title: "murph",
               links: [
                 { url: "https://www.instagram.com/p/DX5JeBWoI28/", label: "instagram" },
                 { url: "https://youtu.be/14UWJ3bIiNs", label: "youtube" },
@@ -90,6 +94,7 @@
             {
               type: "creative reel",
               date: "may 7",
+              title: "day in the life",
               links: [
                 { url: "https://www.instagram.com/reel/DYDCGRIoORF/", label: "instagram" },
                 { url: "https://www.tiktok.com/@pj.k1m/video/7637218915969535246", label: "tiktok" },
@@ -104,6 +109,7 @@
             {
               type: "creative reel",
               date: "may 11",
+              title: "figtree poem sylvia plath",
               links: [
                 { url: "https://www.instagram.com/p/DYKqvQtIhSW/", label: "instagram" },
                 { url: "https://www.tiktok.com/@pj.k1m/video/7638332544320146702", label: "tiktok" },
@@ -113,6 +119,7 @@
             {
               type: "creative reel",
               date: "may 16",
+              title: "umich colorgrading edit",
               links: [
                 { url: "https://www.tiktok.com/@pj.k1m/video/7640176389429202190", label: "tiktok" },
                 { url: "https://www.instagram.com/p/DYXfyIkIIZN/", label: "instagram" },
@@ -127,14 +134,46 @@
             {
               type: "creative reel",
               date: "may 18",
+              title: "kwin dj edit",
               links: [
                 { url: "https://www.instagram.com/reel/DYfcV4oIUVJ/", label: "instagram" },
                 { url: "https://www.tiktok.com/@pj.k1m/video/7641684355756166414", label: "tiktok" },
               ],
             },
+            {
+              type: "vlog",
+              date: "may 23",
+              title: "summer series ep 2",
+              links: [
+                { url: "https://youtu.be/ryRsaH3q-Iw?si=4117xI9E9jPHEefN", label: "youtube" },
+              ],
+            },
           ],
         },
-        { range: "may 25–31", start: "2026-05-25" },
+        {
+          range: "may 25–31",
+          start: "2026-05-25",
+          posts: [
+            {
+              type: "creative reel",
+              date: "may 25",
+              title: "movement \"larping\" edit",
+              links: [
+                { url: "https://www.instagram.com/reel/DYwDe5IoKG8/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==", label: "instagram" },
+                { url: "https://www.tiktok.com/@pj.k1m/video/7643702532467936525", label: "tiktok" },
+              ],
+            },
+            {
+              type: "creative reel",
+              date: "may 25",
+              title: "movement cinematic edit",
+              links: [
+                { url: "https://www.instagram.com/p/DYxBG3CBVDB/", label: "instagram" },
+                { url: "https://www.tiktok.com/@pj.k1m/video/7643847707466976525", label: "tiktok" },
+              ],
+            },
+          ],
+        },
         { range: "jun 1–7", start: "2026-06-01" },
         { range: "jun 8–14", start: "2026-06-08" },
         { range: "jun 15–21", start: "2026-06-15" },
@@ -196,7 +235,7 @@
           vlogs + " " + vlogLabel + " · " + reels + " " + reelLabel + " · " + total + " total";
       }
 
-      function appendPostRow(ul, typeLabel, dateLabel, links) {
+      function appendPostRow(ul, typeLabel, dateLabel, titleLabel, links) {
         const li = document.createElement("li");
         li.className = "summer-slot";
 
@@ -213,6 +252,12 @@
         typeEl.className = "summer-type";
         typeEl.textContent = typeLabel;
         what.appendChild(typeEl);
+        if (titleLabel) {
+          const t = document.createElement("span");
+          t.className = "summer-title";
+          t.textContent = " · " + titleLabel;
+          what.appendChild(t);
+        }
 
         const linkCell = document.createElement("span");
         linkCell.className = "summer-slot-link";
@@ -277,7 +322,13 @@
           ul.appendChild(li);
         } else {
           posts.forEach((post) => {
-            appendPostRow(ul, post.type, post.date || "", normalizeLinkEntry(post.links));
+            appendPostRow(
+              ul,
+              post.type,
+              post.date || "",
+              post.title || "",
+              normalizeLinkEntry(post.links),
+            );
           });
         }
 
