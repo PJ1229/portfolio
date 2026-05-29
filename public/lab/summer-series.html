@@ -34,7 +34,7 @@
       </div>
       <div class="summer-spec-row">
         <span class="summer-spec-k">cadence</span>
-        <span class="summer-spec-v">~2 posts/week — creative reels + vlogs, days flex</span>
+        <span class="summer-spec-v">~2 posts/week — reels, short films, promos + vlogs, days flex</span>
       </div>
     </section>
     <!-- posts: edit WEEKS in the script below -->
@@ -48,9 +48,9 @@
     (function () {
       /**
        * WEEKS[] = { range, start, posts? }
-       * posts[] = { type, date?, title?, links? }
+       * posts[] = { type, date?, title?, links? } — type: "creative reel" | "short film" | "promo" | "vlog"
        * date: display label, e.g. "apr 29"
-       * title: short descriptor, shown in the log
+       * title: short descriptor (omit words already in type, e.g. no "promo" on promo posts)
        * links: string url, { url, label }, or array of those
        */
       const WEEKS = [
@@ -59,9 +59,9 @@
           start: "2026-04-27",
           posts: [
             {
-              type: "creative reel",
+              type: "promo",
               date: "apr 29",
-              title: "promo for summer series",
+              title: "summer series",
               links: [
                 { url: "https://www.instagram.com/p/DXuEYcaBPmY/", label: "instagram" },
                 { url: "https://www.tiktok.com/@pj.k1m/video/7635004506035539214", label: "tiktok" },
@@ -91,9 +91,9 @@
               ],
             },
             {
-              type: "creative reel",
+              type: "promo",
               date: "may 7",
-              title: "day in the life",
+              title: "summer series ep 1",
               links: [
                 { url: "https://www.instagram.com/reel/DYDCGRIoORF/", label: "instagram" },
                 { url: "https://www.tiktok.com/@pj.k1m/video/7637218915969535246", label: "tiktok" },
@@ -106,7 +106,7 @@
           start: "2026-05-11",
           posts: [
             {
-              type: "creative reel",
+              type: "short film",
               date: "may 11",
               title: "figtree poem sylvia plath",
               links: [
@@ -224,23 +224,30 @@
       function countPosted() {
         let vlogs = 0;
         let reels = 0;
+        let promos = 0;
+        let shortFilms = 0;
         for (const week of WEEKS) {
           for (const post of week.posts || []) {
             if (post.type === "vlog") vlogs++;
+            else if (post.type === "promo") promos++;
+            else if (post.type === "short film") shortFilms++;
             else if (post.type === "creative reel") reels++;
           }
         }
-        return { vlogs, reels, total: vlogs + reels };
+        return { vlogs, reels, promos, shortFilms, total: vlogs + reels + promos + shortFilms };
       }
 
       function renderStats() {
         const el = document.getElementById("summer-stats");
         if (!el) return;
-        const { vlogs, reels, total } = countPosted();
-        const vlogLabel = vlogs === 1 ? "vlog" : "vlogs";
-        const reelLabel = reels === 1 ? "creative reel" : "creative reels";
-        el.textContent =
-          vlogs + " " + vlogLabel + " · " + reels + " " + reelLabel + " · " + total + " total";
+        const { vlogs, reels, promos, shortFilms, total } = countPosted();
+        const parts = [];
+        if (vlogs) parts.push(vlogs + " " + (vlogs === 1 ? "vlog" : "vlogs"));
+        if (reels) parts.push(reels + " " + (reels === 1 ? "creative reel" : "creative reels"));
+        if (shortFilms) parts.push(shortFilms + " " + (shortFilms === 1 ? "short film" : "short films"));
+        if (promos) parts.push(promos + " " + (promos === 1 ? "promo" : "promos"));
+        parts.push(total + " total");
+        el.textContent = parts.join(" · ");
       }
 
       function sortLinks(links) {
