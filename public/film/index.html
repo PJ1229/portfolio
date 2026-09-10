@@ -45,15 +45,17 @@
   <main>
 
     <!-- hero: the title list is the index. Hovering or focusing a title swaps
-         the still behind it; clicking opens the project. -->
+         the footage behind it; clicking opens the project. -->
     <section class="home-hero" aria-label="Selected work">
       <div class="home-hero-slide is-active" data-slide="if-not-later-when">
         <img src="../images/if-not-later-when/stack-03.webp"
              alt="if not later, when? — a boy sitting on a bench" fetchpriority="high">
+        <video muted loop playsinline preload="none" aria-hidden="true" data-src="/videos/inlw-hero.mp4"></video>
       </div>
       <div class="home-hero-slide" data-slide="unsanctioned" aria-hidden="true">
         <img src="../images/unsanctioned/website-hero.webp"
              alt="Project Unsanctioned — hero" loading="eager">
+        <video muted loop playsinline preload="none" aria-hidden="true" data-src="/videos/unsanctioned-hero.mp4"></video>
       </div>
 
       <div class="hero-overlay">
@@ -143,35 +145,6 @@
   </footer>
 
   <script src="../film/projects.js"></script>
-  <script>
-    // Hero stills follow the title list. No timer — the person drives it.
-    (function () {
-      var hero = document.querySelector(".home-hero");
-      if (!hero) return;
-      var slides = Array.prototype.slice.call(hero.querySelectorAll(".home-hero-slide"));
-      var links = Array.prototype.slice.call(hero.querySelectorAll(".home-titles a"));
-      if (slides.length < 2 || !links.length) return;
-
-      function show(key) {
-        slides.forEach(function (s) {
-          var on = s.getAttribute("data-slide") === key;
-          s.classList.toggle("is-active", on);
-          if (on) s.removeAttribute("aria-hidden");
-          else s.setAttribute("aria-hidden", "true");
-        });
-        links.forEach(function (a) {
-          a.parentNode.classList.toggle("is-active", a.getAttribute("data-slide") === key);
-        });
-      }
-
-      links.forEach(function (a) {
-        var key = a.getAttribute("data-slide");
-        a.addEventListener("mouseenter", function () { show(key); });
-        a.addEventListener("focus", function () { show(key); });
-      });
-
-      show(links[0].getAttribute("data-slide"));
-    })();
-  </script>
+  <script src="../film/hero.js"></script>
 </body>
 </html>
