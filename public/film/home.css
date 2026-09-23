@@ -25,6 +25,9 @@
   object-position: center;
   opacity: 0;
 }
+.film-page.home-page .home-hero-slide[data-slide="december"] img {
+  object-position: center 48%;
+}
 .film-page.home-page .home-hero-slide.has-video video { opacity: 1; }
 /* more air under the title stack; film.css's clamp bottoms the last line out */
 .film-page.home-page .home-hero .hero-overlay {
@@ -36,9 +39,6 @@
    narrows — at phone widths the still is scaled to ~4x the container and
    `right` keeps only the far edge of the frame. Anchor each slide on its own
    subject instead so it survives any aspect ratio. */
-.film-page.home-page .home-hero-slide[data-slide="if-not-later-when"] img {
-  object-position: 66% 57%;
-}
 .film-page.home-page .home-hero-slide[data-slide="unsanctioned"] img {
   /* anchor the right-side subject (the 2nd ninth from the right edge) so the
      narrow crop stays on her instead of swinging to the left figure */

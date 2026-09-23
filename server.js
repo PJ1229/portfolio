@@ -69,6 +69,10 @@ app.get("/if-not-later-when", (req, res) => {
   sendFilmPage(res, "if-not-later-when.html");
 });
 
+app.get("/december", (req, res) => {
+  sendFilmPage(res, "december.html");
+});
+
 app.get("/filmic", (req, res) => {
   sendFilmPage(res, "filmic.html");
 });

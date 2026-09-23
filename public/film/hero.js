@@ -12,6 +12,7 @@
   function sync() {
     slides.forEach(function (slide) {
       var video = slide.querySelector('video');
+      if (!video) return;
       if (slide !== active || paused || !visible || document.hidden) {
         video.pause();
         return;
@@ -26,6 +27,7 @@
 
   slides.forEach(function (slide) {
     var video = slide.querySelector('video');
+    if (!video) return;
     video.addEventListener('playing', function () {
       slide.classList.add('has-video');
     });
