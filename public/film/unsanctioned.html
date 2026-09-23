@@ -14,11 +14,23 @@
   <meta name="twitter:title" content="Project Unsanctioned — PJ Kim">
   <meta name="twitter:description" content="Project Unsanctioned — a multi-shooter rave campaign for OSTAR × House Bl3nd, spanning a hero film, photo drop, three-day teaser, and post-rave recap.">
   <meta name="twitter:image" content="https://pjk1m.com/images/unsanctioned/website-hero.webp">
+  <link rel="canonical" href="https://pjk1m.com/unsanctioned">
   <link rel="icon" href="../images/logo.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../film/film.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Project Unsanctioned",
+    "description": "A multi-shooter rave campaign for OSTAR and House Bl3nd, co-directed, edited and colored by PJ Kim.",
+    "thumbnailUrl": "https://pjk1m.com/images/unsanctioned/website-hero.webp",
+    "uploadDate": "2026-08-11",
+    "embedUrl": "https://www.youtube.com/embed/FLqxwn8_9xI"
+  }
+  </script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-M0J8NYPG27"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -34,7 +46,7 @@
     <a href="/">WORK</a>
     <div class="nav-links">
       <a href="/writing">WRITING</a>
-      <a href="/about">INFO</a>
+      <a href="/#info">INFO</a>
     </div>
   </header>
 
@@ -82,6 +94,15 @@
         </div>
 
         <div data-project-meta></div>
+
+        <dl class="project-facts">
+          <div><dt>Format</dt><dd>Campaign · Film · Photo · Social</dd></div>
+          <div><dt>Presented by</dt><dd>OSTAR × House Bl3nd</dd></div>
+          <div><dt>My roles</dt><dd>Co-director · Editor · Colorist</dd></div>
+          <div><dt>Deliverables</dt><dd>Hero film · Photo drop · Teaser · Recap</dd></div>
+          <div><dt>Capture</dt><dd>Sony FX3 · a7III · a7IV · Fujifilm X-S20</dd></div>
+          <div><dt>Profiles</dt><dd>S-Log3 · S-Log2</dd></div>
+        </dl>
 
         <p class="lead">A month-long rave campaign for OSTAR × House Bl3nd.</p>
         <p>We shot on three cameras: the main film on a Sony FX3 (S-Log3), the teaser on a Sony a7III
@@ -340,12 +361,19 @@
     </ol>
   </main>
 
+  <nav class="project-pagination" aria-label="Project navigation">
+    <span class="project-pagination-empty" aria-hidden="true">PREVIOUS</span>
+    <a class="project-pagination-all" href="/">ALL WORK</a>
+    <a class="project-pagination-next" href="/december"><span>NEXT →</span><strong>DECEMBER</strong></a>
+  </nav>
+
   <footer class="monogram">
     <a href="/inspo">INSPO</a> · PJK1M
   </footer>
 
   <script src="../film/projects.js"></script>
   <script src="../film/lightbox.js"></script>
+  <script src="../film/analytics.js"></script>
 
 </body>
 </html>

@@ -21,6 +21,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,ital,wght@6..96,0,400;6..96,0,500;6..96,1,400&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../film/film.css">
   <link rel="stylesheet" href="../film/december.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "December — Official Trailer",
+    "description": "A music video for Lizette directed, produced, shot, edited and colored by PJ Kim.",
+    "thumbnailUrl": "https://pjk1m.com/images/december/trailer-poster.webp",
+    "uploadDate": "2026-09-23",
+    "duration": "PT20S",
+    "contentUrl": "https://pjk1m.com/videos/december-trailer.mp4"
+  }
+  </script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-M0J8NYPG27"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -81,6 +93,8 @@
               <div><dt>Format</dt><dd>Music video</dd></div>
               <div><dt>Artist</dt><dd>Lizette</dd></div>
               <div><dt>Filmmaker</dt><dd>PJ Kim</dd></div>
+              <div><dt>Roles</dt><dd>Director · Producer · DP · Editor · Colorist</dd></div>
+              <div><dt>Runtime</dt><dd>3:37</dd></div>
               <div><dt>Release</dt><dd>In progress</dd></div>
             </dl>
           </div>
@@ -99,8 +113,9 @@
           <p>A first look at the theatrical re-grade. The final film is still being finished for its new release.</p>
         </div>
         <div class="dec-trailer-player">
-          <video controls playsinline preload="metadata" poster="../images/december/trailer-poster.webp">
+          <video controls playsinline preload="metadata" poster="../images/december/trailer-poster.webp" data-track-media="december_trailer">
             <source src="../videos/december-trailer.mp4" type="video/mp4">
+            <track kind="captions" src="../captions/december-trailer-en.vtt" srclang="en" label="English">
             Your browser does not support embedded video.
           </video>
           <div class="dec-player-caption">
@@ -289,6 +304,12 @@
     </section>
   </main>
 
+  <nav class="project-pagination" aria-label="Project navigation">
+    <a href="/unsanctioned"><span>← PREVIOUS</span><strong>PROJECT UNSANCTIONED</strong></a>
+    <a class="project-pagination-all" href="/">ALL WORK</a>
+    <span class="project-pagination-empty" aria-hidden="true">NEXT</span>
+  </nav>
+
   <footer class="monogram dec-footer">
     <a href="/">ALL WORK</a> · <a href="/inspo">INSPO</a> · PJK1M
   </footer>
@@ -296,5 +317,6 @@
   <script src="../film/projects.js"></script>
   <script src="../film/lightbox.js"></script>
   <script src="../film/december.js"></script>
+  <script src="../film/analytics.js"></script>
 </body>
 </html>

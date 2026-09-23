@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /engineering
+Disallow: /if-not-later-when
+Disallow: /filmic
+
+Sitemap: https://pjk1m.com/sitemap.xml

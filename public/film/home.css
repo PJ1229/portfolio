@@ -88,7 +88,8 @@
 
 /* ---- shared section rhythm ---- */
 .film-page.home-page .home-work,
-.film-page.home-page .home-info {
+.film-page.home-page .home-info,
+.film-page.home-page .home-contact {
   padding: clamp(48px, 8vw, 96px) var(--gutter);
 }
 .film-page.home-page .home-count {
@@ -139,6 +140,33 @@
   outline: var(--rule) solid var(--paper);
   outline-offset: 3px;
 }
+
+/* ---- direct contact ---- */
+.film-page.home-page .home-contact {
+  border-top: var(--rule) solid rgba(255, 255, 255, 0.14);
+  text-align: center;
+}
+.film-page.home-page .home-contact > .mono { color: var(--paper-dim); }
+.film-page.home-page .home-contact h2 {
+  margin: clamp(34px, 6vw, 72px) auto;
+  font-size: clamp(60px, 11vw, 160px);
+  font-weight: 400;
+  letter-spacing: -0.045em;
+  line-height: 0.78;
+}
+.film-page.home-page .home-contact h2 i { font-weight: 400; }
+.film-page.home-page .home-contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding-bottom: 7px;
+  border-bottom: var(--rule) solid currentColor;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+}
+.film-page.home-page .home-contact-link:hover,
+.film-page.home-page .home-contact-link:focus-visible { color: var(--paper-dim); }
 
 @media (max-width: 719px) {
   .film-page.home-page .info-row { grid-template-columns: 1fr; gap: 2px; }
