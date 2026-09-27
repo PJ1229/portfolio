@@ -296,11 +296,10 @@ export const deck = {
     {
       id: "the-room",
       layout: "split",
-      title: "What the room gives us",
+      title: "Scene strategy",
       body: {
         points: [
           "It's lit by overhead tubes and track spots. I'd turn off what we can and let the windows and the deli case carry it.",
-          "The case glass picks up the street, so a polarizer goes on every case shot.",
           "The hand-painted signs do the art direction for us.",
           "The aisle is tight at lunch: gimbal, small rig, one camera."
         ]
@@ -308,38 +307,38 @@ export const deck = {
       images: [graded[0]],
       notes: {
         seconds: 20,
-        text: "This location already has texture and production design. The DP job is subtraction: control the practicals, protect the glass, and keep the rig small enough that the real deli can stay alive around us."
+        text: "This location already has texture and production design. The DP job is subtraction: control the practicals and keep the rig small enough that the real deli can stay alive around us."
       }
     },
     {
       id: "as-shot",
       layout: "compare",
-      title: "As shot, and where I'd take it",
+      title: "Color grade experiment",
       body: {
         defaultPair: "LOG | GRADED",
-        instruction: "Compare the flat capture, neutral Rec.709 transform, and final creative grade.",
+        instruction: "Compare the flat LOG capture with the final creative grade.",
         gradeDirection: "I pushed the midtones warmer and the shadows toward green/orange. Blacks come down, sign colors return, cheese stays white, and food never gets pushed."
       },
       images: compareFrames.flatMap((frame) => [frame.states.log, frame.states["709"], frame.states.graded]),
       notes: {
         seconds: 45,
-        text: "The LOG image protects the window and case. Rec.709 gives the neutral baseline. From there I warm the midtones, separate the shadows toward green/orange, deepen the blacks, and selectively restore the building's colors without contaminating the food whites."
+        text: "The LOG image protects the window and case. From there I warm the midtones, separate the shadows toward green/orange, deepen the blacks, and selectively restore the building's colors without contaminating the food whites."
       }
     },
     {
       id: "two-eras",
       layout: "split",
-      title: "Two eras, two looks",
+      title: "The history",
       body: {
         looks: [
           {
-            name: "Now",
-            description: "Modern primes (24/35/50), clean and sharp.",
+            name: "The present",
+            description: "The present-day story keeps the warm, natural grade established by the deli itself.",
             imageId: "frame-05-graded"
           },
           {
             name: "Since 1982",
-            description: "Vintage 50, Pro-Mist filter, Super 8 inserts, and old deli photos framed 4:3.",
+            description: "The history sections use a distinct color grade: faded warmth, softer contrast, lifted blacks, and restrained saturation to separate the past from the present.",
             imageId: "reference-history-01"
           }
         ]
@@ -359,13 +358,13 @@ export const deck = {
       ],
       notes: {
         seconds: 20,
-        text: "The present is precise and immediate. History gets a softer optical language—vintage glass, diffusion, Super 8, and archival material—so the audience can feel time without confusing the two eras."
+        text: "The present stays warm and natural. The history sections shift into a softer, faded grade so the audience can feel the change in time without leaving the documentary's visual world."
       }
     },
     {
       id: "palette",
       layout: "swatches",
-      title: "Colors from the building",
+      title: "The color palette",
       body: {
         caption: "Sampled from my frames, 9/26.",
         swatches: [
