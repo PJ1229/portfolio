@@ -245,10 +245,10 @@ export const deck = {
       title: "The idea",
       body: {
         lead: "Students don't skip Zingerman's because it's bad. They skip it because it's a walk they've never taken.",
-        accent: "So the film is the walk, and what's been waiting at the end of it since 1982.",
+        accent: "My proposal is to film the walk and show what Zingerman's has in store.",
         acts: [
-          { numeral: "I", text: "Start on campus and walk there, with the history told on the way." },
-          { numeral: "II", text: "Inside: the counter, the case, the people." },
+          { numeral: "I", text: "Start at the Diag, then walk to Zingerman's, telling its history along the way." },
+          { numeral: "II", text: "Film the employees making the food, documentary-style." },
           { numeral: "III", text: "The student sits down, tries a meal, and gives an honest review." }
         ]
       },
@@ -261,26 +261,26 @@ export const deck = {
     {
       id: "three-acts",
       layout: "rows",
-      title: "Two minutes, three acts",
+      title: "The storyboard",
       body: {
         rows: [
           {
             timecode: "0:00–0:30",
             name: "The walk.",
-            description: "Diag to Kerrytown, street sound, a voice telling how it started in 1982, landing on the storefront.",
+            description: "Film the walk from the Diag to Kerrytown, walking backward ahead of the student and a Filmic member with a mic as they exchange banter.",
             camera: "Handheld, 35mm, daylight, 24fps.",
             imageId: "frame-04-graded"
           },
           {
             timecode: "0:30–1:30",
-            name: "The counter.",
-            description: "Into the rush, sandwiches built, the case glows, longest-tenured staff do the talking.",
+            name: "In the store.",
+            description: "Film the food being made with macro shots and employee coverage, woven together with employee stories.",
             camera: "Gimbal through the line, 120fps macro inserts.",
             imageId: "frame-01-graded"
           },
           {
             timecode: "1:30–2:00",
-            name: "The first bite.",
+            name: "Eating scene.",
             description: "Student tries the Reuben and tells the people who made it what they think.",
             camera: "Locked off, 50mm. The camera finally stops moving.",
             imageId: "frame-07-graded"
