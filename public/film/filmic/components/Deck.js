@@ -79,8 +79,9 @@ export class Deck {
   render({ updateHash }) {
     this.slides.forEach((slide, index) => {
       const active = index === this.index;
-      slide.hidden = !active;
+      slide.classList.toggle("is-active", active);
       slide.setAttribute("aria-hidden", String(!active));
+      slide.toggleAttribute("inert", !active);
     });
 
     const current = this.data.slides[this.index];
