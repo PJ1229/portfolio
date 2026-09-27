@@ -242,7 +242,7 @@ export const deck = {
     {
       id: "the-idea",
       layout: "split",
-      title: "The idea",
+      title: "Thesis",
       body: {
         lead: "Students don't skip Zingerman's because it's bad. They skip it because it's a walk they've never taken.",
         accent: "My proposal is to film the walk and show what Zingerman's has in store.",
@@ -385,10 +385,10 @@ export const deck = {
     {
       id: "food",
       layout: "rows",
-      title: "The food, where it lives",
+      title: "Food-specific frames",
       body: {
-        lead: "Every build gets shot four times: real time, 120fps, 60fps, then a diopter for macro.",
-        placement: "On butcher paper, under the signs, next to the case. Never on a white tablecloth."
+        lead: "Emulating Adam Bricker's cinematography from Chef's Table.",
+        placement: "Shoot every food shot with four different settings."
       },
       images: [
         referenceImage({
@@ -430,13 +430,13 @@ export const deck = {
       ],
       notes: {
         seconds: 18,
-        text: "Food stays inside the world of the deli. The four passes give editorial choice, but the surfaces, signs, paper, and case keep every beauty shot authentic to Zingerman's rather than turning it into generic tabletop advertising."
+        text: "Adam Bricker's Chef's Table cinematography is the reference point. Four settings for every food shot give editorial range while keeping the images grounded in the real deli."
       }
     },
     {
       id: "people",
       layout: "split",
-      title: "The people behind the counter",
+      title: "Capturing authenticity",
       body: {
         points: [
           "Portraits on a 50 at eye level, window-lit.",
@@ -454,7 +454,7 @@ export const deck = {
     {
       id: "shot-list",
       layout: "table",
-      title: "Eight shots that carry it",
+      title: "Focused shots and settings",
       body: {
         columns: ["Shot", "Lens", "Move", "FPS"],
         rows: [
@@ -464,7 +464,7 @@ export const deck = {
           { shot: "Reuben on butcher paper", lens: "50mm", move: "locked overhead", fps: "60", imageId: null },
           { shot: "Hand-off across the counter", lens: "35mm", move: "gimbal through the line", fps: "24", imageId: "frame-01-graded" },
           { shot: "Old photos + a regular's story", lens: "vintage 50mm", move: "handheld, Super 8", fps: "18", imageId: null },
-          { shot: "Longest-tenured staffer by the window", lens: "50mm", move: "locked", fps: "24", imageId: "frame-05-graded" },
+          { shot: "Employee by the window", lens: "50mm", move: "locked", fps: "24", imageId: "frame-05-graded" },
           { shot: "First bite and the review", lens: "50mm", move: "locked, slow push", fps: "24", imageId: "frame-07-graded" }
         ]
       },
@@ -479,29 +479,36 @@ export const deck = {
       layout: "split",
       title: "Social cut",
       body: {
-        headline: "POV: a senior finally takes you to Zingerman's",
+        headline: "POV: exploring Ann Arbor's most notable restaurants",
         runtime: "0:30",
         format: "9:16 · vertical from the start",
-        capture: "Point-and-shoot with direct flash.",
-        thesis: "The promo is cinema. The short should look like a friend posted it."
+        capture: "Shot on iPhone in LOG, then graded."
       },
       images: [
-        shotSlot("social-cut-vertical-clip", "Empty 9:16 slot for a future social-cut clip.", "Future 9:16 social-cut clip or poster frame.")
+        referenceImage({
+          id: "reference-social-urban-fast-food",
+          src: "/images/filmic-pitch/references/reference-social-urban-fast-food.png",
+          sourceUrl: null,
+          alt: "Reference: a vertical fast-food frame centered on a sandwich while sauce is poured over it, surrounded by small ingredient inserts.",
+          caption: "Reference for the vertical social cut: a central food action with supporting detail frames layered around it.",
+          width: 540,
+          height: 720
+        })
       ],
       notes: {
         seconds: 18,
-        text: "The social deliverable should not feel like a crop or a compressed version of the hero. Direct flash, vertical blocking, and a senior-to-student point of view give it the casual credibility of a recommendation from a friend."
+        text: "The social deliverable is designed vertically from the start and shot on iPhone in LOG, then graded to stay connected to the main film."
       }
     },
     {
       id: "production",
       layout: "table",
-      title: "$5,000, two days, one small rig",
+      title: "Budget breakdown",
       body: {
-        kit: "Compact full-frame body, three primes plus a 100mm macro, vintage 50 plus Pro-Mist, gimbal, slider, two small LEDs, haze, Super 8, lav and boom.",
+        kit: "We need to rent a full-frame body, lighting, macro lenses, and film filters.",
         schedule: [
-          { day: "Day 1", plan: "The walk and the counter." },
-          { day: "Day 2", plan: "Food, people, the first bite, social." }
+          { day: "Day 1", plan: "The walk + restaurant B-roll." },
+          { day: "Day 2", plan: "Employee interviews & food review." }
         ],
         budgetLabel: "Estimates",
         columns: ["Line", "$"],

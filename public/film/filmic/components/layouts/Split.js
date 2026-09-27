@@ -57,11 +57,11 @@ function renderSocial(slide) {
   copy.append(
     label(`${slide.body.runtime} · ${slide.body.format}`, "filmic-timecode"),
     el("blockquote", "filmic-social-headline", slide.body.headline),
-    el("p", "filmic-social-capture", slide.body.capture),
-    el("p", "filmic-social-thesis", slide.body.thesis)
+    el("p", "filmic-social-capture", slide.body.capture)
   );
+  if (slide.body.thesis) copy.append(el("p", "filmic-social-thesis", slide.body.thesis));
   const visual = el("div", "filmic-social-visual");
-  visual.append(media(slide.images[0], { hideCaption: true }));
+  visual.append(media(slide.images[0], { hideCaption: true, fit: "contain" }));
   return [copy, visual];
 }
 

@@ -176,6 +176,10 @@
   transition: transform 750ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+.filmic-media[data-fit="contain"] .filmic-media__visual img {
+  object-fit: contain;
+}
+
 .filmic-slide.is-active .filmic-media__visual img {
   transform: scale(1);
 }
