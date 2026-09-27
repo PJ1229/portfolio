@@ -48,7 +48,8 @@ export class Deck {
 
     this.previousButton = document.createElement("button");
     this.previousButton.type = "button";
-    this.previousButton.textContent = "Previous";
+    this.previousButton.textContent = "←";
+    this.previousButton.setAttribute("aria-label", "Previous slide");
     this.previousButton.addEventListener("click", () => this.goTo(this.index - 1));
 
     this.status = document.createElement("span");
@@ -57,7 +58,8 @@ export class Deck {
 
     this.nextButton = document.createElement("button");
     this.nextButton.type = "button";
-    this.nextButton.textContent = "Next";
+    this.nextButton.textContent = "→";
+    this.nextButton.setAttribute("aria-label", "Next slide");
     this.nextButton.addEventListener("click", () => this.goTo(this.index + 1));
 
     controls.append(this.previousButton, this.status, this.nextButton);

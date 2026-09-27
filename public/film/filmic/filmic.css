@@ -225,6 +225,8 @@
   top: 1.2cqh;
   left: 0.8cqw;
   content: attr(data-source-label);
+  padding: 0.3cqh 0.35cqw;
+  background: rgba(16, 12, 9, 0.66);
   color: var(--filmic-paper);
   font-size: 0.58cqw;
   font-weight: 650;
@@ -679,6 +681,11 @@
   color: var(--filmic-paper);
 }
 
+.filmic-food-slot .filmic-media--captionless::before {
+  right: 0.8cqw;
+  left: auto;
+}
+
 .filmic-food-slot .filmic-media,
 .filmic-food-slot .filmic-media__visual {
   height: 100%;
@@ -921,9 +928,9 @@
   right: 12px;
   bottom: 10px;
   display: flex;
-  gap: 5px;
+  gap: 0;
   color: var(--filmic-muted);
-  opacity: 0.35;
+  opacity: 0.5;
   transition: opacity 180ms ease;
 }
 
@@ -933,28 +940,19 @@
 }
 
 .filmic-controls button {
-  width: 30px;
-  height: 27px;
-  overflow: hidden;
+  width: 34px;
+  height: 30px;
   padding: 0;
-  border: 1px solid rgba(230, 220, 196, 0.25);
-  border-radius: 0;
-  background: rgba(16, 12, 9, 0.9);
-  color: transparent;
+  border: 0;
+  border-bottom: 1px solid rgba(230, 220, 196, 0.34);
+  background: transparent;
+  color: var(--filmic-paper);
+  font-size: 15px;
   cursor: pointer;
 }
 
-.filmic-controls button::after {
-  color: var(--filmic-paper);
-  font-size: 12px;
-}
-
-.filmic-controls button:first-child::after {
-  content: "←";
-}
-
-.filmic-controls button:last-child::after {
-  content: "→";
+.filmic-controls button + button {
+  border-left: 1px solid rgba(230, 220, 196, 0.18);
 }
 
 .filmic-controls button:disabled {

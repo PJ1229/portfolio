@@ -110,6 +110,27 @@ function referenceSlot(slotId, alt, caption) {
   };
 }
 
+function referenceImage({ id, src, sourceUrl, alt, caption, width, height }) {
+  return {
+    id,
+    src,
+    sourceUrl,
+    alt,
+    label: /** @type {SourceLabel} */ ("Reference"),
+    caption: {
+      text: caption,
+      draft: true
+    },
+    width,
+    height,
+    placeholder: null,
+    sources: {
+      avif: null,
+      webp: null
+    }
+  };
+}
+
 function shotSlot(slotId, alt, caption) {
   return {
     id: slotId,
@@ -325,7 +346,15 @@ export const deck = {
       },
       images: [
         graded[4],
-        referenceSlot("reference-history-01", "Reference image pending for the vintage 1982 visual language.", "Reference slot: vintage glass, Super 8 texture, or archival deli photography."),
+        referenceImage({
+          id: "reference-history-01",
+          src: "/images/filmic-pitch/references/reference-history-diner.jpg",
+          sourceUrl: "https://www.pinterest.com/pin/873065077789409645/",
+          alt: "Reference: a sunlit vintage diner interior with wood paneling, stained glass, Coca-Cola signs, and an empty table.",
+          caption: "Reference: warm practicals, aged surfaces, and a lived-in diner palette for the film's historical language.",
+          width: 1169,
+          height: 1464
+        }),
         referenceSlot("reference-history-02", "Reference image pending for archival Zingerman's imagery.", "Reference slot: old deli photograph framed 4:3.")
       ],
       notes: {
@@ -363,10 +392,42 @@ export const deck = {
         placement: "On butcher paper, under the signs, next to the case. Never on a white tablecloth."
       },
       images: [
-        referenceSlot("reference-food-01", "Food cinematography reference pending.", "Reference slot: sandwich build in real time."),
-        referenceSlot("reference-food-02", "Slow-motion food reference pending.", "Reference slot: 120fps ingredient movement."),
-        referenceSlot("reference-food-03", "Food detail reference pending.", "Reference slot: 60fps plated sandwich."),
-        referenceSlot("reference-food-04", "Macro food reference pending.", "Reference slot: diopter detail on bread, meat, or cheese.")
+        referenceImage({
+          id: "reference-food-01",
+          src: "/images/filmic-pitch/references/reference-food-sandwich-held.jpg",
+          sourceUrl: "https://www.pinterest.com/pin/873065077789409592/",
+          alt: "Reference: two flash-lit sandwich halves held close to camera with the stacked fillings exposed.",
+          caption: "Reference for the real-time pass: close, handheld, direct, and generous about the sandwich layers.",
+          width: 1179,
+          height: 1412
+        }),
+        referenceImage({
+          id: "reference-food-02",
+          src: "/images/filmic-pitch/references/reference-food-blt-pair.jpg",
+          sourceUrl: "https://www.pinterest.com/pin/873065077789409587/",
+          alt: "Reference: two rye sandwiches stacked against a pale background with each ingredient clearly separated.",
+          caption: "Reference for the 120fps pass: a graphic profile that keeps bread, meat, greens, and spread readable.",
+          width: 786,
+          height: 1004
+        }),
+        referenceImage({
+          id: "reference-food-03",
+          src: "/images/filmic-pitch/references/reference-food-sandwich-stack.jpg",
+          sourceUrl: "https://www.pinterest.com/pin/873065077789409585/",
+          alt: "Reference: an extreme close view through a toasted sandwich with melted cheese, greens, and open crumb.",
+          caption: "Reference for the 60fps pass: compressed layers, toasted edges, and enough movement for the cheese to carry.",
+          width: 736,
+          height: 946
+        }),
+        referenceImage({
+          id: "reference-food-04",
+          src: "/images/filmic-pitch/references/reference-food-bread-macro.jpg",
+          sourceUrl: "https://www.pinterest.com/pin/873065077789409602/",
+          alt: "Reference: macro detail of a deeply browned loaf crust and open interior crumb.",
+          caption: "Reference for the diopter pass: crust, flour, and crumb become the landscape of the frame.",
+          width: 640,
+          height: 960
+        })
       ],
       notes: {
         seconds: 18,
