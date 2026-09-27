@@ -355,7 +355,8 @@ Each milestone ends with a review stop, a concise preview command, a list of dec
 
 ### M4 — scroll mode and mobile
 
-- Add `?view=read`, the mode toggle, automatic phone behavior, and the standalone Grade section.
+- Make the continuous treatment the default at `/filmic`; keep the 16:9 deck at `?view=present`, with a quiet mode toggle that preserves the current section hash.
+- Use the same data and layout components in both views, add direct section anchors, and stack dense layouts into readable mobile compositions.
 - Tune long-read typography, image sizing, sticky/inline controls, and touch behavior.
 
 ### M5 — presenter view, grid, and help overlay
@@ -394,3 +395,4 @@ None blocking M1. Reference/mood slots remain deliberately empty until separate 
 - 2026-09-27 — Completed M1: replaced the legacy `/filmic` shell, added the isolated 13-slide content model and plain 16:9 presentation renderer, copied and normalized all 21 source JPGs without altering the originals, and verified route isolation, hash navigation, and noindex controls.
 - 2026-09-27 — Completed M2: replaced the generic content renderer with dedicated layout components, rebuilt all 13 slides as fixed 16:9 compositions, removed internal scrolling and clipping, added restrained transitions and grain, and visually reviewed every slide at the presentation viewport.
 - 2026-09-27 — M2 follow-up: curated five locally cached references from PJ's Pinterest board for the vintage-look and food slides, recorded their pin URLs in the content model, and simplified the bottom navigation arrows.
+- 2026-09-27 — Completed M4's view inversion: `/filmic` is now a continuous, responsive project treatment modeled on the site's film pages, while `?view=present` retains the 16:9 deck, keyboard navigation, and hash-linked position. Both modes render the same content model and expose a quiet Read/Present switch.

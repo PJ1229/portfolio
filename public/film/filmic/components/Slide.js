@@ -3,6 +3,7 @@ import { renderLayout } from "./layouts/index.js";
 export function createSlide(slide, index, total) {
   const section = document.createElement("section");
   section.className = `filmic-slide filmic-slide--${slide.layout}`;
+  section.id = String(index + 1);
   section.dataset.slide = String(index + 1);
   section.dataset.slideId = slide.id;
   section.setAttribute("aria-labelledby", `filmic-slide-title-${index + 1}`);

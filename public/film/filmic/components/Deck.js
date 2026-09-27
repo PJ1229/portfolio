@@ -17,20 +17,24 @@ export class Deck {
   constructor(root, data) {
     this.root = root;
     this.data = data;
+    this.mode = new URLSearchParams(window.location.search).get("view") === "present" ? "present" : "read";
     this.index = slideFromHash(data.slides.length);
     this.slides = [];
     this.ignoreHashChange = false;
+    this.observer = null;
     this.onKeyDown = this.onKeyDown.bind(this);
     this.onHashChange = this.onHashChange.bind(this);
   }
 
   mount() {
+    document.body.dataset.view = this.mode;
+
     const shell = document.createElement("div");
     shell.className = "filmic-shell";
 
     const stage = document.createElement("div");
     stage.className = "filmic-stage";
-    stage.setAttribute("aria-label", `${this.data.meta.title} presentation`);
+    stage.setAttribute("aria-label", `${this.data.meta.title} ${this.mode === "present" ? "presentation" : "treatment"}`);
 
     this.slides = this.data.slides.map((slide, index) => {
       const node = createSlide(slide, index, this.data.slides.length);
@@ -38,9 +42,7 @@ export class Deck {
       return node;
     });
 
-    stage.addEventListener("click", (event) => {
-      if (!isInteractiveTarget(event.target)) this.goTo(this.index + 1);
-    });
+    const viewNavigation = this.createViewNavigation();
 
     const controls = document.createElement("nav");
     controls.className = "filmic-controls";
@@ -63,12 +65,63 @@ export class Deck {
     this.nextButton.addEventListener("click", () => this.goTo(this.index + 1));
 
     controls.append(this.previousButton, this.status, this.nextButton);
-    shell.append(stage, controls);
-    this.root.replaceChildren(shell);
+    if (this.mode === "present") {
+      stage.addEventListener("click", (event) => {
+        if (!isInteractiveTarget(event.target)) this.goTo(this.index + 1);
+      });
+      shell.append(stage, controls);
+      document.addEventListener("keydown", this.onKeyDown);
+      window.addEventListener("hashchange", this.onHashChange);
+    } else {
+      shell.append(stage);
+      this.observeReadSections();
+    }
 
-    document.addEventListener("keydown", this.onKeyDown);
-    window.addEventListener("hashchange", this.onHashChange);
+    this.root.replaceChildren(shell);
+    document.body.append(viewNavigation);
+
     this.render({ updateHash: false });
+
+    if (this.mode === "read" && window.location.hash) {
+      requestAnimationFrame(() => this.slides[this.index].scrollIntoView());
+    }
+  }
+
+  createViewNavigation() {
+    const navigation = document.createElement("nav");
+    navigation.className = "filmic-view-nav";
+    navigation.setAttribute("aria-label", "Page view");
+
+    const home = document.createElement("a");
+    home.href = "/";
+    home.textContent = "pjk1m.com";
+
+    this.viewLink = document.createElement("a");
+    this.viewLink.className = "filmic-view-nav__mode";
+    this.viewLink.textContent = this.mode === "present" ? "Read" : "Present";
+    this.updateViewLink();
+
+    navigation.append(home, this.viewLink);
+    return navigation;
+  }
+
+  updateViewLink() {
+    const hash = `#${this.index + 1}`;
+    this.viewLink.href = this.mode === "present" ? `/filmic${hash}` : `/filmic?view=present${hash}`;
+  }
+
+  observeReadSections() {
+    this.observer = new IntersectionObserver((entries) => {
+      const visible = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+      if (!visible) return;
+      this.index = Number(visible.target.dataset.slide) - 1;
+      this.updateViewLink();
+    }, { threshold: [0.35, 0.6] });
+
+    this.slides.forEach((slide) => this.observer.observe(slide));
   }
 
   goTo(index) {
@@ -80,17 +133,23 @@ export class Deck {
 
   render({ updateHash }) {
     this.slides.forEach((slide, index) => {
-      const active = index === this.index;
+      const active = this.mode === "read" || index === this.index;
       slide.classList.toggle("is-active", active);
       slide.setAttribute("aria-hidden", String(!active));
       slide.toggleAttribute("inert", !active);
     });
 
     const current = this.data.slides[this.index];
-    this.status.textContent = `${String(this.index + 1).padStart(2, "0")} / ${String(this.data.slides.length).padStart(2, "0")} · ${current.title}`;
-    this.previousButton.disabled = this.index === 0;
-    this.nextButton.disabled = this.index === this.data.slides.length - 1;
-    document.title = `${current.title} — ${this.data.meta.title}`;
+    this.updateViewLink();
+
+    if (this.mode === "present") {
+      this.status.textContent = `${String(this.index + 1).padStart(2, "0")} / ${String(this.data.slides.length).padStart(2, "0")} · ${current.title}`;
+      this.previousButton.disabled = this.index === 0;
+      this.nextButton.disabled = this.index === this.data.slides.length - 1;
+      document.title = `${current.title} — ${this.data.meta.title}`;
+    } else {
+      document.title = `${this.data.meta.title} — PJ Kim`;
+    }
 
     if (updateHash) {
       const nextHash = `#${this.index + 1}`;

@@ -968,15 +968,336 @@
   clip: rect(0 0 0 0);
 }
 
+.filmic-view-nav {
+  position: fixed;
+  z-index: 200;
+  top: 14px;
+  right: 18px;
+  left: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+}
+
+.filmic-view-nav a {
+  pointer-events: auto;
+  padding: 7px 0 5px;
+  border-bottom: 1px solid rgba(230, 220, 196, 0.38);
+  color: var(--filmic-paper);
+  font-size: 10px;
+  font-weight: 650;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.95);
+  transition: border-color 180ms ease, color 180ms ease;
+}
+
+.filmic-view-nav a:hover {
+  border-color: var(--filmic-accent);
+  color: var(--filmic-accent);
+}
+
+/* The treatment is the default: one continuous, full-width project page. */
+.filmic-deck[data-view="read"] {
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: var(--filmic-bg);
+}
+
+.filmic-deck[data-view="read"] .filmic-shell {
+  display: block;
+  min-height: 100svh;
+  background: var(--filmic-bg);
+}
+
+.filmic-deck[data-view="read"] .filmic-stage {
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+  overflow: visible;
+  border: 0;
+  container: normal;
+  cursor: default;
+}
+
+.filmic-deck[data-view="read"] .filmic-slide {
+  position: relative;
+  inset: auto;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  container: filmic-section / size;
+  visibility: visible;
+  opacity: 1;
+  border-bottom: 1px solid rgba(230, 220, 196, 0.12);
+  scroll-margin-top: 0;
+  transition: none;
+}
+
+.filmic-deck[data-view="read"] .filmic-slide:last-child {
+  border-bottom: 0;
+}
+
+.filmic-deck[data-view="read"] .filmic-controls {
+  display: none;
+}
+
 .filmic-deck noscript {
   display: block;
   padding: 2rem;
 }
 
 @media (max-aspect-ratio: 4 / 3) {
-  .filmic-stage {
+  .filmic-deck[data-view="present"] .filmic-stage {
     width: 100vw;
     height: min(100svh, 56.25vw);
+  }
+}
+
+@media (max-width: 760px) {
+  .filmic-deck[data-view="read"] .filmic-view-nav {
+    top: 12px;
+    right: 14px;
+    left: 14px;
+  }
+
+  .filmic-deck[data-view="read"] .filmic-slide:not(.filmic-slide--fullBleed):not(.filmic-slide--quote) {
+    display: block;
+    min-height: 0;
+    aspect-ratio: auto;
+    padding: 72px 22px 56px;
+    container: filmic-mobile / inline-size;
+  }
+
+  .filmic-deck[data-view="read"] .filmic-slide--fullBleed,
+  .filmic-deck[data-view="read"] .filmic-slide--quote {
+    min-height: 100svh;
+    aspect-ratio: auto;
+    container: filmic-mobile-hero / size;
+  }
+
+  .filmic-deck[data-view="read"] .filmic-slide__header {
+    gap: 18px;
+    margin-bottom: 30px;
+    padding-bottom: 18px;
+  }
+
+  .filmic-deck[data-view="read"] .filmic-slide__title {
+    max-width: 10em;
+    font-size: clamp(38px, 12cqw, 58px);
+    line-height: 0.96;
+  }
+
+  .filmic-deck[data-view="read"] .filmic-slide__count,
+  .filmic-deck[data-view="read"] .filmic-kicker,
+  .filmic-deck[data-view="read"] .filmic-timecode,
+  .filmic-deck[data-view="read"] .filmic-media__label,
+  .filmic-deck[data-view="read"] .filmic-table th {
+    font-size: 9px;
+  }
+
+  .filmic-deck[data-view="read"] .filmic-media,
+  .filmic-deck[data-view="read"] .filmic-media__visual {
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  .filmic-deck[data-view="read"] .filmic-media__caption {
+    gap: 8px;
+    margin-top: 8px;
+    font-size: 10px;
+  }
+
+  .filmic-deck[data-view="read"] .filmic-media--captionless::before,
+  .filmic-deck[data-view="read"] .filmic-media__empty-label {
+    font-size: 8px;
+  }
+
+  .filmic-deck[data-view="read"] .filmic-layout--split,
+  .filmic-deck[data-view="read"] .filmic-layout--the-room,
+  .filmic-deck[data-view="read"] .filmic-layout--people,
+  .filmic-deck[data-view="read"] .filmic-layout--social-cut,
+  .filmic-deck[data-view="read"] .filmic-food-layout,
+  .filmic-deck[data-view="read"] .filmic-production,
+  .filmic-deck[data-view="read"] .filmic-layout--swatches {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .filmic-deck[data-view="read"] .filmic-statement {
+    font-size: 32px;
+  }
+
+  .filmic-deck[data-view="read"] .filmic-statement--accent {
+    font-size: 15px;
+  }
+
+  .filmic-deck[data-view="read"] .filmic-acts {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .filmic-deck[data-view="read"] .filmic-acts__number {
+    font-size: 20px;
+  }
+
+  .filmic-deck[data-view="read"] .filmic-acts__item p,
+  .filmic-deck[data-view="read"] .filmic-points__text,
+  .filmic-deck[data-view="read"] .filmic-era__copy > p:last-child,
+  .filmic-deck[data-view="read"] .filmic-social-capture,
+  .filmic-deck[data-view="read"] .filmic-social-thesis,
+  .filmic-deck[data-view="read"] .filmic-food-placement,
+  .filmic-deck[data-view="read"] .filmic-day p {
+    font-size: 13px;
+  }
+
+  .filmic-deck[data-view="read"] .filmic-points__item {
+    grid-template-columns: 28px minmax(0, 1fr);
+    gap: 10px;
+    padding: 14px 0;
+  }
+
+  .filmic-deck[data-view="read"] .filmic-points__number {
+    font-size: 10px;
+  }
+
+  .filmic-deck[data-view="read"] .filmic-era-grid {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .filmic-deck[data-view="read"] .filmic-era__copy h3,
+  .filmic-deck[data-view="read"] .filmic-kit {
+    font-size: 26px;
+  }
+
+  .filmic-deck[data-view="read"] .filmic-people-visual {
+    grid-template-columns: 1fr 0.65fr;
+    gap: 8px;
+  }
+
+  .filmic-deck[data-view="read"] .filmic-social-headline {
+    margin-block: 18px;
+    font-size: 36px;
+  }
+
+  .filmic-deck[data-view="read"] .filmic-social-visual .filmic-media,
+  .filmic-deck[data-view="read"] .filmic-social-visual .filmic-media__visual {
+    width: min(66vw, 280px);
+    height: auto;
+    aspect-ratio: 9 / 16;
+  }
+
+  .filmic-deck[data-view="read"] .filmic-act-rows {
+    gap: 34px;
+  }
+
+  .filmic-deck[data-view="read"] .filmic-act-row {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding-top: 24px;
+  }
+
+  .filmic-deck[data-view="read"] .filmic-act-row__copy {
+    grid-template-columns: 72px minmax(0, 1fr);
+    gap: 8px 14px;
+  }
+
+  .filmic-deck[data-view="read"] .filmic-act-row__copy h3 {
+    font-size: 24px;
+  }
+
+  .filmic-deck[data-view="read"] .filmic-act-row__description,
+  .filmic-deck[data-view="read"] .filmic-camera-line {
+    grid-column: 1 / -1;
+  }
+
+  .filmic-deck[data-view="read"] .filmic-act-row__description,
+  .filmic-deck[data-view="read"] .filmic-camera-line {
+    font-size: 12px;
+  }
+
+  .filmic-deck[data-view="read"] .filmic-food-lead {
+    font-size: 32px;
+  }
+
+  .filmic-deck[data-view="read"] .filmic-food-grid,
+  .filmic-deck[data-view="read"] .filmic-swatch-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: none;
+    gap: 14px;
+  }
+
+  .filmic-deck[data-view="read"] .filmic-food-slot .filmic-media,
+  .filmic-deck[data-view="read"] .filmic-food-slot .filmic-media__visual {
+    aspect-ratio: 1;
+  }
+
+  .filmic-deck[data-view="read"] .filmic-compare-stage {
+    min-height: 44vw;
+  }
+
+  .filmic-deck[data-view="read"] .filmic-compare-stage > .filmic-media,
+  .filmic-deck[data-view="read"] .filmic-compare-stage .filmic-media__visual {
+    height: 100%;
+    aspect-ratio: auto;
+  }
+
+  .filmic-deck[data-view="read"] .filmic-compare-copy {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .filmic-deck[data-view="read"] .filmic-compare-direction,
+  .filmic-deck[data-view="read"] .filmic-compare-instruction {
+    font-size: 12px;
+  }
+
+  .filmic-deck[data-view="read"] .filmic-swatch h3 {
+    font-size: 20px;
+  }
+
+  .filmic-deck[data-view="read"] .filmic-swatch__chip {
+    min-height: 110px;
+  }
+
+  .filmic-deck[data-view="read"] .filmic-swatch__hex {
+    font-size: 11px;
+  }
+
+  .filmic-deck[data-view="read"] .filmic-palette-source > .filmic-media,
+  .filmic-deck[data-view="read"] .filmic-palette-source .filmic-media__visual {
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  .filmic-deck[data-view="read"] .filmic-table {
+    height: auto;
+    font-size: 11px;
+  }
+
+  .filmic-deck[data-view="read"] .filmic-table th {
+    font-size: 8px;
+  }
+
+  .filmic-deck[data-view="read"] .filmic-table th,
+  .filmic-deck[data-view="read"] .filmic-table td {
+    padding: 9px 5px;
+  }
+
+  .filmic-deck[data-view="read"] .filmic-days {
+    gap: 14px;
+  }
+
+  .filmic-deck[data-view="read"] .filmic-day strong {
+    font-size: 10px;
+  }
+
+  .filmic-deck[data-view="read"] .filmic-budget-table {
+    font-size: 11px;
   }
 }
 
