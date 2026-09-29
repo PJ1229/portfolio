@@ -58,6 +58,33 @@
       date: "2026-09-29"
     },
     {
+      title: "mckenna grace — bones and all",
+      url: "https://www.youtube.com/watch?v=MyA24lQByPQ",
+      type: "video",
+      duration: "4:07",
+      date: "2026-09-29",
+      preview: "/images/inspo/previews/bones-and-all.jpg",
+      previewAlt: "Thumbnail for Mckenna Grace's Bones and All music video"
+    },
+    {
+      title: "your life ends when you turn 25",
+      url: "https://www.youtube.com/watch?v=kzwl_SoaecY",
+      type: "video",
+      duration: "5:27",
+      date: "2026-09-29",
+      preview: "/images/inspo/previews/life-ends-25.jpg",
+      previewAlt: "Thumbnail for Your Life Ends When You Turn 25"
+    },
+    {
+      title: "forrest nolan — drama queens",
+      url: "https://www.youtube.com/watch?v=7hMTP2UPb3U",
+      type: "video",
+      duration: "2:58",
+      date: "2026-09-29",
+      preview: "/images/inspo/previews/drama-queens.jpg",
+      previewAlt: "Thumbnail for Forrest Nolan's Drama Queens music video"
+    },
+    {
       title: "i tried to shoot a cinematic ski film in japan | sony fx3",
       url: "https://www.youtube.com/watch?v=yRURaSoB7CY",
       type: "video",
