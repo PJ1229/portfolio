@@ -30,6 +30,7 @@
     "jobTitle": "Director, Cinematographer and Editor",
     "sameAs": [
       "https://www.instagram.com/pj.k1m/",
+      "https://www.linkedin.com/in/pjk1m/",
       "https://www.youtube.com/@pj.k1m",
       "https://www.tiktok.com/@pj.k1m"
     ]
@@ -143,6 +144,10 @@
           <dd><a href="https://www.instagram.com/pj.k1m/" target="_blank" rel="noopener noreferrer">@pj.k1m</a></dd>
         </div>
         <div class="info-row">
+          <dt>LinkedIn</dt>
+          <dd><a href="https://www.linkedin.com/in/pjk1m/" target="_blank" rel="noopener noreferrer">pjk1m</a></dd>
+        </div>
+        <div class="info-row">
           <dt>YouTube</dt>
           <dd><a href="https://www.youtube.com/@pj.k1m" target="_blank" rel="noopener noreferrer">@pj.k1m</a></dd>
         </div>
@@ -153,12 +158,39 @@
       </dl>
     </section>
 
-    <section class="home-contact" aria-labelledby="contact-heading">
-      <p class="mono">AVAILABLE FOR SELECT PROJECTS</p>
-      <h2 id="contact-heading">LET'S MAKE<br><i>SOMETHING.</i></h2>
-      <a class="home-contact-link" href="mailto:pekim@umich.edu" data-track-contact>
-        PEKIM@UMICH.EDU <span aria-hidden="true">↗</span>
-      </a>
+    <section class="home-contact" aria-labelledby="contact-heading" data-contact-film>
+      <div class="contact-film-media" aria-hidden="true">
+        <video id="contact-film-video" class="contact-film-video" muted playsinline preload="none"
+               poster="/images/home/verci-contact-poster.jpg"
+               data-preview-src="/videos/verci-hover.mp4"
+               data-src="/videos/verci-film.mp4"></video>
+        <div class="contact-film-scrim"></div>
+      </div>
+
+      <div class="home-contact-content">
+        <p class="mono">AVAILABLE FOR SELECT PROJECTS</p>
+        <h2 id="contact-heading">LET'S MAKE<br><i>SOMETHING.</i></h2>
+        <button class="contact-film-play" type="button" data-contact-play aria-controls="contact-film-video">
+          <span>PLAY FILM</span><span>02:00</span>
+        </button>
+        <a class="home-contact-link" href="mailto:pekim@umich.edu" data-track-contact>
+          PEKIM@UMICH.EDU <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+
+      <div class="contact-film-controls" data-contact-controls hidden>
+        <button type="button" data-contact-toggle aria-label="Pause film">PAUSE</button>
+        <span data-contact-current>00:00</span>
+        <label class="contact-film-timeline">
+          <span class="sr-only">Film position</span>
+          <input type="range" min="0" max="120" step="0.1" value="0" data-contact-timeline aria-label="Film position">
+        </label>
+        <span data-contact-duration>02:00</span>
+        <button type="button" data-contact-mute aria-label="Mute film">MUTE</button>
+        <button type="button" data-contact-fullscreen>FULLSCREEN</button>
+        <a href="https://www.youtube.com/watch?v=sFBvEzxBjYw" target="_blank" rel="noopener noreferrer">YOUTUBE ↗</a>
+        <button type="button" data-contact-close aria-label="Close film">CLOSE</button>
+      </div>
     </section>
 
   </main>
@@ -169,6 +201,7 @@
 
   <script src="../film/projects.js"></script>
   <script src="../film/hero.js"></script>
+  <script src="../film/contact-film.js"></script>
   <script src="../film/analytics.js"></script>
 </body>
 </html>

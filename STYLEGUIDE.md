@@ -64,12 +64,19 @@ grid; client work is tagged, not split into its own section.
 - **reading time**: `feb 2026 · X min read` (use `min`, not `mins`).
 
 ### inspo page
-- **red marker**: wrap inline emphasis as `<span class="is-red">red</span>`.
-- **red items**: add `class="is-red"` on the `<a>` element.
+- **surface**: full-black archive; do not put `/inspo` back inside the paper card.
+- **content source**: add entries to `public/film/inspo.js`; foundational films stay first, then dated references run newest-first.
+- **preview**: use a local image when one is available and a deliberate type-led fallback when it is not. Hover/focus may change the preview, but the row itself remains the real outbound link.
+- **red marker**: set `isKey: true` on archive entries that changed how PJ thinks; the renderer supplies the diamond.
 - **weight**: keep font weight consistent; red should only change color.
 - **red color**: `#ff2d2d`, scoped to `.film-page.inspo-page` — this is the one
   deliberate color exception to the otherwise monochrome film register.
 
+### home contact film
+- The Verci film is a native, lazy-loaded video behind `LET'S MAKE SOMETHING.`
+- Keep the supplied sunset portrait as the poster and the YouTube upload as a fallback link only.
+- Hover/focus uses the separate, silent `/videos/verci-hover.mp4` proxy; an explicit click swaps to the full `/videos/verci-film.mp4` with audio and restarts it from the beginning.
+- Preserve play/pause, timeline, time, mute, fullscreen, close, keyboard focus, and reduced-motion behavior when changing the treatment.
+
 ### images
 - **responsive crop rule** (lab home photo): use `object-fit: cover` and pick the anchor with `object-position` depending on which side should crop first.
-
