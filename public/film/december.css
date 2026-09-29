@@ -200,6 +200,17 @@
 .film-page.december-page .dec-prose p + p { margin-top: 1em; }
 
 .film-page.december-page .dec-meta [data-project-meta] { margin: 0 0 30px; }
+.film-page.december-page .dec-meta .project-tags li {
+  border-color: rgba(17, 16, 14, 0.55);
+  color: var(--dec-ink);
+}
+.film-page.december-page .dec-meta .project-client {
+  background: var(--dec-ink);
+  color: var(--dec-paper);
+}
+.film-page.december-page .dec-meta .project-status {
+  color: var(--dec-ink);
+}
 .film-page.december-page .dec-meta dl { border-top: 1px solid rgba(17, 16, 14, 0.25); }
 .film-page.december-page .dec-meta dl div {
   display: grid;
