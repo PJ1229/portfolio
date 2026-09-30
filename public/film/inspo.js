@@ -51,6 +51,15 @@
       previewFit: "contain"
     },
     {
+      title: "remember?",
+      url: "https://www.youtube.com/watch?v=eDRq516f4Mk",
+      type: "video",
+      duration: "0:47",
+      date: "2026-09-30",
+      preview: "/images/inspo/previews/remember.jpg",
+      previewAlt: "Thumbnail for Remember? by Miles Murphy"
+    },
+    {
       title: "adam bricker — projects",
       url: "https://www.adambricker.com/projects",
       type: "site",
