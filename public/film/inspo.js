@@ -51,6 +51,15 @@
       previewFit: "contain"
     },
     {
+      title: "whycrywhenyoucancut",
+      url: "https://www.youtube.com/watch?v=6qDF358rxtw",
+      type: "video",
+      duration: "1:34",
+      date: "2026-10-15",
+      preview: "/images/inspo/previews/why-cry-when-you-can-cut.jpg",
+      previewAlt: "Thumbnail for whycrywhenyoucancut by zian fournier"
+    },
+    {
       title: "remember?",
       url: "https://www.youtube.com/watch?v=eDRq516f4Mk",
       type: "video",
