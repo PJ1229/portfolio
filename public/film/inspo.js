@@ -51,6 +51,24 @@
       previewFit: "contain"
     },
     {
+      title: "daniel caesar — violence",
+      url: "https://www.youtube.com/watch?v=YTNXXUauZ6s",
+      type: "video",
+      duration: "3:19",
+      date: "2026-10-24",
+      preview: "/images/inspo/previews/violence.jpg",
+      previewAlt: "Thumbnail for Daniel Caesar's Violence music video"
+    },
+    {
+      title: "enough for you",
+      url: "https://www.youtube.com/watch?v=dZsx0s2j5Fw",
+      type: "video",
+      duration: "0:49",
+      date: "2026-10-24",
+      preview: "/images/inspo/previews/enough-for-you.jpg",
+      previewAlt: "Thumbnail for Enough For You by Montell Fish"
+    },
+    {
       title: "whycrywhenyoucancut",
       url: "https://www.youtube.com/watch?v=6qDF358rxtw",
       type: "video",
