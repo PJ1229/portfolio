@@ -1,6 +1,7 @@
 // Server-only content. Do not move this file into public/.
 // Public copy stays free of customer metrics, internal names, and unpublished specs.
-// React / Express are part of the broader Yazaki tooling, not these two desktop tools.
+// The bill-of-materials generator is a Python desktop app and CLI. Do not describe
+// it as Excel VBA or as shipped, and do not name the automotive customer.
 module.exports = {
   headline: "Engineering",
   summary: "Electrical engineering at the University of Michigan. Michigan Athletics creative video intern (Aug 2026–now) and Yazaki North America software engineering co-op (since May 2025).",
@@ -22,13 +23,13 @@ module.exports = {
     {
       slug: "yazaki-bom",
       name: "Yazaki Bill of Materials Generator",
-      status: "Shipped",
-      year: "2026",
+      status: "In active development",
+      year: "May–Oct 2026",
       context: "Yazaki North America co-op",
       role: "Software engineering co-op",
-      problem: "Purchasing bills of materials were assembled by hand in Excel.",
-      solution: "A desktop tool generates the bill of materials for harness purchasing.",
-      stack: ["Excel VBA"],
+      problem: "Assembly bill-of-materials tables are split across an automotive OEM's harness data.",
+      solution: "A Python desktop app and CLI extract them from Capital HDSI, KBL/XML, text PDFs, and image-only PDFs with local Tesseract OCR, merge and dedupe the rows, and export a formatted Excel workbook for purchasing.",
+      stack: ["Python", "pdfplumber", "Tesseract OCR", "openpyxl", "PyInstaller (Mac app)"],
       repo: null,
       demo: "https://youtu.be/3-hsH8Vi_Ro",
       videoId: "3-hsH8Vi_Ro",

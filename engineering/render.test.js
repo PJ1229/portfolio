@@ -26,7 +26,16 @@ test("renders three finished projects, public links, and escaped HTML", () => {
   assert.ok(html.includes("https://www.youtube-nocookie.com/embed/S6AR5nTcQ0s"));
   assert.ok(html.includes("Apple Vision"));
   assert.ok(html.includes("Streamlit"));
-  assert.ok(html.includes("Excel VBA"));
+  assert.ok(!html.includes("Excel VBA"));
+  assert.ok(html.includes("pdfplumber"));
+  assert.ok(html.includes("Tesseract OCR"));
+  assert.ok(html.includes("openpyxl"));
+  assert.ok(html.includes("PyInstaller (Mac app)"));
+  assert.ok(html.includes("In active development"));
+  assert.ok(html.includes("May–Oct 2026"));
+  assert.ok(html.includes("automotive OEM&#39;s harness data"));
+  const bom = html.split("<article ").slice(1)[1];
+  assert.ok(!bom.includes("Shipped"));
   assert.ok(html.includes("PaddleOCR"));
   assert.ok(html.includes("Tkinter"));
   assert.ok(!html.includes("React"));
