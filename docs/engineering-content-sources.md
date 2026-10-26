@@ -44,10 +44,10 @@ speedup claims or accuracy claims were included.
 
 ## Public page
 
-The live `/engineering` page lists um-autolog, BOM Generator, and Schematic
-Rule Checker. All three are marked in development. um-autolog has no public
-repository link. Placeholder slots, including the camera platform, are not on
-the page. Public card text does not name a customer.
+The live `/engineering` page lists um-autolog, Bill of Materials Generator,
+and Wiring Drawing Rule Checker. The Yazaki cards are in active development
+and do not include metrics. um-autolog has no public repository link.
+Placeholder slots, including the camera platform, are not on the page.
 
 ## Still unpublished
 

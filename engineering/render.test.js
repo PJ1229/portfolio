@@ -35,29 +35,31 @@ test("renders the three approved cards, demo embeds, and escaped HTML", () => {
   assert.ok(!autolog.includes("Repository"));
   assert.ok(!/Shipped/i.test(autolog));
 
-  assert.ok(bom.includes("BOM Generator"));
-  assert.ok(bom.includes("In development"));
+  assert.ok(bom.includes("Bill of Materials Generator"));
+  assert.ok(bom.includes("In active development"));
   assert.ok(bom.includes("May 2025–present"));
-  assert.ok(bom.includes("Software Engineering Co-Op"));
+  assert.ok(bom.includes("Software engineering co-op"));
   assert.ok(bom.includes("Yazaki North America"));
-  assert.ok(bom.includes("validated 17 of 17 parts"));
-  assert.ok(bom.includes("Demo uses invented sample data."));
-  assert.ok(bom.includes("Python / PySide6 / pytest"));
+  assert.ok(bom.includes("slow, repetitive, and error-prone"));
+  assert.ok(bom.includes("per-harness and combined views"));
+  assert.ok(bom.includes("Python / PySide6 / Excel export / pytest"));
+  assert.ok(!bom.includes("17 of 17"));
   assert.ok(!/Shipped/i.test(bom));
 
-  assert.ok(checker.includes("Schematic Rule Checker"));
-  assert.ok(checker.includes("In development"));
-  assert.ok(checker.includes(">Yazaki<") || checker.includes("Yazaki</p>"));
-  assert.ok(checker.includes("taping and clip rules"));
-  assert.ok(checker.includes("Demo uses sample data."));
-  assert.ok(checker.includes("Python / OCR / Tkinter / React/Node"));
-  assert.ok(!checker.includes("May 2025"));
+  assert.ok(checker.includes("Wiring Drawing Rule Checker"));
+  assert.ok(checker.includes("In active development"));
+  assert.ok(checker.includes("May 2025–present"));
+  assert.ok(checker.includes("taping and clipping rules"));
+  assert.ok(checker.includes("flags rule violations right on the drawing"));
+  assert.ok(checker.includes("Python / Tkinter / React/Node / pytest"));
+  assert.ok(!checker.includes("OCR"));
   assert.ok(!/Shipped/i.test(checker));
 
   for (const banned of [
     "Tesla", "Excel VBA", "PaddleOCR", "pdfplumber", "Tesseract", "openpyxl",
     "PyInstaller", "PyObjC", "FFmpeg", "Capital", "KBL", "automotive OEM",
-    "github.com/PJ1229/um-autolog", "pending", "camera platform",
+    "github.com/PJ1229/um-autolog", "pending", "camera platform", "17 of 17",
+    "Demo uses invented sample data", "Demo uses sample data",
   ]) {
     assert.ok(!html.includes(banned), banned);
   }

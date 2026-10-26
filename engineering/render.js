@@ -36,7 +36,7 @@ function renderProject(project, index) {
     </div>
     ${who ? `<p class="engineering-context">${who}</p>` : ""}
     ${project.description ? `<p class="engineering-description">${escape(project.description)}</p>` : ""}
-    ${project.demoNote ? `<p class="engineering-demo-note">${escape(project.demoNote)}</p>` : ""}
+    ${(project.problem || project.solution) ? `<dl class="engineering-lines">${project.problem ? `<div><dt>Problem</dt><dd>${escape(project.problem)}</dd></div>` : ""}${project.solution ? `<div><dt>Solution</dt><dd>${escape(project.solution)}</dd></div>` : ""}</dl>` : ""}
     ${stack.length ? `<p class="engineering-stack"><span>Stack</span> ${escape(stack.join(" / "))}</p>` : ""}
     ${links ? `<p class="engineering-links">${links}</p>` : ""}
     ${video}
