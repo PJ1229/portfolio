@@ -42,7 +42,7 @@ test("renders the three approved cards, demo embeds, and escaped HTML", () => {
   assert.ok(bom.includes("Yazaki North America"));
   assert.ok(bom.includes("slow, repetitive, and error-prone"));
   assert.ok(bom.includes("per-harness and combined views"));
-  assert.ok(bom.includes("Built for Tesla EV wiring-harness data, which PJ owned end to end, from design through deployment and support."));
+  assert.ok(bom.includes("Built for Tesla EV wiring-harness data, which I owned end to end, from design through deployment and support."));
   assert.ok(bom.includes("Python / PySide6 / Excel export / pytest"));
   assert.ok(!bom.includes("17 of 17"));
   assert.ok(!bom.includes("44/50"));

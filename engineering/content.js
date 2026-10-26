@@ -26,7 +26,7 @@ module.exports = {
       context: "Yazaki North America",
       role: "Software engineering co-op",
       problem: "Building a bill of materials from wiring harness design files by hand is slow, repetitive, and error-prone.",
-      solution: "A desktop tool that reads harness design files, builds a structured bill of materials with per-harness and combined views, and exports a multi-sheet Excel workbook, backed by automated regression tests. Built for Tesla EV wiring-harness data, which PJ owned end to end, from design through deployment and support.",
+      solution: "A desktop tool that reads harness design files, builds a structured bill of materials with per-harness and combined views, and exports a multi-sheet Excel workbook, backed by automated regression tests. Built for Tesla EV wiring-harness data, which I owned end to end, from design through deployment and support.",
       stack: ["Python", "PySide6", "Excel export", "pytest"],
       repo: null,
       demo: "https://youtu.be/3-hsH8Vi_Ro",
