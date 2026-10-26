@@ -1,6 +1,6 @@
 // Server-only content. Do not move this file into public/.
-// Card copy is the approved public text. Do not add a private repo, a customer
-// name, a time-saved claim, or a claim that plays are labeled accurately.
+// Card copy is the approved public text. Do not link the private um-autolog
+// repo, and do not add accuracy figures (no 17/17, 44/50, or jersey-number rate).
 module.exports = {
   headline: "Engineering",
   summary: "Electrical engineering at the University of Michigan. Michigan Athletics creative video intern (Aug 2026–now) and Yazaki North America software engineering co-op (since May 2025).",
@@ -26,7 +26,7 @@ module.exports = {
       context: "Yazaki North America",
       role: "Software engineering co-op",
       problem: "Building a bill of materials from wiring harness design files by hand is slow, repetitive, and error-prone.",
-      solution: "A desktop tool that reads harness design files, builds a structured bill of materials with per-harness and combined views, and exports a multi-sheet Excel workbook, backed by automated regression tests.",
+      solution: "A desktop tool that reads harness design files, builds a structured bill of materials with per-harness and combined views, and exports a multi-sheet Excel workbook, backed by automated regression tests. Built for Tesla EV wiring-harness data, which PJ owned end to end, from design through deployment and support.",
       stack: ["Python", "PySide6", "Excel export", "pytest"],
       repo: null,
       demo: "https://youtu.be/3-hsH8Vi_Ro",
@@ -40,7 +40,7 @@ module.exports = {
       context: "Yazaki North America",
       role: "Software engineering co-op",
       problem: "Checking wiring drawings against taping and clipping rules is manual, and mistakes can slip through to review.",
-      solution: "Compares a wiring drawing against its harness data, flags rule violations right on the drawing with the reason for each, and lets the engineer fix the data and re-validate in the app.",
+      solution: "Compares a wiring drawing against its harness data, flags rule violations right on the drawing with the reason for each, and lets the engineer fix the data and re-validate in the app. Root-caused a systematic defect driving ~$44K in savings per frame harness and cut review time 88% (128 hrs to under 16).",
       stack: ["Python", "Tkinter", "React/Node", "pytest"],
       repo: null,
       demo: "https://youtu.be/S6AR5nTcQ0s",

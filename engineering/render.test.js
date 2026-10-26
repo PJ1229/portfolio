@@ -42,8 +42,10 @@ test("renders the three approved cards, demo embeds, and escaped HTML", () => {
   assert.ok(bom.includes("Yazaki North America"));
   assert.ok(bom.includes("slow, repetitive, and error-prone"));
   assert.ok(bom.includes("per-harness and combined views"));
+  assert.ok(bom.includes("Built for Tesla EV wiring-harness data, which PJ owned end to end, from design through deployment and support."));
   assert.ok(bom.includes("Python / PySide6 / Excel export / pytest"));
   assert.ok(!bom.includes("17 of 17"));
+  assert.ok(!bom.includes("44/50"));
   assert.ok(!/Shipped/i.test(bom));
 
   assert.ok(checker.includes("Wiring Drawing Rule Checker"));
@@ -51,14 +53,17 @@ test("renders the three approved cards, demo embeds, and escaped HTML", () => {
   assert.ok(checker.includes("May 2025–present"));
   assert.ok(checker.includes("taping and clipping rules"));
   assert.ok(checker.includes("flags rule violations right on the drawing"));
+  assert.ok(checker.includes("Root-caused a systematic defect driving ~$44K in savings per frame harness and cut review time 88% (128 hrs to under 16)."));
   assert.ok(checker.includes("Python / Tkinter / React/Node / pytest"));
+  assert.ok(!checker.includes("17 of 17"));
+  assert.ok(!checker.includes("44/50"));
   assert.ok(!checker.includes("OCR"));
   assert.ok(!/Shipped/i.test(checker));
 
   for (const banned of [
-    "Tesla", "Excel VBA", "PaddleOCR", "pdfplumber", "Tesseract", "openpyxl",
+    "Excel VBA", "PaddleOCR", "pdfplumber", "Tesseract", "openpyxl",
     "PyInstaller", "PyObjC", "FFmpeg", "Capital", "KBL", "automotive OEM",
-    "github.com/PJ1229/um-autolog", "pending", "camera platform", "17 of 17",
+    "github.com/PJ1229/um-autolog", "pending", "camera platform", "17 of 17", "17/17", "44/50",
     "Demo uses invented sample data", "Demo uses sample data",
   ]) {
     assert.ok(!html.includes(banned), banned);
