@@ -44,16 +44,10 @@ speedup claims or accuracy claims were included.
 
 ## Public page
 
-The live `/engineering` page lists um-autolog, the Yazaki bill of materials
-generator, and the Yazaki wiring drawing rule checker. Placeholder slots,
-including the camera platform, are not on the page.
-The public um-autolog repository is https://github.com/PJ1229/um-autolog.
-The bill of materials generator is a Python desktop app and CLI in active
-development (May–Oct 2026): Python, pdfplumber, Tesseract OCR, openpyxl, and
-PyInstaller. It is not Excel VBA and is not labeled shipped. The drawing rule
-checker stays Python / Tkinter / PaddleOCR. React / Express stay off those cards.
-Public copy calls the source data an automotive OEM's harness data and does not
-name that customer.
+The live `/engineering` page lists um-autolog, BOM Generator, and Schematic
+Rule Checker. All three are marked in development. um-autolog has no public
+repository link. Placeholder slots, including the camera platform, are not on
+the page. Public card text does not name a customer.
 
 ## Still unpublished
 
