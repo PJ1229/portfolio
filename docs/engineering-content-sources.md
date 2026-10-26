@@ -42,8 +42,17 @@ specifications, customer field, repository URL or media revokes their display
 until another code review. No footage, athlete details, internal naming codes,
 speedup claims or accuracy claims were included.
 
-## Still pending
+## Public page
+
+The live `/engineering` page lists three finished projects: um-autolog,
+the Yazaki bill of materials generator, and the Yazaki wiring drawing rule
+checker. Placeholder slots, including the camera platform, are not on the page.
+The public um-autolog repository is https://github.com/PJ1229/um-autolog.
+Yazaki stacks on the page are only the pieces that fit each desktop tool:
+Excel VBA for the bill of materials, and Python / Tkinter / PaddleOCR for the
+drawing rule checker. React / Express stay off those cards.
+
+## Still unpublished
 
 Neither folder supplied camera-platform specifications or milestone dates.
-One unnamed project slot remains. No dates, metrics or fourth-project identity
-were inferred to fill these gaps.
+Those rows were removed from the public page instead of being filled in.

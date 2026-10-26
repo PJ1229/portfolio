@@ -21,16 +21,16 @@ app.use(
 app.use(compression());
 app.use(express.json({ limit: "64kb" })); // parse JSON body with size cap
 
-// Hidden work stays directly reachable, but should not appear in search.
-app.use("/engineering", (req, res, next) => {
-  res.set("X-Robots-Tag", "noindex, nofollow");
-  next();
-});
-
 // Unpublished — Love from Toronto. Source files stay in the repo for a future
 // re-publish, but the page is not live at any URL (including the static path).
 app.use(["/love-from-toronto", "/film/love-from-toronto.html"], (req, res) => {
   res.status(404).type("text/plain").send("Not found");
+});
+
+// Serve the engineering page before static. public/engineering/ is a directory,
+// and serve-static would otherwise 301 /engineering to /engineering/.
+app.get(["/engineering", "/engineering/"], (req, res) => {
+  res.type("html").send(require("./engineering/render")());
 });
 
 // serve static files (but don't auto-serve public/index.html at "/")
@@ -55,11 +55,6 @@ function sendFilmPage(res, file) {
 }
 
 // Film portfolio (root)
-app.get("/engineering", (req, res) => {
-  res.set("X-Robots-Tag", "noindex, nofollow");
-  res.type("html").send(require("./engineering/render")());
-});
-
 app.get("/", (req, res) => {
   sendFilmPage(res, "index.html");
 });

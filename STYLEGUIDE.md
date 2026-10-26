@@ -9,9 +9,10 @@ It is a **Projects** portfolio now — film work and client work share the same
 grid; client work is tagged, not split into its own section.
 
 ### primary nav
-- **format**: `WORK · WRITING · INFO` — current page/section renders as a
-  `<span>`, the others are links. `WORK` → `/`, `WRITING` → `/writing`
-  (302 → Substack), `INFO` → `/about`.
+- **format**: `WORK · ENGINEERING · WRITING · INFO · INSPO` — current
+  page/section renders as a `<span>`, the others are links. `WORK` → `/`,
+  `ENGINEERING` → `/engineering`, `WRITING` → `/writing` (302 → Substack),
+  `INFO` → `/#info`, `INSPO` → `/inspo`.
 - **footer**: every page carries an `INSPO` link in the footer (`/inspo`).
 
 ### project content model

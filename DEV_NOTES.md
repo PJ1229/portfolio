@@ -39,14 +39,10 @@ Legacy is now explicitly under `public/legacy/`.
 If you have redirects configured outside the app (Cloudflare/DNS/Heroku), avoid creating a loop between `/` and `/lab`. The app intentionally does not redirect for lab routes to prevent `ERR_TOO_MANY_REDIRECTS`.
 
 
-## Homepage hero footage
+## Homepage selected work
 
-- `public/film/hero.js` swaps muted looping previews on title hover/focus;
-  titles still open their project pages. There are no visible playback controls.
-- Clips live in `public/videos/`: `inlw-hero.mp4` (first 20 seconds of the
-  supplied film) and `unsanctioned-hero.mp4` (first 7 seconds of the supplied
-  edit, excluding end credits). Both are 1280×720, 24 fps H.264, without audio,
-  with MP4 fast-start metadata. Original files remain on the external drive.
-- Only the selected clip loads. Reduced-motion and Save-Data visitors start
-  on the existing still. Hidden/offscreen footage
-  pauses; blocked playback and loading failures retain the still fallback.
+- The index is a thumbnail grid in `public/film/index.html`: title, role,
+  year, and status sit under each still. December and Project Unsanctioned
+  are the public entries.
+- `public/film/hero.js` is unused by the index. The hover-swap hero was
+  removed because it was hard to read and did nothing on touch screens.

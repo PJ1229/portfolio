@@ -1,5 +1,10 @@
 # Engineering page — pjk1m.com
 
+The public page now lists three finished projects (um-autolog, the Yazaki bill
+of materials generator, and the Yazaki wiring drawing rule checker), each with
+a demo video. The notes below are the original build record, including the
+placeholder slots that were later removed.
+
 Implement `/engineering` as a section of the existing film portfolio: one practice,
 with engineering and filmmaking presented in the same visual language.
 
