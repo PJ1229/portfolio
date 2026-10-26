@@ -622,8 +622,13 @@
 }
 
 @media (max-width: 620px) {
-  .film-page.december-page .dec-nav { width: 100vw; max-width: 100%; }
-  .film-page.december-page .dec-nav .nav-links { margin-left: auto; }
+  .film-page.december-page .dec-nav { width: auto; max-width: 100%; }
+  .film-page.december-page .dec-nav .nav-links { margin-left: 0; }
+  .film-page.december-page .dec-language h2,
+  .film-page.december-page .dec-plan h2,
+  .film-page.december-page .dec-gallery h2 {
+    font-size: clamp(40px, 11.2vw, 56px);
+  }
   .film-page.december-page .dec-hero { min-height: max(620px, 100svh); }
   .film-page.december-page .dec-hero-image { object-position: 58% center; }
   .film-page.december-page .dec-credit { top: 23%; max-width: 42%; overflow-wrap: anywhere; }

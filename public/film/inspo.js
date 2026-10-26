@@ -307,6 +307,20 @@
   var list = document.querySelector("[data-inspo-list]");
   var count = document.querySelector("[data-inspo-count]");
   var preview = document.querySelector(".inspo-preview");
+
+  function pad(number) {
+    return String(number).padStart(2, "0");
+  }
+
+  function setCount() {
+    if (!count) return;
+    count.textContent = pad(entries.length) + " REFERENCES";
+  }
+
+  // Write the count before preview wiring. A later throw used to leave the
+  // placeholder at "00 REFERENCES" after the rows had already been listed.
+  setCount();
+
   if (!list || !preview) return;
 
   var previewImage = preview.querySelector("[data-preview-image]");
@@ -318,10 +332,6 @@
   var previewTitle = preview.querySelector("[data-preview-title]");
   var previewDetail = preview.querySelector("[data-preview-detail]");
   var rows = [];
-
-  function pad(number) {
-    return String(number).padStart(2, "0");
-  }
 
   function readableDate(value) {
     if (!value) return "";
@@ -422,17 +432,20 @@
     });
   });
 
-  previewImage.addEventListener("error", function () {
-    previewImage.hidden = true;
-    previewFallback.hidden = false;
-    previewMedia.classList.remove("has-image");
-    previewMedia.style.backgroundImage = "none";
-    var activeIndex = rows.findIndex(function (row) { return row.classList.contains("is-active"); });
-    var entry = entries[Math.max(activeIndex, 0)];
-    previewType.textContent = entry.type;
-    previewFallbackTitle.textContent = entry.title;
-  });
+  if (previewImage) {
+    previewImage.addEventListener("error", function () {
+      previewImage.hidden = true;
+      previewFallback.hidden = false;
+      previewMedia.classList.remove("has-image");
+      previewMedia.style.backgroundImage = "none";
+      var activeIndex = rows.findIndex(function (row) { return row.classList.contains("is-active"); });
+      var entry = entries[Math.max(activeIndex, 0)];
+      if (!entry) return;
+      previewType.textContent = entry.type;
+      previewFallbackTitle.textContent = entry.title;
+    });
+  }
 
-  if (count) count.textContent = pad(entries.length) + " REFERENCES";
-  activate(entries[0], 0, rows[0]);
+  setCount();
+  if (rows[0]) activate(entries[0], 0, rows[0]);
 })();

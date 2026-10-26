@@ -1,89 +1,99 @@
-/* home — merged work index + info.
-   Loads after film.css. Every rule is scoped to .film-page.home-page.
-   film.css supplies the tokens, .disp / .mono roles, .home-hero, .projects
-   and .monogram; this file only adds what the merge needs. */
+/* home — selected-work grid + info.
+   Loads after film.css. Every rule is scoped to .film-page.home-page. */
 
-/* ---- nav sits over the hero ---- */
 .film-page.home-page .home-nav {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+  position: relative;
   z-index: 2;
+  align-items: center;
   padding: clamp(16px, 3vw, 28px) var(--gutter);
 }
-.film-page.home-page .home-nav .mono { color: var(--paper-dim); }
-.film-page.home-page .home-nav a:hover { color: var(--paper); }
+.film-page.home-page .home-mark {
+  color: var(--paper-dim);
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+}
+.film-page.home-page .home-nav a:hover,
+.film-page.home-page .home-nav a:focus-visible { color: var(--paper); }
+.film-page.home-page .home-nav [aria-current="page"] { color: var(--paper); }
 
-.film-page.home-page .home-hero { position: relative; }
-.film-page.home-page .home-hero-slide video {
+.film-page.home-page .home-work-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: clamp(20px, 3vw, 36px);
+}
+.film-page.home-page .home-eyebrow,
+.film-page.home-page .home-work-head .home-count {
+  margin-bottom: 0;
+  color: var(--paper-dim);
+}
+
+.film-page.home-page .work-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(40px, 6vw, 64px);
+}
+.film-page.home-page .work-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  color: var(--paper);
+}
+.film-page.home-page .work-still {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  margin-bottom: 16px;
+  overflow: hidden;
+  border: var(--rule) solid rgba(255, 255, 255, 0.16);
+}
+.film-page.home-page .work-still img {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
-  opacity: 0;
 }
-.film-page.home-page .home-hero-slide[data-slide="december"] img {
-  object-position: center 48%;
+.film-page.home-page .work-card h2 {
+  font-size: clamp(32px, 4.4vw, 58px);
+  line-height: 0.9;
+  color: var(--paper);
 }
-.film-page.home-page .home-hero-slide.has-video video { opacity: 1; }
-/* more air under the title stack; film.css's clamp bottoms the last line out */
-.film-page.home-page .home-hero .hero-overlay {
-  padding-bottom: clamp(40px, 7vw, 72px);
-}
-
-/* Focal point per still. film.css defaults every slide to `right center`,
-   which holds at desktop but swings the crop off the subject as the viewport
-   narrows — at phone widths the still is scaled to ~4x the container and
-   `right` keeps only the far edge of the frame. Anchor each slide on its own
-   subject instead so it survives any aspect ratio. */
-.film-page.home-page .home-hero-slide[data-slide="unsanctioned"] img {
-  /* anchor the right-side subject (the 2nd ninth from the right edge) so the
-     narrow crop stays on her instead of swinging to the left figure */
-  object-position: 82% 25%;
-}
-
-/* ---- hero title list — this is the index ---- */
-.film-page.home-page .home-eyebrow {
-  color: var(--paper-dim);
-  margin-bottom: clamp(16px, 2.5vw, 24px);
-}
-.film-page.home-page .home-titles {
-  list-style: none;
-  display: grid;
-  gap: clamp(2px, 0.6vw, 8px);
-}
-.film-page.home-page .home-titles a {
-  display: inline-flex;
-  align-items: flex-start;
-  gap: 10px;
-  color: rgba(255, 255, 255, 0.4);
-  transition: color 0.25s ease;
-}
-/* film.css colors and sizes .hero-overlay .disp / .mono directly, which would
-   otherwise beat the anchor rule above and keep every title full white. Scope
-   through .home-hero so the title list wins and its parts inherit the
-   active/inactive color from the anchor. */
-.film-page.home-page .home-hero .home-titles a .disp {
-  font-size: clamp(26px, 6.2vw, 76px);
-  line-height: 0.96;
-  color: inherit;
-}
-.film-page.home-page .home-hero .home-titles a sup {
-  font-size: 11px;
+.film-page.home-page .work-role,
+.film-page.home-page .work-meta {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 12px;
   letter-spacing: 0.14em;
-  padding-top: 0.35em;
-  margin-bottom: 0;
-  color: inherit;
+  line-height: 1.6;
+  text-transform: uppercase;
 }
-.film-page.home-page .home-titles li.is-active a,
-.film-page.home-page .home-titles a:hover,
-.film-page.home-page .home-titles a:focus-visible { color: var(--paper); }
-.film-page.home-page .home-titles a:focus-visible {
+.film-page.home-page .work-role {
+  margin-top: 12px;
+  color: var(--paper);
+}
+.film-page.home-page .work-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin-top: 4px;
+  color: var(--paper-dim);
+}
+.film-page.home-page .work-card:hover h2,
+.film-page.home-page .work-card:focus-visible h2 { color: var(--paper-dim); }
+.film-page.home-page .work-card:focus-visible {
   outline: var(--rule) solid var(--paper);
   outline-offset: 6px;
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .film-page.home-page .work-still img { transition: transform 0.5s ease; }
+  .film-page.home-page .work-card:hover img { transform: scale(1.015); }
+}
+@media (min-width: 800px) {
+  .film-page.home-page .work-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(24px, 3vw, 40px);
+  }
 }
 
 /* ---- shared section rhythm ---- */
@@ -111,6 +121,13 @@
   font-size: clamp(18px, 2.2vw, 24px);
   line-height: 1.45;
   color: var(--paper-dim);
+}
+.film-page.home-page .info-roles {
+  margin-top: 14px;
+  max-width: 40em;
+  font-size: clamp(16px, 2vw, 20px);
+  line-height: 1.45;
+  color: var(--paper);
 }
 
 /* label / value table — same pattern as the film-page credits block */
@@ -312,26 +329,22 @@
   .film-page.home-page .contact-film-controls > a { grid-column: 2 / span 2; }
   .film-page.home-page .contact-film-controls [data-contact-close] { grid-column: 5; }
 
-  /* the identity line is long; give it its own row so it never collides with
-     WRITING / INFO / INSPO at phone widths */
   .film-page.home-page .home-nav {
     flex-wrap: wrap;
     row-gap: 14px;
     align-items: flex-start;
   }
-  .film-page.home-page .home-nav .mono {
+  .film-page.home-page .home-nav .nav-links {
     flex: 1 1 100%;
-    font-size: 10px;
-    letter-spacing: 0.14em;
-    line-height: 1.2;
+    justify-content: flex-start;
+    gap: 10px 14px;
   }
-  .film-page.home-page .home-nav .nav-links { gap: clamp(14px, 4vw, 18px); }
 }
 
 /* ---- motion ---- */
 @media (prefers-reduced-motion: reduce) {
-  .film-page.home-page .home-titles a,
   .film-page.home-page .contact-film-video,
   .film-page.home-page .contact-film-scrim,
-  .film-page.home-page .home-contact-content { transition: none; }
+  .film-page.home-page .home-contact-content,
+  .film-page.home-page .work-still img { transition: none; }
 }

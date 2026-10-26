@@ -48,72 +48,43 @@
 <body class="film-page home-page">
 
   <header class="nav dark-nav home-nav">
-    <span class="mono">PJ KIM — DIRECTOR / CINEMATOGRAPHER / EDITOR</span>
-    <div class="nav-links">
+    <a class="home-mark" href="/" aria-label="PJ Kim, home">PJ KIM</a>
+    <nav class="nav-links" aria-label="Primary">
+      <span aria-current="page">WORK</span>
+      <a href="/engineering">ENGINEERING</a>
       <a href="/writing" aria-label="Writing on Substack">WRITING</a>
       <a href="#info">INFO</a>
       <a href="/inspo">INSPO</a>
-    </div>
+    </nav>
   </header>
 
   <main>
 
-    <!-- hero: the title list is the index. Hovering or focusing a title swaps
-         the footage behind it; clicking opens the project. -->
-    <section class="home-hero" aria-label="Selected work">
-      <div class="home-hero-slide is-active" data-slide="december">
-        <img src="../images/december/bedroom.webp"
-             alt="December — Lizette and Meekel lying apart in a dim bedroom" fetchpriority="high">
-        <video muted loop playsinline preload="none" aria-hidden="true" data-src="/videos/december-hero.mp4"></video>
-      </div>
-      <div class="home-hero-slide" data-slide="unsanctioned" aria-hidden="true">
-        <img src="../images/unsanctioned/website-hero.webp"
-             alt="Project Unsanctioned — hero" loading="eager">
-        <video muted loop playsinline preload="none" aria-hidden="true" data-src="/videos/unsanctioned-hero.mp4"></video>
-      </div>
-
-      <div class="hero-overlay">
+    <section class="home-work" aria-label="Selected work">
+      <div class="home-work-head">
         <p class="mono home-eyebrow">SELECTED WORK</p>
-        <ol class="home-titles">
-          <li>
-            <a href="/december" data-slide="december">
-              <span class="disp">DECEMBER</span><sup class="mono">2026</sup>
-            </a>
-          </li>
-          <li>
-            <a href="/unsanctioned" data-slide="unsanctioned">
-              <span class="disp">PROJECT UNSANCTIONED</span><sup class="mono">2026</sup>
-            </a>
-          </li>
-        </ol>
+        <p class="mono home-count">01 — 02</p>
       </div>
-    </section>
-
-    <!-- work -->
-    <section class="home-work" aria-label="Projects">
-      <p class="mono home-count">01 — 02</p>
-      <div class="projects">
-        <a class="project" href="/december"
-           data-type="FILM,PROMO"
-           data-client="Lizette"
-           data-status="IN PROGRESS"
-           data-year="2026">
-          <img src="../images/december/bedroom.webp" alt="Lizette and Meekel lying apart in a dim bedroom" loading="lazy">
-          <div class="project-overlay">
-            <h2 class="disp">DECEMBER</h2>
-            <div data-project-meta></div>
-          </div>
+      <div class="work-grid">
+        <a class="work-card" href="/december">
+          <figure class="work-still">
+            <img src="../images/december/bedroom.webp"
+                 alt="Lizette and Meekel lying apart in a dim bedroom"
+                 fetchpriority="high">
+          </figure>
+          <h2 class="disp">December</h2>
+          <p class="work-role">Director · Cinematographer · Editor · Colorist</p>
+          <p class="work-meta"><span>2026</span><span>In progress</span></p>
         </a>
-        <a class="project" href="/unsanctioned"
-           data-type="EVENT,PROMO,FILM"
-           data-client="self"
-           data-status="RELEASED"
-           data-year="2026">
-          <img src="../images/unsanctioned/chad-tiffany-close.webp" alt="Project Unsanctioned" loading="lazy">
-          <div class="project-overlay">
-            <h2 class="disp">PROJECT UNSANCTIONED</h2>
-            <div data-project-meta></div>
-          </div>
+        <a class="work-card" href="/unsanctioned">
+          <figure class="work-still">
+            <img src="../images/unsanctioned/website-hero.webp"
+                 alt="Project Unsanctioned campaign still"
+                 loading="lazy">
+          </figure>
+          <h2 class="disp">Project Unsanctioned</h2>
+          <p class="work-role">Co-director · Editor · Colorist</p>
+          <p class="work-meta"><span>2026</span><span>Released</span></p>
         </a>
       </div>
     </section>
@@ -125,6 +96,8 @@
       <p class="info-statement">PJ Kim <i>directs, shoots, cuts, and colors</i> films built around feeling, rhythm, and image.</p>
 
       <p class="info-support">Based in Metro Detroit and studying electrical engineering at the University of Michigan. Available for music videos, narrative films, live events and collaborative visual work.</p>
+
+      <p class="info-roles">Michigan Athletics creative video intern (Aug 2026–now) and Yazaki North America software engineering co-op (since May 2025).</p>
 
       <dl class="info-table">
         <div class="info-row">
@@ -199,8 +172,6 @@
     <a href="/inspo">INSPO</a> · PJK1M
   </footer>
 
-  <script src="../film/projects.js"></script>
-  <script src="../film/hero.js"></script>
   <script src="../film/contact-film.js"></script>
   <script src="../film/analytics.js"></script>
 </body>
