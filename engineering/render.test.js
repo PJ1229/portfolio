@@ -29,8 +29,11 @@ test("renders the three approved cards, demo embeds, and escaped HTML", () => {
   assert.ok(autolog.includes("Creative Video Intern"));
   assert.ok(autolog.includes("Michigan Athletics"));
   assert.ok(autolog.includes("25BKW_1OSU_005_#05 JUMPER"));
-  assert.ok(autolog.includes("29 sports and 269 action tags"));
+  assert.ok(autolog.includes("The naming engine covers 29 sports and 269 action tags, backed by 33 unit tests."));
   assert.ok(autolog.includes("jersey accuracy is the next focus"));
+  assert.ok(!autolog.includes("%"));
+  assert.ok(!autolog.includes("17/17"));
+  assert.ok(!autolog.includes("44/50"));
   assert.ok(autolog.includes("Python / Apple Vision / SoundAnalysis / ffmpeg / Streamlit"));
   assert.ok(!autolog.includes("Repository"));
   assert.ok(!/Shipped/i.test(autolog));
@@ -43,9 +46,9 @@ test("renders the three approved cards, demo embeds, and escaped HTML", () => {
   assert.ok(bom.includes("slow, repetitive, and error-prone"));
   assert.ok(bom.includes("per-harness and combined views"));
   assert.ok(bom.includes("Built for Tesla EV wiring-harness data, which I owned end to end, from design through deployment and support."));
+  assert.ok(bom.includes("Validated 17/17 parts on a production harness and 44/50 (88%) on image-only drawings, vs. a 0-line incumbent baseline."));
   assert.ok(bom.includes("Python / PySide6 / Excel export / pytest"));
   assert.ok(!bom.includes("17 of 17"));
-  assert.ok(!bom.includes("44/50"));
   assert.ok(!/Shipped/i.test(bom));
 
   assert.ok(checker.includes("Wiring Drawing Rule Checker"));
@@ -63,7 +66,7 @@ test("renders the three approved cards, demo embeds, and escaped HTML", () => {
   for (const banned of [
     "Excel VBA", "PaddleOCR", "pdfplumber", "Tesseract", "openpyxl",
     "PyInstaller", "PyObjC", "FFmpeg", "Capital", "KBL", "automotive OEM",
-    "github.com/PJ1229/um-autolog", "pending", "camera platform", "17 of 17", "17/17", "44/50",
+    "github.com/PJ1229/um-autolog", "pending", "camera platform", "17 of 17",
     "Demo uses invented sample data", "Demo uses sample data",
   ]) {
     assert.ok(!html.includes(banned), banned);

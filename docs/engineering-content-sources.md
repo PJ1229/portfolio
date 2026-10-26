@@ -47,7 +47,9 @@ speedup claims or accuracy claims were included.
 The live `/engineering` page lists um-autolog, Bill of Materials Generator,
 and Wiring Drawing Rule Checker. The Yazaki cards are in active development.
 The rule checker includes the approved savings and review-time result.
-Accuracy figures stay off every card. um-autolog has no public repository link.
+The bill of materials card includes the approved 17/17 and 44/50 validation line.
+um-autolog names 33 unit tests and does not state a jersey-number accuracy rate.
+um-autolog has no public repository link.
 Placeholder slots, including the camera platform, are not on the page.
 
 ## Still unpublished

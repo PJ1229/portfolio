@@ -1,6 +1,6 @@
 // Server-only content. Do not move this file into public/.
 // Card copy is the approved public text. Do not link the private um-autolog
-// repo, and do not add accuracy figures (no 17/17, 44/50, or jersey-number rate).
+// repo, and do not add a jersey-number accuracy rate.
 module.exports = {
   headline: "Engineering",
   summary: "Electrical engineering at the University of Michigan. Michigan Athletics creative video intern (Aug 2026–now) and Yazaki North America software engineering co-op (since May 2025).",
@@ -12,7 +12,7 @@ module.exports = {
       year: "Aug 2026–present",
       context: "Michigan Athletics",
       role: "Creative Video Intern",
-      description: "An on-device tool that logs game footage on my Mac, with no cloud. It reads jersey numbers, tags action and audio events like cheering and whistles, and names each clip in ShareBrowser style (e.g. 25BKW_1OSU_005_#05 JUMPER) with a separate detailed description. A review UI lets me check and fix the labels. The naming engine covers 29 sports and 269 action tags. It's early and in active development; jersey accuracy is the next focus.",
+      description: "An on-device tool that logs game footage on my Mac, with no cloud. It reads jersey numbers, tags action and audio events like cheering and whistles, and names each clip in ShareBrowser style (e.g. 25BKW_1OSU_005_#05 JUMPER) with a separate detailed description. A review UI lets me check and fix the labels. The naming engine covers 29 sports and 269 action tags, backed by 33 unit tests. It's early and in active development; jersey accuracy is the next focus.",
       stack: ["Python", "Apple Vision", "SoundAnalysis", "ffmpeg", "Streamlit"],
       repo: null,
       demo: "https://youtu.be/3N1zfZ2oOhQ",
@@ -26,7 +26,7 @@ module.exports = {
       context: "Yazaki North America",
       role: "Software engineering co-op",
       problem: "Building a bill of materials from wiring harness design files by hand is slow, repetitive, and error-prone.",
-      solution: "A desktop tool that reads harness design files, builds a structured bill of materials with per-harness and combined views, and exports a multi-sheet Excel workbook, backed by automated regression tests. Built for Tesla EV wiring-harness data, which I owned end to end, from design through deployment and support.",
+      solution: "A desktop tool that reads harness design files, builds a structured bill of materials with per-harness and combined views, and exports a multi-sheet Excel workbook, backed by automated regression tests. Built for Tesla EV wiring-harness data, which I owned end to end, from design through deployment and support. Validated 17/17 parts on a production harness and 44/50 (88%) on image-only drawings, vs. a 0-line incumbent baseline.",
       stack: ["Python", "PySide6", "Excel export", "pytest"],
       repo: null,
       demo: "https://youtu.be/3-hsH8Vi_Ro",
