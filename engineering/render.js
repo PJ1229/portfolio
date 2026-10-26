@@ -28,16 +28,15 @@ function renderProject(project, index) {
     ? `<div class="engineering-video"><iframe src="https://www.youtube-nocookie.com/embed/${id}" title="${escape(project.name)} demo" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>`
     : "";
   const stack = Array.isArray(project.stack) ? project.stack.filter(Boolean) : [];
+  const who = [project.role, project.context].filter(Boolean).map(escape).join(" / ");
   return `<article class="engineering-project" aria-labelledby="project-${index}">
     <div class="engineering-project-heading">
       <h2 class="disp" id="project-${index}">${escape(project.name)}</h2>
-      <p class="engineering-status">${escape(project.status)}<br>${escape(project.year)}</p>
+      <p class="engineering-status">${escape(project.status)}${project.year ? `<br>${escape(project.year)}` : ""}</p>
     </div>
-    <p class="engineering-context">${escape(project.role)}${project.context ? ` / ${escape(project.context)}` : ""}</p>
-    <dl class="engineering-lines">
-      <div><dt>Problem</dt><dd>${escape(project.problem)}</dd></div>
-      <div><dt>Solution</dt><dd>${escape(project.solution)}</dd></div>
-    </dl>
+    ${who ? `<p class="engineering-context">${who}</p>` : ""}
+    ${project.description ? `<p class="engineering-description">${escape(project.description)}</p>` : ""}
+    ${(project.problem || project.solution) ? `<dl class="engineering-lines">${project.problem ? `<div><dt>Problem</dt><dd>${escape(project.problem)}</dd></div>` : ""}${project.solution ? `<div><dt>Solution</dt><dd>${escape(project.solution)}</dd></div>` : ""}</dl>` : ""}
     ${stack.length ? `<p class="engineering-stack"><span>Stack</span> ${escape(stack.join(" / "))}</p>` : ""}
     ${links ? `<p class="engineering-links">${links}</p>` : ""}
     ${video}

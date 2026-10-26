@@ -3,7 +3,7 @@ const assert = require("node:assert/strict");
 const render = require("./render");
 const content = require("./content");
 
-test("renders three finished projects, public links, and escaped HTML", () => {
+test("renders the three approved cards, demo embeds, and escaped HTML", () => {
   const data = structuredClone(content);
   data.projects[0].name = 'Changed <script>alert("x")</script>';
   const html = render(data);
@@ -13,39 +13,74 @@ test("renders three finished projects, public links, and escaped HTML", () => {
   assert.ok(html.includes("Changed &lt;script&gt;"));
   assert.ok(!html.includes('<script>alert("x")</script>'));
   assert.ok(!html.includes('src=""'));
-  assert.ok(!/pending/i.test(html));
-  assert.ok(!/camera platform/i.test(html));
-  assert.ok(html.includes('href="/#info"'));
+  assert.ok(!html.includes("github.com/PJ1229/um-autolog"));
   assert.ok(!html.includes('href="/about"'));
-  assert.ok(html.includes("https://github.com/PJ1229/um-autolog"));
+  assert.ok(html.includes('href="/#info"'));
   assert.ok(html.includes("https://youtu.be/3N1zfZ2oOhQ"));
   assert.ok(html.includes("https://youtu.be/3-hsH8Vi_Ro"));
   assert.ok(html.includes("https://youtu.be/S6AR5nTcQ0s"));
   assert.ok(html.includes("https://www.youtube-nocookie.com/embed/3N1zfZ2oOhQ"));
   assert.ok(html.includes("https://www.youtube-nocookie.com/embed/3-hsH8Vi_Ro"));
   assert.ok(html.includes("https://www.youtube-nocookie.com/embed/S6AR5nTcQ0s"));
-  assert.ok(html.includes("Apple Vision"));
-  assert.ok(html.includes("Streamlit"));
-  assert.ok(html.includes("Excel VBA"));
-  assert.ok(html.includes("PaddleOCR"));
-  assert.ok(html.includes("Tkinter"));
-  assert.ok(!html.includes("React"));
-  assert.ok(!html.includes("Express"));
-  assert.ok(html.includes("Aug 2026"));
-  assert.ok(html.includes("May 2025"));
-  assert.ok(html.includes("Bill of Materials"));
-  assert.ok(html.includes("Wiring Drawing Rule Checker"));
+
+  const [autolog, bom, checker] = html.split("<article ").slice(1);
+  assert.ok(autolog.includes("In development"));
+  assert.ok(autolog.includes("Aug 2026–present"));
+  assert.ok(autolog.includes("Creative Video Intern"));
+  assert.ok(autolog.includes("Michigan Athletics"));
+  assert.ok(autolog.includes("25BKW_1OSU_005_#05 JUMPER"));
+  assert.ok(autolog.includes("The naming engine covers 29 sports and 269 action tags, backed by 33 unit tests."));
+  assert.ok(autolog.includes("jersey accuracy is the next focus"));
+  assert.ok(!autolog.includes("%"));
+  assert.ok(!autolog.includes("17/17"));
+  assert.ok(!autolog.includes("44/50"));
+  assert.ok(autolog.includes("Python / Apple Vision / SoundAnalysis / ffmpeg / Streamlit"));
+  assert.ok(!autolog.includes("Repository"));
+  assert.ok(!/Shipped/i.test(autolog));
+
+  assert.ok(bom.includes("Bill of Materials Generator"));
+  assert.ok(bom.includes("In active development"));
+  assert.ok(bom.includes("May 2025–present"));
+  assert.ok(bom.includes("Software engineering co-op"));
+  assert.ok(bom.includes("Yazaki North America"));
+  assert.ok(bom.includes("slow, repetitive, and error-prone"));
+  assert.ok(bom.includes("per-harness and combined views"));
+  assert.ok(bom.includes("Built for Tesla EV wiring-harness data, which I owned end to end, from design through deployment and support."));
+  assert.ok(bom.includes("Validated 17/17 parts on a production harness and 44/50 (88%) on image-only drawings, vs. a 0-line incumbent baseline."));
+  assert.ok(bom.includes("Python / PySide6 / Excel export / pytest"));
+  assert.ok(!bom.includes("17 of 17"));
+  assert.ok(!/Shipped/i.test(bom));
+
+  assert.ok(checker.includes("Wiring Drawing Rule Checker"));
+  assert.ok(checker.includes("In active development"));
+  assert.ok(checker.includes("May 2025–present"));
+  assert.ok(checker.includes("taping and clipping rules"));
+  assert.ok(checker.includes("flags rule violations right on the drawing"));
+  assert.ok(checker.includes("Root-caused a systematic defect driving ~$44K in savings per frame harness and cut review time 88% (128 hrs to under 16)."));
+  assert.ok(checker.includes("Python / Tkinter / React/Node / pytest"));
+  assert.ok(!checker.includes("17 of 17"));
+  assert.ok(!checker.includes("44/50"));
+  assert.ok(!checker.includes("OCR"));
+  assert.ok(!/Shipped/i.test(checker));
+
+  for (const banned of [
+    "Excel VBA", "PaddleOCR", "pdfplumber", "Tesseract", "openpyxl",
+    "PyInstaller", "PyObjC", "FFmpeg", "Capital", "KBL", "automotive OEM",
+    "github.com/PJ1229/um-autolog", "pending", "camera platform", "17 of 17",
+    "Demo uses invented sample data", "Demo uses sample data",
+  ]) {
+    assert.ok(!html.includes(banned), banned);
+  }
 });
 
 test("unsafe repository urls and video ids are omitted", () => {
   const html = render.renderProject({
     name: "Unsafe",
-    status: "Shipped",
-    year: "2026",
-    role: "Developer",
+    status: "In development",
+    year: "",
+    role: "",
     context: "",
-    problem: "A problem.",
-    solution: "A solution.",
+    description: 'A <script>alert("x")</script> description.',
     stack: ["Python"],
     repo: "javascript:alert(1)",
     demo: "https://youtu.be/3N1zfZ2oOhQ",
@@ -55,6 +90,5 @@ test("unsafe repository urls and video ids are omitted", () => {
   assert.ok(!html.includes("<script>"));
   assert.ok(!html.includes("<iframe"));
   assert.ok(html.includes("https://youtu.be/3N1zfZ2oOhQ"));
-  assert.ok(html.includes("A problem."));
-  assert.ok(html.includes("A solution."));
+  assert.ok(html.includes("A &lt;script&gt;"));
 });

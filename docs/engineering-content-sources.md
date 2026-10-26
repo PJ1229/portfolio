@@ -44,13 +44,13 @@ speedup claims or accuracy claims were included.
 
 ## Public page
 
-The live `/engineering` page lists three finished projects: um-autolog,
-the Yazaki bill of materials generator, and the Yazaki wiring drawing rule
-checker. Placeholder slots, including the camera platform, are not on the page.
-The public um-autolog repository is https://github.com/PJ1229/um-autolog.
-Yazaki stacks on the page are only the pieces that fit each desktop tool:
-Excel VBA for the bill of materials, and Python / Tkinter / PaddleOCR for the
-drawing rule checker. React / Express stay off those cards.
+The live `/engineering` page lists um-autolog, Bill of Materials Generator,
+and Wiring Drawing Rule Checker. The Yazaki cards are in active development.
+The rule checker includes the approved savings and review-time result.
+The bill of materials card includes the approved 17/17 and 44/50 validation line.
+um-autolog names 33 unit tests and does not state a jersey-number accuracy rate.
+um-autolog has no public repository link.
+Placeholder slots, including the camera platform, are not on the page.
 
 ## Still unpublished
 
