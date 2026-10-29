@@ -66,3 +66,14 @@
   font-weight: 500;
   margin-bottom: 0.4rem;
 }
+
+/* Honors */
+.engineering-page .engineering-honors { padding: clamp(56px, 8vw, 112px) var(--gutter) 0; }
+.engineering-page .engineering-honors > h2 { font-size: clamp(32px, 5vw, 72px); line-height: 0.95; margin-bottom: clamp(24px, 4vw, 40px); }
+.engineering-page .engineering-honor { display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; padding: clamp(24px, 4vw, 40px) 0; border-top: var(--rule) solid var(--engineering-border); }
+@media (min-width: 760px) { .engineering-page .engineering-honor:has(figure) { grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); gap: 40px; } }
+.engineering-page .engineering-honor-still { margin: 0; border: var(--rule) solid var(--engineering-border); }
+.engineering-page .engineering-honor-still img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; max-height: 520px; }
+.engineering-page .engineering-honor h3 { font-size: clamp(24px, 3vw, 40px); line-height: 1; }
+.engineering-page .engineering-honor .engineering-context { margin-top: 10px; }
+.engineering-page .engineering-honor-caption { max-width: 60ch; margin: 16px 0 0; }

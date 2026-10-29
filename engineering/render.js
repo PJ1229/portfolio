@@ -52,6 +52,20 @@ function renderProject(project, index) {
   </article>`;
 }
 
+function renderHonor(honor) {
+  const link = httpsUrl(honor.link);
+  const image = honor.image && /^\/images\/[\w\/.-]+$/.test(honor.image) ? honor.image : "";
+  return `<div class="engineering-honor">
+    ${image ? `<figure class="engineering-honor-still"><img src="${escape(image)}" alt="${escape(honor.alt)}" loading="lazy"></figure>` : ""}
+    <div class="engineering-honor-copy">
+      <h3 class="disp">${escape(honor.name)}</h3>
+      <p class="engineering-context">${escape(honor.award)}${honor.date ? ` · ${escape(honor.date)}` : ""}</p>
+      ${honor.caption ? `<p class="engineering-honor-caption">${escape(honor.caption)}</p>` : ""}
+      ${link ? `<p class="engineering-links"><a href="${escape(link)}" target="_blank" rel="noopener noreferrer">${escape(honor.linkLabel || "Devpost")} <span aria-hidden="true">↗</span></a></p>` : ""}
+    </div>
+  </div>`;
+}
+
 function render(data = content) {
   return `<!DOCTYPE html>
 <html lang="en"><head>
@@ -83,6 +97,7 @@ function render(data = content) {
       <p class="engineering-positioning">${escape(data.summary)}</p>
     </div>
     <section class="engineering-datasheets" aria-label="Projects">${data.projects.map(renderProject).join("")}</section>
+    ${Array.isArray(data.honors) && data.honors.length ? `<section class="engineering-honors" aria-labelledby="honors-heading"><h2 class="disp" id="honors-heading">Honors</h2>${data.honors.map(renderHonor).join("")}</section>` : ""}
     <p class="engineering-crosslink">The same practice, through another lens. <a href="/">Explore the film work <span aria-hidden="true">↗</span></a></p>
   </main>
   <footer class="monogram"><a href="/inspo">INSPO</a> · PJK1M</footer>
@@ -91,3 +106,4 @@ function render(data = content) {
 
 module.exports = render;
 module.exports.renderProject = renderProject;
+module.exports.renderHonor = renderHonor;

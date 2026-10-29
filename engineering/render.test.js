@@ -92,3 +92,13 @@ test("unsafe repository urls and video ids are omitted", () => {
   assert.ok(html.includes("https://youtu.be/3N1zfZ2oOhQ"));
   assert.ok(html.includes("A &lt;script&gt;"));
 });
+
+test("renders honors with devpost links and no autolog metrics", () => {
+  const html = render(content);
+  assert.ok(html.includes('id="honors-heading"'));
+  assert.equal((html.match(/class="engineering-honor"/g) || []).length, 3);
+  assert.ok(html.includes("https://devpost.com/software/depend-a-pou"));
+  assert.ok(html.includes("https://devpost.com/software/ootd-outfit-of-the-day"));
+  assert.ok(html.includes("Dean&#39;s List"));
+  assert.ok(html.includes("/images/honors/devfest-2025.webp"));
+});
