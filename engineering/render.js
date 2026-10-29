@@ -16,6 +16,15 @@ function youtubeId(value) {
   return /^[A-Za-z0-9_-]{11}$/.test(id) ? id : "";
 }
 
+// Presentational only: show the first sentence as a skimmable lede and the
+// rest as detail. The approved copy itself is unchanged.
+function renderDescription(text) {
+  const value = String(text);
+  const match = value.match(/^(.+?[.!?])\s+(.+)$/s);
+  if (!match) return `<p class="engineering-description">${escape(value)}</p>`;
+  return `<p class="engineering-description"><strong class="engineering-lede">${escape(match[1])}</strong> ${escape(match[2])}</p>`;
+}
+
 function renderProject(project, index) {
   const id = youtubeId(project.videoId);
   const repo = httpsUrl(project.repo);
@@ -35,7 +44,7 @@ function renderProject(project, index) {
       <p class="engineering-status">${escape(project.status)}${project.year ? `<br>${escape(project.year)}` : ""}</p>
     </div>
     ${who ? `<p class="engineering-context">${who}</p>` : ""}
-    ${project.description ? `<p class="engineering-description">${escape(project.description)}</p>` : ""}
+    ${project.description ? renderDescription(project.description) : ""}
     ${(project.problem || project.solution) ? `<dl class="engineering-lines">${project.problem ? `<div><dt>Problem</dt><dd>${escape(project.problem)}</dd></div>` : ""}${project.solution ? `<div><dt>Solution</dt><dd>${escape(project.solution)}</dd></div>` : ""}</dl>` : ""}
     ${stack.length ? `<p class="engineering-stack"><span>Stack</span> ${escape(stack.join(" / "))}</p>` : ""}
     ${links ? `<p class="engineering-links">${links}</p>` : ""}

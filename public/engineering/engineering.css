@@ -60,3 +60,9 @@
 @media (prefers-reduced-motion: reduce) {
   .engineering-page *, .engineering-page *::before, .engineering-page *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
+
+.engineering-lede {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+}

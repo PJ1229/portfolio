@@ -348,3 +348,11 @@
   .film-page.home-page .home-contact-content,
   .film-page.home-page .work-still img { transition: none; }
 }
+
+.film-page.home-page .work-type {
+  margin: 0.25rem 0 0;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
