@@ -3,6 +3,16 @@
 
   var entries = [
     {
+      title: "fred again.. — behind the sound",
+      url: "https://www.youtube.com/watch?v=fO-DT-f9dz8",
+      type: "video",
+      duration: "20:20",
+      date: "2026-11-08",
+      isKey: true,
+      preview: "/images/inspo/previews/fred-behind-the-sound.jpg",
+      previewAlt: "Thumbnail for Fred again..: Behind The Sound by Gawx Art"
+    },
+    {
       title: "call me by your name",
       url: "https://letterboxd.com/film/call-me-by-your-name/",
       type: "film",
