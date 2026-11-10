@@ -15,8 +15,8 @@ module.exports = {
       description: "An on-device tool that logs game footage on my Mac, with no cloud. It reads jersey numbers, tags action and audio events like cheering and whistles, and names each clip in ShareBrowser style (e.g. 25BKW_1OSU_005_#05 JUMPER) with a separate detailed description. A review UI lets me check and fix the labels. The naming engine covers 29 sports and 269 action tags, backed by 33 unit tests. It's early and in active development; jersey accuracy is the next focus.",
       stack: ["Python", "Apple Vision", "SoundAnalysis", "ffmpeg", "Streamlit"],
       repo: null,
-      demo: "https://youtu.be/3N1zfZ2oOhQ",
-      videoId: "3N1zfZ2oOhQ",
+      demo: "https://youtu.be/3OMeSvn2cEQ",
+      videoId: "3OMeSvn2cEQ",
     },
     {
       slug: "yazaki-bom",
