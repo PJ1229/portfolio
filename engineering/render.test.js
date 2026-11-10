@@ -16,10 +16,10 @@ test("renders the three approved cards, demo embeds, and escaped HTML", () => {
   assert.ok(!html.includes("github.com/PJ1229/um-autolog"));
   assert.ok(!html.includes('href="/about"'));
   assert.ok(html.includes('href="/#info"'));
-  assert.ok(html.includes("https://youtu.be/3N1zfZ2oOhQ"));
+  assert.ok(html.includes("https://youtu.be/3OMeSvn2cEQ"));
   assert.ok(html.includes("https://youtu.be/3-hsH8Vi_Ro"));
   assert.ok(html.includes("https://youtu.be/S6AR5nTcQ0s"));
-  assert.ok(html.includes("https://www.youtube-nocookie.com/embed/3N1zfZ2oOhQ"));
+  assert.ok(html.includes("https://www.youtube-nocookie.com/embed/3OMeSvn2cEQ"));
   assert.ok(html.includes("https://www.youtube-nocookie.com/embed/3-hsH8Vi_Ro"));
   assert.ok(html.includes("https://www.youtube-nocookie.com/embed/S6AR5nTcQ0s"));
 
@@ -83,13 +83,13 @@ test("unsafe repository urls and video ids are omitted", () => {
     description: 'A <script>alert("x")</script> description.',
     stack: ["Python"],
     repo: "javascript:alert(1)",
-    demo: "https://youtu.be/3N1zfZ2oOhQ",
+    demo: "https://youtu.be/3OMeSvn2cEQ",
     videoId: 'abc"><script>',
   }, 0);
   assert.ok(!html.includes("javascript:"));
   assert.ok(!html.includes("<script>"));
   assert.ok(!html.includes("<iframe"));
-  assert.ok(html.includes("https://youtu.be/3N1zfZ2oOhQ"));
+  assert.ok(html.includes("https://youtu.be/3OMeSvn2cEQ"));
   assert.ok(html.includes("A &lt;script&gt;"));
 });
 
