@@ -1,0 +1,31 @@
+/* Subset from public/fonts/SF-Pro.ttf (licensed for this site).
+   Latin, optical size 17 (Text) and 28 (Display), weights 400 and 500.
+   Originals in public/fonts are not served. */
+@font-face {
+  font-family: "SF Pro Text";
+  src: url("/fonts/sf-pro/SFProText-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SF Pro Text";
+  src: url("/fonts/sf-pro/SFProText-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("/fonts/sf-pro/SFProDisplay-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("/fonts/sf-pro/SFProDisplay-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}

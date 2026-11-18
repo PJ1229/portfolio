@@ -3,10 +3,13 @@
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-  font-family: "IBM Plex Mono", ui-monospace, monospace;
-  font-size: 14px;
-  line-height: 1.7;
-  --engineering-border: rgba(0, 0, 0, 0.14);
+  --engineering-border: var(--line);
+}
+.engineering-page .disp {
+  font-family: var(--font-display);
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: var(--ls-h2);
 }
 .engineering-page a:focus-visible { outline: 2px solid currentColor; outline-offset: 5px; }
 .engineering-page .engineering-nav {
@@ -21,21 +24,23 @@
 .engineering-page .engineering-datasheets { padding: 24px var(--gutter) clamp(56px, 8vw, 112px); }
 .engineering-page .engineering-breadcrumb { font-size: 13px; margin-bottom: clamp(36px, 6vw, 72px); color: var(--ink-dim); }
 .engineering-page .engineering-breadcrumb a:hover { color: var(--ink); }
-.engineering-page h1.disp { font-size: clamp(56px, 10vw, 140px); letter-spacing: -0.025em; line-height: 0.9; }
-.engineering-page .engineering-positioning { max-width: 40em; margin: clamp(24px, 4vw, 40px) 0 0; font-size: 16px; line-height: 1.6; }
+.engineering-page h1.disp { font-size: var(--fs-h1); letter-spacing: var(--ls-h1); line-height: var(--lh-h1); }
+.engineering-page .engineering-positioning { max-width: var(--read); margin: 24px 0 0; font-size: var(--fs-body); line-height: var(--lh-body); }
 .engineering-page .engineering-datasheets { padding-top: 0; padding-bottom: 0; }
 .engineering-page .engineering-project { padding: clamp(32px, 5vw, 64px) 0; border-top: var(--rule) solid var(--engineering-border); }
 .engineering-page .engineering-project-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; }
-.engineering-page .engineering-project h2 { font-size: clamp(32px, 5vw, 72px); letter-spacing: -0.01em; line-height: 0.95; max-width: 14em; overflow-wrap: anywhere; }
-.engineering-page .engineering-status { text-align: right; flex-shrink: 0; color: var(--ink-dim); font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; }
-.engineering-page .engineering-context { margin-top: 16px; color: var(--ink-dim); font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; }
-.engineering-page .engineering-description { max-width: 68ch; margin: 28px 0 0; }
+.engineering-page .engineering-project h2 { font-size: var(--fs-h2); letter-spacing: var(--ls-h2); line-height: var(--lh-h2); max-width: 18em; overflow-wrap: anywhere; }
+.engineering-page .engineering-status { text-align: right; flex-shrink: 0; color: var(--meta); font-size: var(--fs-label); letter-spacing: var(--ls-label); line-height: var(--lh-label); text-transform: uppercase; }
+.engineering-page .engineering-context { margin-top: 16px; color: var(--meta); font-size: var(--fs-label); letter-spacing: var(--ls-label); line-height: var(--lh-label); text-transform: uppercase; }
+.engineering-page .engineering-description { max-width: var(--read); margin: 28px 0 0; font-family: var(--font-sans); }
 .engineering-page .engineering-lines { max-width: 68ch; margin: 28px 0 8px; }
 .engineering-page .engineering-lines div + div { margin-top: 18px; }
-.engineering-page .engineering-lines dt { font-size: 13px; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-dim); }
-.engineering-page .engineering-lines dd { margin-top: 4px; }
-.engineering-page .engineering-stack { margin-top: 22px; font-size: 13px; }
-.engineering-page .engineering-stack span { color: var(--ink-dim); margin-right: 24px; letter-spacing: 0.1em; text-transform: uppercase; }
+.engineering-page .engineering-lines dt { font-size: var(--fs-label); font-weight: 400; letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--meta); }
+.engineering-page .engineering-lines dd { margin-top: 4px; font-family: var(--font-sans); }
+.engineering-page .engineering-stack,
+.engineering-page .engineering-stack span { font-family: var(--font-mono); font-size: var(--fs-small); letter-spacing: 0; }
+.engineering-page .engineering-stack { margin-top: 22px; }
+.engineering-page .engineering-stack span { color: var(--meta); margin-right: 24px; text-transform: uppercase; letter-spacing: var(--ls-label); }
 .engineering-page .engineering-links { display: flex; flex-wrap: wrap; gap: 12px 28px; margin-top: 18px; }
 .engineering-page .engineering-links a { text-decoration: underline; text-underline-offset: 4px; }
 .engineering-page .engineering-video {
@@ -51,7 +56,7 @@
 .engineering-page .monogram a:hover { color: var(--ink); }
 .engineering-page .engineering-skip { position: absolute; left: 16px; top: -100px; padding: 12px; background: var(--paper); z-index: 10; }
 .engineering-page .engineering-skip:focus { top: 8px; }
-@media (max-width: 719px) {
+@media (max-width: 720px) {
   .engineering-page .engineering-project-heading { flex-direction: column; gap: 12px; }
   .engineering-page .engineering-status { text-align: left; }
   .engineering-page .engineering-nav { flex-wrap: wrap; }
@@ -69,11 +74,11 @@
 
 /* Honors */
 .engineering-page .engineering-honors { padding: clamp(56px, 8vw, 112px) var(--gutter) 0; }
-.engineering-page .engineering-honors > h2 { font-size: clamp(32px, 5vw, 72px); line-height: 0.95; margin-bottom: clamp(24px, 4vw, 40px); }
+.engineering-page .engineering-honors > h2 { font-size: var(--fs-h2); line-height: var(--lh-h2); margin-bottom: 32px; }
 .engineering-page .engineering-honor { display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; padding: clamp(24px, 4vw, 40px) 0; border-top: var(--rule) solid var(--engineering-border); }
-@media (min-width: 760px) { .engineering-page .engineering-honor:has(figure) { grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); gap: 40px; } }
+@media (min-width: 720px) { .engineering-page .engineering-honor:has(figure) { grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); gap: 40px; } }
 .engineering-page .engineering-honor-still { margin: 0; border: var(--rule) solid var(--engineering-border); }
 .engineering-page .engineering-honor-still img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; max-height: 520px; }
-.engineering-page .engineering-honor h3 { font-size: clamp(24px, 3vw, 40px); line-height: 1; }
+.engineering-page .engineering-honor h3 { font-size: var(--fs-h3); line-height: var(--lh-h3); }
 .engineering-page .engineering-honor .engineering-context { margin-top: 10px; }
 .engineering-page .engineering-honor-caption { max-width: 60ch; margin: 16px 0 0; }

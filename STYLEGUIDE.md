@@ -9,11 +9,11 @@ It is a **Projects** portfolio now — film work and client work share the same
 grid; client work is tagged, not split into its own section.
 
 ### primary nav
-- **format**: `WORK · ENGINEERING · WRITING · INFO · INSPO` — current
-  page/section renders as a `<span>`, the others are links. `WORK` → `/`,
-  `ENGINEERING` → `/engineering`, `WRITING` → `/writing` (302 → Substack),
-  `INFO` → `/#info`, `INSPO` → `/inspo`.
-- **footer**: every page carries an `INSPO` link in the footer (`/inspo`).
+- **format**: `Work · Engineering · Writing ↗ · About`. Sentence case, shared
+  partial (`public/film/chrome.js`). `Work` → `/`, `Engineering` →
+  `/engineering`, `Writing` → `/writing` (opens Substack), `About` → `/#info`.
+  Inspo is footer-only.
+- **footer**: © PJ Kim, then Inspo, YouTube, Instagram, Email.
 
 ### project content model
 - Each project element carries its model as data attributes, rendered by
@@ -33,16 +33,19 @@ grid; client work is tagged, not split into its own section.
 - Render a section only when it has content — delete its `<li>` to omit it;
   insert a new `<li>` in order to add one. No placeholder sections.
 
-### type — three roles, no more
-- **display titles** — condensed grotesque, uppercase, tight tracking (`Anton`).
-- **running header / prose** — serif, Title Case / sentence case (`Instrument Serif`).
-- **metadata / nav / credits** — mono, uppercase, letterspaced (`IBM Plex Mono`).
+### type — one family
+- **SF Pro**, self-hosted from `public/fonts/SF-Pro.ttf` as subset woff2 files
+  (`SF Pro Text` for UI and body, `SF Pro Display` for titles). Weights 400 and 500.
+  Stack continues `-apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif`.
+- **IBM Plex Mono** only for timecodes and tech specs.
+- Do not load Inter, Anton, Instrument Serif, Bodoni, or the original SF Pro files.
 
 ### tokens
-- black canvas `#000000` · white paper `#FFFFFF` · ink `#000` · grays for dim/meta
-  (dim values are the paper-dim/ink-dim vars in `film.css`).
-- black and white only — no color accent. labels, nav, and metadata use grayscale.
-- hairline frames only. no shadows, no rounded corners, no gradients.
+- Light paper shell `#F8F7F3`, ink `#141413`, meta `#6B6A65`. Footage sits on a
+  black stage `#0B0B0C`. A film may set `--cover-mat` and nothing else in chrome.
+- Shared signal `#D8191F` is for the focus ring and the active-section tick only.
+- Hairline frames. No shadows. One breakpoint at 720px.
+- Tokens live in `public/film/tokens.css`.
 
 ### rules
 - never mix casings within a role. display = uppercase, metadata = uppercase
@@ -70,8 +73,7 @@ grid; client work is tagged, not split into its own section.
 - **preview**: use a local image when one is available and a deliberate type-led fallback when it is not. Hover/focus may change the preview, but the row itself remains the real outbound link.
 - **red marker**: set `isKey: true` on archive entries that changed how PJ thinks; the renderer supplies the diamond.
 - **weight**: keep font weight consistent; red should only change color.
-- **red color**: `#ff2d2d`, scoped to `.film-page.inspo-page` — this is the one
-  deliberate color exception to the otherwise monochrome film register.
+- **key mark**: `var(--signal)`, the shared tick color. Not a second red.
 
 ### home contact film
 - The Verci film is a native, lazy-loaded video behind `LET'S MAKE SOMETHING.`

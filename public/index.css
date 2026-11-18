@@ -1,9 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
-
-@font-face {
-  font-family: sf-pro;
-  src: url(fonts/SF-Pro.ttf);
-}
+@import url("/fonts/sf-pro.css");
 
 
 /* ---------- THEME VARIABLES ---------- */
@@ -42,7 +37,7 @@ html.dark {
 html, body {
   margin: 0;
   padding: 0;
-  font-family: "Inter", "SF Pro Text", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  font-family: "SF Pro Text", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
   background: var(--bg);
   color: var(--text);
   font-size: 15.5px;
@@ -69,7 +64,7 @@ html, body {
 /* ---------- Typography ---------- */
 
 h1, h2, h3 {
-  font-family: "Inter", "SF Pro Display", "SF Pro Text", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  font-family: "SF Pro Display", "SF Pro Text", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
   font-weight: 400;
   color: var(--text);
   margin-top: 0;

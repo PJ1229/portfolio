@@ -1,0 +1,253 @@
+/* Shared light shell. Scoped to .site so unpublished pages that only use
+   .film-page (INLW) keep their own styles. One breakpoint: 720px. */
+
+.film-page.site {
+  --paper: #F8F7F3;
+  --paper-2: #EFEDE7;
+  --ink: #141413;
+  --ink-2: #4B4A46;
+  --meta: #6B6A65;
+  --line: #DDDBD3;
+  --hover-wash: rgba(20, 20, 19, 0.06);
+  --stage: #0B0B0C;
+  --bone: #F2F0EA;
+  --bone-2: #B4B2AA;
+  --bone-3: #8C8A83;
+  --signal: #D8191F;
+  --ink-dim: var(--meta);
+  --paper-dim: var(--bone-2);
+  --accent: var(--ink);
+  --canvas: var(--paper);
+  --rule: 1px;
+  --gutter: clamp(16px, 4vw, 56px);
+  --font-sans: "SF Pro Text", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --font-display: "SF Pro Display", "SF Pro Text", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  font-weight: 400;
+  line-height: var(--lh-body);
+  letter-spacing: var(--ls-body);
+}
+
+.film-page.site h1,
+.film-page.site h2,
+.film-page.site h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: var(--ls-h2);
+}
+
+.film-page.site h1 {
+  font-size: var(--fs-h1);
+  line-height: var(--lh-h1);
+  letter-spacing: var(--ls-h1);
+}
+
+.film-page.site h2 {
+  font-size: var(--fs-h2);
+  line-height: var(--lh-h2);
+}
+
+.film-page.site h3 {
+  font-size: var(--fs-h3);
+  line-height: var(--lh-h3);
+  letter-spacing: -0.02em;
+}
+
+.film-page.site strong,
+.film-page.site b { font-weight: 500; }
+
+.film-page.site :focus-visible {
+  outline: 2px solid var(--signal);
+  outline-offset: 3px;
+}
+
+.film-page.site .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.site-header {
+  position: fixed;
+  z-index: 40;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: var(--header-h);
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.site-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: min(var(--page), calc(100% - 2 * var(--gutter)));
+  height: 100%;
+  margin: 0 auto;
+}
+
+.site-mark {
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.site-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 8px 12px;
+  border-radius: 2px;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 20px;
+  transition: background var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out);
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible,
+.site-nav a[aria-current="page"] {
+  background: var(--hover-wash);
+}
+
+.site-menu {
+  display: none;
+  align-items: center;
+  min-height: 40px;
+  padding: 8px 12px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: 500 15px/20px var(--font-sans);
+  letter-spacing: -0.01em;
+  cursor: pointer;
+}
+
+.has-stage .site-header.is-on-stage {
+  background: linear-gradient(to bottom, rgba(11, 11, 12, 0.72), rgba(11, 11, 12, 0.2));
+  color: var(--bone);
+}
+
+.has-stage .site-header.is-on-stage .site-nav a:hover,
+.has-stage .site-header.is-on-stage .site-nav a:focus-visible,
+.has-stage .site-header.is-on-stage .site-nav a[aria-current="page"] {
+  background: rgba(242, 240, 234, 0.14);
+}
+
+.site main { padding-top: var(--header-h); }
+.has-stage main { padding-top: 0; }
+
+.site-footer {
+  min-height: var(--footer-h);
+  border-top: 1px solid var(--line);
+}
+
+.site-footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px 32px;
+  width: min(var(--page), calc(100% - 2 * var(--gutter)));
+  min-height: var(--footer-h);
+  margin: 0 auto;
+}
+
+.site-footer p,
+.site-footer a {
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  line-height: 20px;
+  text-transform: uppercase;
+}
+
+.site-footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+}
+
+.site-footer a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+}
+
+.site-footer a:hover { color: var(--ink-2); }
+
+body.nav-open { overflow: hidden; }
+
+@media (max-width: 720px) {
+  .film-page.site {
+    font-size: 16px;
+    line-height: 27px;
+  }
+
+  .site-menu { display: inline-flex; }
+
+  .site-nav {
+    position: fixed;
+    z-index: 30;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 4px;
+    padding: calc(var(--header-h) + 24px) var(--gutter) 32px;
+    background: var(--paper);
+    color: var(--ink);
+    visibility: hidden;
+    transform: translateY(-8px);
+    opacity: 0;
+    transition: opacity var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out);
+  }
+
+  .site-header.is-open .site-nav {
+    visibility: visible;
+    transform: none;
+    opacity: 1;
+  }
+
+  .site-header.is-open {
+    background: var(--paper);
+    color: var(--ink);
+  }
+
+  .site-nav a {
+    width: 100%;
+    font-size: var(--fs-lede);
+    line-height: var(--lh-lede);
+  }
+
+  .site-footer-inner {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 16px 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-nav,
+  .site-nav a { transition: none; }
+}

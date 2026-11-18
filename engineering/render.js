@@ -74,22 +74,10 @@ function render(data = content) {
   <meta name="description" content="${escape(data.summary)}">
   <link rel="canonical" href="https://pjk1m.com/engineering">
   <link rel="icon" href="/images/logo.png" type="image/png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/film/film.css"><link rel="stylesheet" href="/engineering/engineering.css">
-</head><body class="film-page engineering-page">
+  <link rel="stylesheet" href="/film/tokens.css"><link rel="stylesheet" href="/film/film.css"><link rel="stylesheet" href="/film/shell.css"><link rel="stylesheet" href="/engineering/engineering.css">
+</head><body class="film-page site engineering-page">
   <a class="engineering-skip" href="#main">Skip to content</a>
-  <header class="nav engineering-nav">
-    <a href="/">PJ KIM</a>
-    <nav class="nav-links" aria-label="Primary">
-      <a href="/">WORK</a>
-      <span aria-current="page">ENGINEERING</span>
-      <a href="/writing">WRITING</a>
-      <a href="/#info">INFO</a>
-      <a href="/inspo">INSPO</a>
-    </nav>
-  </header>
+  ${require("../public/film/chrome").renderHeader("engineering")}
   <main id="main" tabindex="-1">
     <div class="engineering-intro">
       <nav class="engineering-breadcrumb" aria-label="Breadcrumb"><a href="/">work</a><span aria-hidden="true"> / </span><span aria-current="page">engineering</span></nav>
@@ -100,7 +88,7 @@ function render(data = content) {
     ${Array.isArray(data.honors) && data.honors.length ? `<section class="engineering-honors" aria-labelledby="honors-heading"><h2 class="disp" id="honors-heading">Honors</h2>${data.honors.map(renderHonor).join("")}</section>` : ""}
     <p class="engineering-crosslink">The same practice, through another lens. <a href="/">Explore the film work <span aria-hidden="true">↗</span></a></p>
   </main>
-  <footer class="monogram"><a href="/inspo">INSPO</a> · PJK1M</footer>
+  ${require("../public/film/chrome").renderFooter()}
 </body></html>`;
 }
 

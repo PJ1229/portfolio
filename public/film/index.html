@@ -15,12 +15,11 @@
   <meta name="twitter:description" content="Music videos, narrative films and live-event campaigns directed, shot and edited by PJ Kim.">
   <meta name="twitter:image" content="https://pjk1m.com/images/december/bedroom.webp">
   <link rel="canonical" href="https://pjk1m.com/">
-  <link rel="icon" href="../images/logo.png" type="image/png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../film/film.css">
-  <link rel="stylesheet" href="../film/home.css">
+  <link rel="icon" href="/images/logo.png" type="image/png">
+  <link rel="stylesheet" href="/film/tokens.css">
+  <link rel="stylesheet" href="/film/film.css">
+  <link rel="stylesheet" href="/film/shell.css">
+  <link rel="stylesheet" href="/film/home.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -45,55 +44,45 @@
   </script>
 </head>
 
-<body class="film-page home-page">
-
-  <header class="nav dark-nav home-nav">
-    <a class="home-mark" href="/" aria-label="PJ Kim, home">PJ KIM</a>
-    <nav class="nav-links" aria-label="Primary">
-      <span aria-current="page">WORK</span>
-      <a href="/engineering">ENGINEERING</a>
-      <a href="/writing" aria-label="Writing on Substack">WRITING</a>
-      <a href="#info">INFO</a>
-      <a href="/inspo">INSPO</a>
-    </nav>
-  </header>
+<body class="film-page site home-page">
+  <!-- chrome:header -->
 
   <main>
+    <h1 class="sr-only">PJ Kim</h1>
 
     <section class="home-work" aria-label="Selected work">
       <div class="home-work-head">
-        <p class="mono home-eyebrow">SELECTED WORK</p>
-        <p class="mono home-count">01 — 02</p>
+        <p class="label">Selected work</p>
+        <p class="label">01 — 02</p>
       </div>
       <div class="work-grid">
         <a class="work-card" href="/december">
           <figure class="work-still">
-            <img src="../images/december/bedroom.webp"
+            <img src="/images/december/bedroom.webp"
                  alt="Lizette and Meekel lying apart in a dim bedroom"
                  fetchpriority="high">
           </figure>
-          <h2 class="disp">December</h2>
-          <p class="work-type mono">Music video · LIZETTE</p>
-          <p class="work-role">Director · Cinematographer · Editor · Colorist</p>
-          <p class="work-meta"><span>Nov–Dec 2025</span><span>Released</span></p>
+          <p class="work-kicker">Music video · Nov 2025–Oct 2026</p>
+          <h2>December</h2>
+          <p class="work-line">A push and pull between two people who never quite became one thing.</p>
+          <p class="work-status">Completed, Oct 2026</p>
         </a>
         <a class="work-card" href="/unsanctioned">
           <figure class="work-still">
-            <img src="../images/unsanctioned/website-hero.webp"
+            <img src="/images/unsanctioned/website-hero.webp"
                  alt="Project Unsanctioned campaign still"
                  loading="lazy">
           </figure>
-          <h2 class="disp">Project Unsanctioned</h2>
-          <p class="work-type mono">Launch Campaign</p>
-          <p class="work-role">Co-director · Editor · Colorist</p>
-          <p class="work-meta"><span>2026</span><span>Released</span></p>
+          <p class="work-kicker">Launch campaign · 2026</p>
+          <h2>Project Unsanctioned</h2>
+          <p class="work-line">A four-part rave campaign that moved from film and photography to a packed room in Detroit.</p>
+          <p class="work-status">Released</p>
         </a>
       </div>
     </section>
 
-    <!-- info (was /about) -->
-    <section class="home-info" id="info" aria-label="Info">
-      <p class="mono home-count">INFO</p>
+    <section class="home-info" id="info" aria-label="About">
+      <p class="label">About</p>
 
       <p class="info-statement">PJ Kim <i>directs, shoots, cuts, and colors</i> films built around feeling, rhythm, and image.</p>
 
@@ -143,8 +132,8 @@
       </div>
 
       <div class="home-contact-content">
-        <p class="mono">AVAILABLE FOR SELECT PROJECTS</p>
-        <h2 id="contact-heading">LET'S MAKE<br><i>SOMETHING.</i></h2>
+        <p class="label">Available for select projects</p>
+        <h2 id="contact-heading">Let’s make something.</h2>
         <button class="contact-film-play" type="button" data-contact-play aria-controls="contact-film-video">
           <span>PLAY FILM</span><span>02:00</span>
         </button>
@@ -170,11 +159,8 @@
 
   </main>
 
-  <footer class="monogram">
-    <a href="/inspo">INSPO</a> · PJK1M
-  </footer>
-
-  <script src="../film/contact-film.js"></script>
-  <script src="../film/analytics.js"></script>
+  <!-- chrome:footer -->
+  <script src="/film/contact-film.js"></script>
+  <script src="/film/analytics.js"></script>
 </body>
 </html>

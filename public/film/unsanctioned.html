@@ -15,12 +15,12 @@
   <meta name="twitter:description" content="A four-part rave campaign for OSTAR × House Bl3nd.">
   <meta name="twitter:image" content="https://pjk1m.com/images/unsanctioned/website-hero.webp">
   <link rel="canonical" href="https://pjk1m.com/unsanctioned">
-  <link rel="icon" href="../images/logo.png" type="image/png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../film/film.css">
-  <link rel="stylesheet" href="../film/unsanctioned.css">
+  <link rel="icon" href="/images/logo.png" type="image/png">
+  <link rel="stylesheet" href="/film/tokens.css">
+  <link rel="stylesheet" href="/film/film.css">
+  <link rel="stylesheet" href="/film/shell.css">
+  <link rel="stylesheet" href="/film/project.css">
+  <link rel="stylesheet" href="/film/unsanctioned.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -40,278 +40,311 @@
     gtag('config', 'G-M0J8NYPG27');
   </script>
 </head>
-
-<body class="film-page unsanctioned-page">
-  <header class="nav dark-nav uns-nav">
-    <a href="/">PJ KIM</a>
-    <nav class="nav-links" aria-label="Primary">
-      <a href="/">WORK</a>
-      <a href="/engineering">ENGINEERING</a>
-      <a href="/writing">WRITING</a>
-      <a href="/#info">INFO</a>
-      <a href="/inspo">INSPO</a>
-    </nav>
-  </header>
-
+<body class="film-page site unsanctioned-page has-stage">
+  <!-- chrome:header -->
   <main>
-    <section class="uns-hero" aria-labelledby="uns-title">
-      <video class="uns-hero-video" autoplay muted loop playsinline preload="metadata"
-             poster="../images/unsanctioned/website-hero.webp" aria-hidden="true">
-        <source src="../videos/unsanctioned-hero.mp4" type="video/mp4">
-      </video>
-      <div class="uns-hero-wash" aria-hidden="true"></div>
-      <div class="uns-hero-grid" aria-hidden="true"></div>
-
-      <p class="uns-hero-kicker">OSTAR × HOUSE BL3ND PRESENTS</p>
-      <p class="uns-hero-side uns-hero-side-left">DETROIT, MI<br>TRANSMISSION 001</p>
-      <p class="uns-hero-side uns-hero-side-right">FILM · PHOTO · SOCIAL<br>AUG 11—21 · 2026</p>
-
-      <div class="uns-title-lockup">
-        <p>PROJECT</p>
-        <h1 id="uns-title">UNSANCTIONED</h1>
-      </div>
-
-      <div class="uns-hero-bottom">
-        <p>CAMPAIGN-WORLD FOOTAGE<br>FROM THE CUT PARKING-LOT SEQUENCE</p>
-        <a href="#campaign">ENTER CASE STUDY <span aria-hidden="true">↓</span></a>
-        <p>CO-DIRECTED · EDITED · COLORED<br>BY PJ KIM</p>
+    <section class="stage" aria-label="Project Unsanctioned">
+      <div class="stage-frame">
+        <video class="uns-hero-video" autoplay muted loop playsinline preload="metadata"
+               poster="/images/unsanctioned/website-hero.webp" aria-hidden="true">
+          <source src="/videos/unsanctioned-hero.mp4" type="video/mp4">
+        </video>
       </div>
     </section>
 
-    <section class="uns-brief" id="campaign"
-             data-type="EVENT,PROMO,FILM"
-             data-client="self"
-             data-status="RELEASED"
-             data-year="2026"
-             aria-labelledby="campaign-heading">
-      <div class="uns-wrap">
-        <div class="uns-section-label">
-          <span>00 / CAMPAIGN BRIEF</span>
-          <span>JUN—AUG 2026</span>
+    <div class="film">
+      <aside class="toc">
+        <p class="label">Contents</p>
+        <a href="#overview">Overview</a>
+        <a href="#grade">Grade</a>
+        <a href="#frames">Frames</a>
+        <a href="#film">Film</a>
+        <a href="#making">Making of</a>
+        <a href="#credits">Credits</a>
+      </aside>
+
+      <article>
+        <h1 id="uns-title">Project Unsanctioned</h1>
+        <blockquote class="logline">
+          <p class="label">Logline</p>
+          <p>One month. Four drops. One full room.</p>
+        </blockquote>
+
+        <div class="credits">
+          <div>
+            <p class="label">Role</p>
+            <ul>
+              <li>Co-director</li>
+              <li>Editor</li>
+              <li>Colorist</li>
+            </ul>
+          </div>
+          <div>
+            <p class="label">Format</p>
+            <ul>
+              <li>Campaign · Film · Photo · Social</li>
+              <li>Sony FX3 · a7III · a7IV · Fujifilm X-S20</li>
+              <li class="spec">S-Log3 · S-Log2</li>
+            </ul>
+          </div>
+          <div>
+            <p class="label">Status</p>
+            <ul>
+              <li>Released</li>
+              <li>Aug 11–21, 2026</li>
+            </ul>
+          </div>
+          <div>
+            <p class="label">Toolkit</p>
+            <ul>
+              <li>Adobe Premiere Pro</li>
+              <li>DaVinci Resolve Studio</li>
+            </ul>
+          </div>
         </div>
+        <a class="btn" href="https://www.youtube.com/watch?v=FLqxwn8_9xI" target="_blank" rel="noopener noreferrer">Watch the film ↗</a>
 
-        <h2 class="uns-statement" id="campaign-heading">ONE MONTH.<br>FOUR DROPS.<br>ONE FULL ROOM.</h2>
-
-        <div class="uns-brief-grid">
-          <div class="uns-intro-copy">
+        <section class="block" id="overview">
+          <h2>The rollout built the room before the doors opened.</h2>
+          <div class="prose">
             <p>Project Unsanctioned was a staged rave campaign for OSTAR × House Bl3nd. Film, portraiture and short-form edits built the world first; Arcade Rave: Gotta Gacha was the payoff.</p>
             <p>Planning began June 16. The party-room unit shot July 23, with additional production and post continuing through the August rollout. I co-directed the hero film, then edited and colored the campaign across multiple cameras and formats.</p>
+            <p>The rollout moved from a fictionalized party reveal to a real room at capacity. The teaser crossed 100K Instagram impressions during its first month, and the RSVP list hit its limit before the event.</p>
           </div>
-          <div class="uns-facts">
-            <div data-project-meta></div>
-            <dl>
-              <div><dt>Format</dt><dd>Campaign · Film · Photo · Social</dd></div>
-              <div><dt>Presented by</dt><dd>OSTAR × House Bl3nd</dd></div>
-              <div><dt>My roles</dt><dd>Co-director · Editor · Colorist</dd></div>
-              <div><dt>Deliverables</dt><dd>Hero film · Photo drop · Teaser · Recap</dd></div>
-              <div><dt>Capture</dt><dd>Sony FX3 · a7III · a7IV · Fujifilm X-S20</dd></div>
-              <div><dt>Profiles</dt><dd>S-Log3 · S-Log2</dd></div>
-            </dl>
+          <ol class="rollout">
+            <li><span>Aug 11</span>Hero film</li>
+            <li><span>Aug 14</span>Photo drop</li>
+            <li><span>Aug 18</span>Three days before</li>
+            <li><span>Aug 21</span>The rave</li>
+          </ol>
+          <div class="stats">
+            <div><strong>+100K</strong><span>Instagram impressions</span></div>
+            <div><strong>+144</strong><span>Followers gained</span></div>
+            <div><strong>361</strong><span>Marked “went” · RSVP cap</span></div>
+            <div><strong>~250</strong><span>Through the door</span></div>
           </div>
-        </div>
+          <p class="link-row">
+            <a href="https://www.instagram.com/house_bl3nd/" target="_blank" rel="noopener noreferrer">House Bl3nd ↗</a>
+            <a href="https://www.gottagacha.com/" target="_blank" rel="noopener noreferrer">Gotta Gacha ↗</a>
+          </p>
+        </section>
 
-        <ol class="uns-rollout" aria-label="Campaign rollout">
-          <li><span>01</span><time datetime="2026-08-11">AUG 11</time><strong>HERO FILM</strong></li>
-          <li><span>02</span><time datetime="2026-08-14">AUG 14</time><strong>PHOTO DROP</strong></li>
-          <li><span>03</span><time datetime="2026-08-18">AUG 18</time><strong>3 DAYS BEFORE</strong></li>
-          <li><span>04</span><time datetime="2026-08-21">AUG 21</time><strong>THE RAVE</strong></li>
-        </ol>
-      </div>
-    </section>
-
-    <section class="uns-film" id="hero-film" aria-labelledby="film-heading">
-      <div class="uns-wrap">
-        <div class="uns-section-label uns-section-label-light">
-          <span>01 / RELEASE</span>
-          <span>AUG 11 · HERO FILM</span>
-        </div>
-
-        <div class="uns-release-head">
-          <h2 id="film-heading">THE INVITE<br><i>HITS DIFFERENT.</i></h2>
-          <div>
-            <p>The hero film introduces Tiffany, her best friend and Chad through a graphic party reveal. Cast cards, notification overlays and high-contrast red styling turn the promo into a piece of the rave’s world.</p>
-            <p class="uns-tech-line">SONY FX3 · S-LOG3 · DIRECTED BY IRWIN PATCHARAPUT + PJ KIM</p>
-          </div>
-        </div>
-
-        <a class="uns-film-poster" href="https://www.youtube.com/watch?v=FLqxwn8_9xI" target="_blank" rel="noopener noreferrer" data-track-media="unsanctioned_hero">
-          <img src="../images/unsanctioned/chad-tiffany-close.webp" alt="Chad and Tiffany in the Project Unsanctioned hero film" loading="lazy">
-          <span class="uns-play">PLAY FILM ↗</span>
-          <span class="uns-timecode">TRANSMISSION 001 · 16:9</span>
-        </a>
-
-        <div class="uns-watch-row" aria-label="Watch Project Unsanctioned">
-          <a href="https://www.youtube.com/watch?v=FLqxwn8_9xI" target="_blank" rel="noopener noreferrer">YOUTUBE ↗</a>
-          <a href="https://www.instagram.com/p/Db3dMg9p6_i/" target="_blank" rel="noopener noreferrer">INSTAGRAM ↗</a>
-          <a href="https://www.tiktok.com/@pj.k1m/video/7672451205301275918" target="_blank" rel="noopener noreferrer">TIKTOK ↗</a>
-        </div>
-
-        <div class="uns-cast">
-          <figure><img src="../images/unsanctioned/tiffany-hero.webp" alt="Lizette Mina as Tiffany" loading="lazy"><figcaption><span>01</span><strong>TIFFANY</strong><small>LIZETTE MINA</small></figcaption></figure>
-          <figure><img src="../images/unsanctioned/bestfriend-hero.webp" alt="Sianna Gelido as Best Friend" loading="lazy"><figcaption><span>02</span><strong>BEST FRIEND</strong><small>SIANNA GELIDO</small></figcaption></figure>
-          <figure><img src="../images/unsanctioned/chad-hero.webp" alt="Meekel T Kim-Riney as Chad" loading="lazy"><figcaption><span>03</span><strong>CHAD</strong><small>MEEKEL T KIM-RINEY</small></figcaption></figure>
-          <figure><img src="../images/unsanctioned/chad-tiffany-close.webp" alt="Chad and Tiffany together at the party" loading="lazy"><figcaption><span>04</span><strong>THE REVEAL</strong><small>PARTY ROOM</small></figcaption></figure>
-        </div>
-
-        <div class="uns-story-strip" aria-label="Selected hero film frames">
-          <img src="../images/unsanctioned/intro.webp" alt="Project Unsanctioned opening frame" loading="lazy">
-          <img src="../images/unsanctioned/tiffany-notif.webp" alt="Tiffany receives a notification" loading="lazy">
-          <img src="../images/unsanctioned/bestfriend-surprised.webp" alt="Best Friend reacts" loading="lazy">
-          <img src="../images/unsanctioned/end.webp" alt="Project Unsanctioned closing frame" loading="lazy">
-        </div>
-      </div>
-    </section>
-
-    <section class="uns-photos" id="photo-drop" aria-labelledby="photos-heading">
-      <div class="uns-wrap">
-        <div class="uns-section-label"><span>02 / RELEASE</span><span>AUG 14 · PHOTO DROP</span></div>
-        <div class="uns-photo-head">
-          <h2 id="photos-heading">AFTER DARK.<br>FLASH ON.</h2>
-          <p>Michael Counts photographed the campaign’s biker and racing silhouettes against cars, bikes and the sodium glow of the lot. I edited the final drop.</p>
-        </div>
-
-        <div class="stills uns-photo-grid">
-          <figure tabindex="0" role="button" aria-label="Open photo drop frame 1"><img src="../images/unsanctioned/photo-drop/photo-1.webp" alt="Two models posed by a red car" loading="lazy"><figcaption>FRAME 01 · FUJIFILM X-S20</figcaption></figure>
-          <figure tabindex="0" role="button" aria-label="Open photo drop frame 2"><img src="../images/unsanctioned/photo-drop/photo-2.webp" alt="Two models in biker-inspired styling" loading="lazy"><figcaption>FRAME 02 · FUJIFILM X-S20</figcaption></figure>
-          <figure tabindex="0" role="button" aria-label="Open photo drop frame 3"><img src="../images/unsanctioned/photo-drop/photo-3.webp" alt="Two models standing in front of a red car" loading="lazy"><figcaption>FRAME 03 · FUJIFILM X-S20</figcaption></figure>
-          <figure tabindex="0" role="button" aria-label="Open photo drop frame 4"><img src="../images/unsanctioned/photo-drop/photo-6.webp" alt="Meekel sitting on a motorcycle" loading="lazy"><figcaption>FRAME 04 · FUJIFILM X-S20</figcaption></figure>
-          <figure tabindex="0" role="button" aria-label="Open photo drop frame 5"><img src="../images/unsanctioned/photo-drop/photo-7.webp" alt="Meekel posed with a motorcycle" loading="lazy"><figcaption>FRAME 05 · FUJIFILM X-S20</figcaption></figure>
-          <figure tabindex="0" role="button" aria-label="Open photo drop frame 6"><img src="../images/unsanctioned/photo-drop/photo-8.webp" alt="Close portrait beside a motorcycle" loading="lazy"><figcaption>FRAME 06 · FUJIFILM X-S20</figcaption></figure>
-        </div>
-        <p class="uns-credit-line">PHOTOGRAPHY · MICHAEL COUNTS / EDIT · PJ KIM</p>
-      </div>
-    </section>
-
-    <section class="uns-teaser" id="teaser" aria-labelledby="teaser-heading">
-      <div class="uns-teaser-tape" aria-hidden="true"><span>AUG 18 · TRANSMISSION 003 · THREE DAYS BEFORE · AUG 18 · TRANSMISSION 003 · THREE DAYS BEFORE ·</span></div>
-      <div class="uns-wrap">
-        <div class="uns-section-label uns-section-label-light"><span>03 / RELEASE</span><span>AUG 18 · 72 HOURS OUT</span></div>
-        <h2 id="teaser-heading"><span>3 DAYS</span><br>BEFORE.</h2>
-        <div class="uns-teaser-copy">
-          <p>Anthony Nguyen’s camera-roll footage became the last signal before the doors opened: crushed monochrome, smoke, motion and red gothic titles cut for speed.</p>
-          <a href="https://www.instagram.com/p/DcMg6QLIgrd/" target="_blank" rel="noopener noreferrer">WATCH THE TEASER ↗</a>
-        </div>
-
-        <div class="stills uns-teaser-grid">
-          <figure tabindex="0" role="button" aria-label="Open teaser frame at 00:00:00:22"><img src="../images/unsanctioned/teaser/teaser-00_00_00_22.webp" alt="Teaser cold open" loading="lazy"><figcaption>00:00:00:22</figcaption></figure>
-          <figure tabindex="0" role="button" aria-label="Open teaser frame at 00:00:01:20"><img src="../images/unsanctioned/teaser/teaser-00_00_01_20.webp" alt="Party teaser frame" loading="lazy"><figcaption>00:00:01:20</figcaption></figure>
-          <figure tabindex="0" role="button" aria-label="Open teaser frame at 00:00:03:02"><img src="../images/unsanctioned/teaser/teaser-00_00_03_02.webp" alt="Crowd in the monochrome teaser" loading="lazy"><figcaption>00:00:03:02</figcaption></figure>
-          <figure tabindex="0" role="button" aria-label="Open teaser frame at 00:00:04:07"><img src="../images/unsanctioned/teaser/teaser-00_00_04_07.webp" alt="Silhouette in the monochrome teaser" loading="lazy"><figcaption>00:00:04:07</figcaption></figure>
-          <figure tabindex="0" role="button" aria-label="Open teaser frame at 00:00:06:06"><img src="../images/unsanctioned/teaser/teaser-00_00_06_06.webp" alt="Arcade Rave teaser frame" loading="lazy"><figcaption>00:00:06:06</figcaption></figure>
-          <figure tabindex="0" role="button" aria-label="Open teaser frame at 00:00:08:27"><img src="../images/unsanctioned/teaser/teaser-00_00_08_27.webp" alt="Teaser end frame" loading="lazy"><figcaption>00:00:08:27</figcaption></figure>
-        </div>
-        <p class="uns-credit-line uns-credit-line-dark">SHOT BY ANTHONY NGUYEN · SONY A7III · S-LOG2 / EDIT + COLOR · PJ KIM</p>
-      </div>
-    </section>
-
-    <section class="uns-impact" id="impact" aria-labelledby="impact-heading">
-      <div class="uns-impact-hero">
-        <img src="../images/unsanctioned/post-rave/event-gottagacha-51.webp" alt="A packed crowd surrounding the DJ booth at Arcade Rave" loading="lazy">
-        <div class="uns-impact-wash" aria-hidden="true"></div>
-        <div class="uns-impact-title"><p>04 / AUG 21 · ARCADE RAVE</p><h2 id="impact-heading">THE ROOM<br>WAS <i>FULL.</i></h2></div>
-        <div class="uns-stats">
-          <div><strong>+100K</strong><span>INSTAGRAM IMPRESSIONS</span></div>
-          <div><strong>+144</strong><span>FOLLOWERS GAINED</span></div>
-          <div><strong>361</strong><span>MARKED “WENT” · RSVP CAP</span></div>
-          <div><strong>~250</strong><span>THROUGH THE DOOR</span></div>
-        </div>
-      </div>
-
-      <div class="uns-wrap uns-impact-body">
-        <div class="uns-section-label uns-section-label-light"><span>04 / RESULT</span><span>10PM—2AM · WARREN, MI</span></div>
-        <div class="uns-impact-copy">
-          <p>The rollout moved from a fictionalized party reveal to a real room at capacity. The teaser crossed 100K Instagram impressions during its first month, and the RSVP list hit its limit before the event.</p>
-          <div class="uns-impact-links"><a href="https://www.instagram.com/house_bl3nd/" target="_blank" rel="noopener noreferrer">HOUSE BL3ND ↗</a><a href="https://www.gottagacha.com/" target="_blank" rel="noopener noreferrer">GOTTA GACHA ↗</a></div>
-        </div>
-
-        <div class="uns-event-grid">
-          <figure class="uns-event-flyer"><img src="../images/unsanctioned/post-rave/banner.webp" alt="Arcade Rave campaign banner by Justin Lagman" loading="lazy"><figcaption>BANNER · JUSTIN LAGMAN · AUG 12</figcaption></figure>
-          <figure><img src="../images/unsanctioned/post-rave/event-gottagacha-49.webp" alt="Crowd reaching toward the DJ booth" loading="lazy"><figcaption>ROOM 01 · ALEX GE</figcaption></figure>
-          <figure><img src="../images/unsanctioned/post-rave/event-gottagacha-69.webp" alt="Packed Arcade Rave crowd" loading="lazy"><figcaption>ROOM 02 · ALEX GE</figcaption></figure>
-          <figure class="uns-event-flyer"><img src="../images/unsanctioned/post-rave/lineup.webp" alt="Arcade Rave lineup poster by Justin Lagman" loading="lazy"><figcaption>LINEUP · JUSTIN LAGMAN · AUG 21</figcaption></figure>
-          <figure><img src="../images/unsanctioned/post-rave/event-gottagacha-76.webp" alt="Crowd gathered under colored lights" loading="lazy"><figcaption>ROOM 03 · ALEX GE</figcaption></figure>
-          <figure><img src="../images/unsanctioned/post-rave/event-dsc00672.webp" alt="Arcade Rave crowd around the booth" loading="lazy"><figcaption>ROOM 04 · ALEX GE</figcaption></figure>
-        </div>
-      </div>
-    </section>
-
-    <section class="uns-process" id="process" aria-labelledby="process-heading">
-      <div class="uns-wrap">
-        <div class="uns-section-label"><span>05 / PROCESS</span><span>WHAT SURVIVED THE CUT</span></div>
-        <div class="uns-process-head">
-          <h2 id="process-heading">BUILD THE WORLD.<br><i>CUT WHAT IT DOESN’T NEED.</i></h2>
-          <div>
+        <section class="block" id="grade">
+          <h2>Build the world. Cut what it doesn’t need.</h2>
+          <div class="prose">
             <p>The original plan included a parking-lot sequence before the party. We shot and graded it, then removed it when the film worked better by dropping straight into Scene 2.</p>
-            <p>The rooftop footage still carries the campaign’s visual identity, which is why it opens this case study. The released film itself is the party-room cut.</p>
+            <p>The rooftop footage still carries the campaign’s visual identity, which is why it opens this page. The released film itself is the party-room cut.</p>
           </div>
-        </div>
+          <div class="grade-compare" data-uns-compare style="--position: 50%;">
+            <img src="/images/unsanctioned/carousel/03-after-0214.webp" alt="Final color grade from the cut parking-lot sequence">
+            <div class="grade-compare-before">
+              <img src="/images/unsanctioned/carousel/02-before-0214.webp" alt="Camera-original frame before the color grade">
+            </div>
+            <span class="grade-compare-line" aria-hidden="true"></span>
+            <span class="grade-compare-label grade-compare-label-before">Before</span>
+            <span class="grade-compare-label grade-compare-label-after">After</span>
+            <input type="range" min="0" max="100" value="50" aria-label="Compare the original frame and final color grade">
+          </div>
+          <p class="note">Drag to compare. Cut scene color study.</p>
+          <p class="spec">S-Log3 / S-Gamut3.Cine → Rec.709 Gamma 2.4 · Scene 1 removed</p>
+        </section>
 
-        <div class="uns-compare" data-uns-compare style="--position: 50%;">
-          <img class="uns-compare-after" src="../images/unsanctioned/carousel/03-after-0214.webp" alt="Final color grade from the cut parking-lot sequence" loading="lazy">
-          <div class="uns-compare-before"><img src="../images/unsanctioned/carousel/02-before-0214.webp" alt="Camera-original frame before the color grade" loading="lazy"></div>
-          <span class="uns-compare-line" aria-hidden="true"></span>
-          <span class="uns-compare-label uns-compare-label-before">BEFORE</span>
-          <span class="uns-compare-label uns-compare-label-after">AFTER</span>
-          <input type="range" min="0" max="100" value="50" aria-label="Compare the original frame and final color grade">
-        </div>
-        <p class="uns-scrub-note">DRAG TO COMPARE · CUT SCENE COLOR STUDY</p>
+        <section class="block" id="frames">
+          <h2>After dark. Flash on.</h2>
+          <div class="prose">
+            <p>Michael Counts photographed the campaign’s biker and racing silhouettes against cars, bikes and the sodium glow of the lot. I edited the final drop. Anthony Nguyen’s camera-roll footage became the last signal before the doors opened.</p>
+          </div>
 
-        <dl class="uns-process-tech">
-          <div><dt>Edit</dt><dd>Adobe Premiere Pro</dd></div>
-          <div><dt>Grade</dt><dd>DaVinci Resolve Studio</dd></div>
-          <div><dt>Pipeline</dt><dd>S-Log3 / S-Gamut3.Cine → Rec.709 Gamma 2.4</dd></div>
-          <div><dt>Decision</dt><dd>Scene 1 removed · Scene 2 became the final film</dd></div>
-        </dl>
+          <div class="stills frames frames-3">
+            <figure tabindex="0">
+              <div class="frame-media portrait"><img src="/images/unsanctioned/tiffany-hero.webp" alt="Lizette Mina as Tiffany"></div>
+              <figcaption>01 · Tiffany · Lizette Mina</figcaption>
+            </figure>
+            <figure tabindex="0">
+              <div class="frame-media portrait"><img src="/images/unsanctioned/bestfriend-hero.webp" alt="Sianna Gelido as Best Friend"></div>
+              <figcaption>02 · Best Friend · Sianna Gelido</figcaption>
+            </figure>
+            <figure tabindex="0">
+              <div class="frame-media portrait"><img src="/images/unsanctioned/chad-hero.webp" alt="Meekel T Kim-Riney as Chad"></div>
+              <figcaption>03 · Chad · Meekel T Kim-Riney</figcaption>
+            </figure>
+            <figure tabindex="0">
+              <div class="frame-media"><img src="/images/unsanctioned/chad-tiffany-close.webp" alt="Chad and Tiffany together at the party"></div>
+              <figcaption>04 · The reveal · party room</figcaption>
+            </figure>
+            <figure tabindex="0">
+              <div class="frame-media"><img src="/images/unsanctioned/intro.webp" alt="Project Unsanctioned opening frame"></div>
+              <figcaption>05 · Opening frame</figcaption>
+            </figure>
+            <figure tabindex="0">
+              <div class="frame-media"><img src="/images/unsanctioned/tiffany-notif.webp" alt="Tiffany receives a notification"></div>
+              <figcaption>06 · Notification</figcaption>
+            </figure>
+            <figure tabindex="0">
+              <div class="frame-media"><img src="/images/unsanctioned/bestfriend-surprised.webp" alt="Best Friend reacts"></div>
+              <figcaption>07 · Reaction</figcaption>
+            </figure>
+            <figure tabindex="0">
+              <div class="frame-media"><img src="/images/unsanctioned/end.webp" alt="Project Unsanctioned closing frame"></div>
+              <figcaption>08 · Closing frame</figcaption>
+            </figure>
+            <figure tabindex="0">
+              <div class="frame-media"><img src="/images/unsanctioned/photo-drop/photo-1.webp" alt="Two models posed by a red car"></div>
+              <figcaption>09 · Fujifilm X-S20</figcaption>
+            </figure>
+            <figure tabindex="0">
+              <div class="frame-media"><img src="/images/unsanctioned/photo-drop/photo-2.webp" alt="Two models in biker-inspired styling"></div>
+              <figcaption>10 · Fujifilm X-S20</figcaption>
+            </figure>
+            <figure tabindex="0">
+              <div class="frame-media"><img src="/images/unsanctioned/photo-drop/photo-3.webp" alt="Two models standing in front of a red car"></div>
+              <figcaption>11 · Fujifilm X-S20</figcaption>
+            </figure>
+            <figure tabindex="0">
+              <div class="frame-media"><img src="/images/unsanctioned/photo-drop/photo-6.webp" alt="Meekel sitting on a motorcycle"></div>
+              <figcaption>12 · Fujifilm X-S20</figcaption>
+            </figure>
+            <figure tabindex="0">
+              <div class="frame-media"><img src="/images/unsanctioned/photo-drop/photo-7.webp" alt="Meekel posed with a motorcycle"></div>
+              <figcaption>13 · Fujifilm X-S20</figcaption>
+            </figure>
+            <figure tabindex="0">
+              <div class="frame-media"><img src="/images/unsanctioned/photo-drop/photo-8.webp" alt="Close portrait beside a motorcycle"></div>
+              <figcaption>14 · Fujifilm X-S20</figcaption>
+            </figure>
+            <figure tabindex="0">
+              <div class="frame-media"><img src="/images/unsanctioned/teaser/teaser-00_00_00_22.webp" alt="Teaser cold open"></div>
+              <figcaption><span class="tc">00:00:00:22</span></figcaption>
+            </figure>
+            <figure tabindex="0">
+              <div class="frame-media"><img src="/images/unsanctioned/teaser/teaser-00_00_01_20.webp" alt="Party teaser frame"></div>
+              <figcaption><span class="tc">00:00:01:20</span></figcaption>
+            </figure>
+            <figure tabindex="0">
+              <div class="frame-media"><img src="/images/unsanctioned/teaser/teaser-00_00_03_02.webp" alt="Crowd in the monochrome teaser"></div>
+              <figcaption><span class="tc">00:00:03:02</span></figcaption>
+            </figure>
+            <figure tabindex="0">
+              <div class="frame-media"><img src="/images/unsanctioned/teaser/teaser-00_00_04_07.webp" alt="Silhouette in the monochrome teaser"></div>
+              <figcaption><span class="tc">00:00:04:07</span></figcaption>
+            </figure>
+            <figure tabindex="0">
+              <div class="frame-media"><img src="/images/unsanctioned/teaser/teaser-00_00_06_06.webp" alt="Arcade Rave teaser frame"></div>
+              <figcaption><span class="tc">00:00:06:06</span></figcaption>
+            </figure>
+            <figure tabindex="0">
+              <div class="frame-media"><img src="/images/unsanctioned/teaser/teaser-00_00_08_27.webp" alt="Teaser end frame"></div>
+              <figcaption><span class="tc">00:00:08:27</span></figcaption>
+            </figure>
+            <figure tabindex="0">
+              <div class="frame-media"><img src="/images/unsanctioned/post-rave/event-gottagacha-49.webp" alt="Crowd reaching toward the DJ booth"></div>
+              <figcaption>Room 01 · Alex Ge</figcaption>
+            </figure>
+            <figure tabindex="0">
+              <div class="frame-media"><img src="/images/unsanctioned/post-rave/event-gottagacha-69.webp" alt="Packed Arcade Rave crowd"></div>
+              <figcaption>Room 02 · Alex Ge</figcaption>
+            </figure>
+            <figure tabindex="0">
+              <div class="frame-media"><img src="/images/unsanctioned/post-rave/event-gottagacha-76.webp" alt="Crowd gathered under colored lights"></div>
+              <figcaption>Room 03 · Alex Ge</figcaption>
+            </figure>
+            <figure tabindex="0">
+              <div class="frame-media"><img src="/images/unsanctioned/post-rave/event-dsc00672.webp" alt="Arcade Rave crowd around the booth"></div>
+              <figcaption>Room 04 · Alex Ge</figcaption>
+            </figure>
+          </div>
+          <figure class="wide-still">
+            <img src="/images/unsanctioned/post-rave/event-gottagacha-51.webp" alt="A packed crowd surrounding the DJ booth at Arcade Rave">
+            <figcaption class="note">Arcade Rave · Aug 21 · 10pm–2am · Warren, MI</figcaption>
+          </figure>
+          <div class="pairs">
+            <figure>
+              <div class="frame-media poster"><img src="/images/unsanctioned/post-rave/banner.webp" alt="Arcade Rave campaign banner by Justin Lagman"></div>
+              <figcaption>Banner · Justin Lagman · Aug 12</figcaption>
+            </figure>
+            <figure>
+              <div class="frame-media poster"><img src="/images/unsanctioned/post-rave/lineup.webp" alt="Arcade Rave lineup poster by Justin Lagman"></div>
+              <figcaption>Lineup · Justin Lagman · Aug 21</figcaption>
+            </figure>
+          </div>
+          <p class="note">Photography · Michael Counts / edit · PJ Kim. Teaser shot by Anthony Nguyen on a Sony a7III.</p>
+        </section>
 
-        <div class="uns-bts-grid">
-          <figure><img src="../images/unsanctioned/bts/bts-scripts.webp" alt="Printed scripts and shot planning" loading="lazy"><figcaption>01 · PLAN</figcaption></figure>
-          <figure><img src="../images/unsanctioned/bts/bts-directing.webp" alt="Directing the party-room shoot" loading="lazy"><figcaption>02 · DIRECT</figcaption></figure>
-          <figure><img src="../images/unsanctioned/bts/bts-editing.webp" alt="Editing Project Unsanctioned" loading="lazy"><figcaption>03 · EDIT</figcaption></figure>
-          <figure><img src="../images/unsanctioned/bts/bts-food.webp" alt="Food prepared for the production" loading="lazy"><figcaption>04 · FEED THE SET</figcaption></figure>
-        </div>
+        <section class="block" id="film">
+          <h2>The invite hits different.</h2>
+          <div class="prose">
+            <p>The hero film introduces Tiffany, her best friend and Chad through a graphic party reveal. Cast cards, notification overlays and high-contrast styling turn the promo into a piece of the rave’s world.</p>
+          </div>
+          <a class="player" href="https://www.youtube.com/watch?v=FLqxwn8_9xI" target="_blank" rel="noopener noreferrer" data-track-media="unsanctioned_hero">
+            <img src="/images/unsanctioned/chad-tiffany-close.webp" alt="Chad and Tiffany in the Project Unsanctioned hero film">
+          </a>
+          <p class="player-caption"><span>Hero film · Aug 11</span><span class="spec">Sony FX3 · S-Log3</span></p>
+          <p class="link-row">
+            <a href="https://www.youtube.com/watch?v=FLqxwn8_9xI" target="_blank" rel="noopener noreferrer">YouTube ↗</a>
+            <a href="https://www.instagram.com/p/Db3dMg9p6_i/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+            <a href="https://www.tiktok.com/@pj.k1m/video/7672451205301275918" target="_blank" rel="noopener noreferrer">TikTok ↗</a>
+          </p>
+        </section>
 
-        <div class="uns-process-links">
-          <a href="https://www.tiktok.com/@pj.k1m/video/7673363611741392142" target="_blank" rel="noopener noreferrer">SFX BREAKDOWN ↗</a>
-          <a href="https://www.tiktok.com/@pj.k1m/video/7673681883426835725" target="_blank" rel="noopener noreferrer">COLOR BREAKDOWN ↗</a>
-          <a href="https://www.instagram.com/p/DbjWrXmiSJf/?img_index=1" target="_blank" rel="noopener noreferrer">COLOR CAROUSEL ↗</a>
-        </div>
-      </div>
-    </section>
+        <section class="block" id="making">
+          <h2>What survived the cut.</h2>
+          <div class="prose">
+            <p>Directed with Irwin Patcharaput. Edit in Adobe Premiere Pro, grade in DaVinci Resolve Studio. Scene 1 came out; Scene 2 became the final film.</p>
+          </div>
+          <div class="stills frames">
+            <figure tabindex="0">
+              <div class="frame-media"><img src="/images/unsanctioned/bts/bts-scripts.webp" alt="Printed scripts and shot planning"></div>
+              <figcaption>01 · Plan</figcaption>
+            </figure>
+            <figure tabindex="0">
+              <div class="frame-media"><img src="/images/unsanctioned/bts/bts-directing.webp" alt="Directing the party-room shoot"></div>
+              <figcaption>02 · Direct</figcaption>
+            </figure>
+            <figure tabindex="0">
+              <div class="frame-media"><img src="/images/unsanctioned/bts/bts-editing.webp" alt="Editing Project Unsanctioned"></div>
+              <figcaption>03 · Edit</figcaption>
+            </figure>
+            <figure tabindex="0">
+              <div class="frame-media"><img src="/images/unsanctioned/bts/bts-food.webp" alt="Food prepared for the production"></div>
+              <figcaption>04 · Feed the set</figcaption>
+            </figure>
+          </div>
+          <p class="link-row">
+            <a href="https://www.tiktok.com/@pj.k1m/video/7673363611741392142" target="_blank" rel="noopener noreferrer">SFX breakdown ↗</a>
+            <a href="https://www.tiktok.com/@pj.k1m/video/7673681883426835725" target="_blank" rel="noopener noreferrer">Color breakdown ↗</a>
+            <a href="https://www.instagram.com/p/DbjWrXmiSJf/?img_index=1" target="_blank" rel="noopener noreferrer">Color carousel ↗</a>
+          </p>
+        </section>
 
-    <section class="uns-credits" id="credits" aria-labelledby="credits-heading">
-      <div class="uns-wrap">
-        <div class="uns-section-label uns-section-label-light"><span>06 / FULL CREDITS</span><span>TRANSMISSION END</span></div>
-        <h2 id="credits-heading">UNSANCTIONED</h2>
-        <div class="uns-credits-grid">
-          <div><span>Presented by</span><strong>OSTAR × House Bl3nd</strong></div>
-          <div><span>Starring</span><strong>Lizette Mina · Meekel T Kim-Riney · Sianna Gelido</strong></div>
-          <div><span>Directed by</span><strong>Irwin Patcharaput · PJ Kim</strong></div>
-          <div><span>Edited / Colored by</span><strong>PJ Kim</strong></div>
-          <div><span>Photography</span><strong>Michael Counts</strong></div>
-          <div><span>DJ</span><strong>Justin Tancinco · Irwin Patcharaput</strong></div>
-          <div><span>Videography</span><strong>Anthony Nguyen · Justin Lagman · Gabriel Del Rosario · Gabe Diego</strong></div>
-          <div><span>Featuring</span><strong>Penelope Talbert · Loreto Albaran · Emma Cruz · Destiny Aniciete · Monica Bumanlag · Lindsey LuMarque · Tina Ngo · Kathleen Yang</strong></div>
-          <div><span>Vehicles</span><strong>Sami Ahmed · Jaden Judge · Ryan Curamen</strong></div>
-          <div><span>Event photography</span><strong>Alex Ge</strong></div>
-          <div><span>Event design</span><strong>Justin Lagman</strong></div>
-          <div><span>Special thanks</span><strong>BB.Q Chicken · Miss Chang An · Shun Ramen &amp; Sushi · QQ Bakery · House Bl3nd Studio</strong></div>
-        </div>
-        <p class="uns-end-mark">OSTAR × HOUSE BL3ND / DETROIT—WARREN / 2026</p>
-      </div>
-    </section>
+        <section class="block" id="credits">
+          <h2>Full credits</h2>
+          <div class="credit-list">
+            <div><span>Presented by</span><strong>OSTAR × House Bl3nd</strong></div>
+            <div><span>Starring</span><strong>Lizette Mina · Meekel T Kim-Riney · Sianna Gelido</strong></div>
+            <div><span>Directed by</span><strong>Irwin Patcharaput · PJ Kim</strong></div>
+            <div><span>Edited / Colored by</span><strong>PJ Kim</strong></div>
+            <div><span>Photography</span><strong>Michael Counts</strong></div>
+            <div><span>DJ</span><strong>Justin Tancinco · Irwin Patcharaput</strong></div>
+            <div><span>Videography</span><strong>Anthony Nguyen · Justin Lagman · Gabriel Del Rosario · Gabe Diego</strong></div>
+            <div><span>Featuring</span><strong>Penelope Talbert · Loreto Albaran · Emma Cruz · Destiny Aniciete · Monica Bumanlag · Lindsey LuMarque · Tina Ngo · Kathleen Yang</strong></div>
+            <div><span>Vehicles</span><strong>Sami Ahmed · Jaden Judge · Ryan Curamen</strong></div>
+            <div><span>Event photography</span><strong>Alex Ge</strong></div>
+            <div><span>Event design</span><strong>Justin Lagman</strong></div>
+            <div><span>Special thanks</span><strong>BB.Q Chicken · Miss Chang An · Shun Ramen &amp; Sushi · QQ Bakery · House Bl3nd Studio</strong></div>
+          </div>
+          <p class="note">OSTAR × House Bl3nd / Detroit–Warren / 2026</p>
+        </section>
+      </article>
+    </div>
+
+    <nav class="next-film" aria-label="More work">
+      <span></span>
+      <a class="next" href="/december"><span>Next</span>December</a>
+    </nav>
   </main>
-
-  <nav class="project-pagination uns-pagination" aria-label="Project navigation">
-    <span class="project-pagination-empty" aria-hidden="true">PREVIOUS</span>
-    <a class="project-pagination-all" href="/">ALL WORK</a>
-    <a class="project-pagination-next" href="/december"><span>NEXT →</span><strong>DECEMBER</strong></a>
-  </nav>
-
-  <footer class="monogram uns-footer"><a href="/">ALL WORK</a> · <a href="/inspo">INSPO</a> · PJK1M</footer>
-
-  <script src="../film/projects.js"></script>
-  <script src="../film/lightbox.js"></script>
-  <script src="../film/unsanctioned.js"></script>
-  <script src="../film/analytics.js"></script>
+  <!-- chrome:footer -->
+  <script src="/film/lightbox.js"></script>
+  <script src="/film/unsanctioned.js"></script>
+  <script src="/film/analytics.js"></script>
 </body>
 </html>
