@@ -20,30 +20,21 @@
 
 .athletics-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
-  gap: var(--s-7) var(--s-5);
+  gap: var(--s-8);
   margin-top: var(--s-8);
 }
 
-.athletics-card {
-  display: flex;
-  flex-direction: column;
+.athletics-entry {
   min-width: 0;
-  color: inherit;
+  scroll-margin-top: calc(var(--header-h) + var(--s-4));
 }
 
-.athletics-still {
-  display: block;
+.athletics-hub .player {
+  position: relative;
   aspect-ratio: 16 / 9;
-  margin-bottom: var(--s-3);
+  margin: 0;
   overflow: hidden;
   background: var(--stage);
-}
-
-.athletics-still img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 .athletics-kicker {
@@ -55,12 +46,65 @@
 }
 
 .athletics-name {
-  margin-top: var(--s-2);
+  display: block;
+  margin-top: var(--s-4);
+  color: inherit;
   font-family: var(--font-display);
   font-size: var(--fs-h2);
   font-weight: 400;
   letter-spacing: var(--ls-h2);
   line-height: var(--lh-h2);
+}
+
+.athletics-kicker,
+.athletics-credit {
+  margin-top: var(--s-2);
+  color: var(--meta);
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
+}
+
+.athletics-kicker {
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.film-page.site .athletics-strip {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: var(--s-2);
+  margin-top: var(--s-4);
+}
+
+.film-page.site .athletics-strip figure {
+  margin: 0;
+  overflow: hidden;
+  cursor: zoom-in;
+}
+
+.film-page.site .athletics-strip img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.film-page.site .athletics-strip figcaption {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+  background: none;
+}
+
+@media (max-width: 720px) {
+  .film-page.site .athletics-strip { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 
 .player { position: relative; }

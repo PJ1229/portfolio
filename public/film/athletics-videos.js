@@ -1,5 +1,6 @@
-/* Michigan Athletics videos.
-   Add one object to ATHLETICS.videos. The hub and /athletics/<slug> both read this list.
+/* Michigan Athletics videos. The hub at /athletics renders this list.
+   page defaults to false: the edit stays a card on the hub.
+   Set page: true only when that edit also has a full film page.
    camera is the shooters for that video, not PJ's role. */
 var ATHLETICS = {
   title: "Michigan Athletics",
@@ -12,6 +13,7 @@ var ATHLETICS = {
       title: "New Standard",
       sport: "Soccer",
       year: "2026",
+      page: false,
       logline: "A cinematic soccer edit for Michigan Athletics, shot on a Sony FX3.",
       overview: "I edit varsity footage for Michigan Athletics. New Standard is the soccer edit.",
       role: ["Editor"],

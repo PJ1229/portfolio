@@ -1,12 +1,6 @@
 (function () {
   "use strict";
 
-  var moved = { "#overview": 1, "#frames": 1, "#credits": 1, "#film": 1 };
-  if (moved[location.hash] && ATHLETICS.videos[0]) {
-    location.replace("/athletics/" + ATHLETICS.videos[0].slug + location.hash);
-    return;
-  }
-
   var title = document.querySelector("[data-athletics-title]");
   var role = document.querySelector("[data-athletics-role]");
   var intro = document.querySelector("[data-athletics-intro]");
@@ -14,32 +8,79 @@
   if (title) title.textContent = ATHLETICS.title;
   if (role) role.textContent = ATHLETICS.role + " · " + ATHLETICS.dates;
   if (intro) intro.textContent = ATHLETICS.intro;
-  if (!grid) return;
+  if (!grid || !ATHLETICS.videos) return;
+
+  function creditLine(video) {
+    var parts = [];
+    if (video.role && video.role.length) {
+      var job = video.role.join(", ");
+      if (job === "Editor") job = "Edit";
+      parts.push(job + " PJ Kim");
+    }
+    if (video.camera && video.camera.length) {
+      parts.push("Camera " + video.camera.join(", "));
+    }
+    return parts.join(" · ");
+  }
 
   ATHLETICS.videos.forEach(function (video) {
-    var card = document.createElement("a");
-    card.className = "athletics-card";
-    card.href = "/athletics/" + video.slug;
+    var entry = document.createElement("article");
+    entry.className = "athletics-entry";
+    entry.id = video.slug;
 
-    var still = document.createElement("span");
-    still.className = "athletics-still";
-    if (video.poster) {
-      var img = document.createElement("img");
-      img.src = video.poster;
-      img.alt = video.posterAlt || "";
-      img.loading = "lazy";
-      still.appendChild(img);
+    var player = document.createElement("div");
+    player.className = "player";
+    if (/^[A-Za-z0-9_-]{11}$/.test(video.youtubeId || "")) {
+      player.setAttribute("data-youtube-id", video.youtubeId);
+      var button = document.createElement("button");
+      button.type = "button";
+      button.className = "player-launch";
+      button.setAttribute("aria-label", "Play " + video.title);
+      if (video.poster) {
+        var poster = document.createElement("img");
+        poster.src = video.poster;
+        poster.alt = video.posterAlt || "";
+        button.appendChild(poster);
+      }
+      var play = document.createElement("span");
+      play.textContent = "Play";
+      button.appendChild(play);
+      player.appendChild(button);
     }
 
-    var kicker = document.createElement("span");
+    var heading = document.createElement(video.page ? "a" : "h2");
+    heading.className = "athletics-name";
+    heading.textContent = video.title;
+    if (video.page) heading.href = "/athletics/" + video.slug;
+
+    var kicker = document.createElement("p");
     kicker.className = "athletics-kicker";
     kicker.textContent = [video.sport, video.year].filter(Boolean).join(" · ");
 
-    var heading = document.createElement("span");
-    heading.className = "athletics-name";
-    heading.textContent = video.title;
+    var credit = document.createElement("p");
+    credit.className = "athletics-credit";
+    credit.textContent = creditLine(video);
 
-    card.append(still, kicker, heading);
-    grid.appendChild(card);
+    entry.append(player, heading, kicker, credit);
+
+    if (video.stills && video.stills.length) {
+      var strip = document.createElement("div");
+      strip.className = "stills athletics-strip";
+      video.stills.forEach(function (still) {
+        var figure = document.createElement("figure");
+        figure.tabIndex = 0;
+        var img = document.createElement("img");
+        img.src = still.src;
+        img.alt = still.alt || "";
+        img.loading = "lazy";
+        var caption = document.createElement("figcaption");
+        caption.textContent = still.caption || "";
+        figure.append(img, caption);
+        strip.appendChild(figure);
+      });
+      entry.appendChild(strip);
+    }
+
+    grid.appendChild(entry);
   });
 })();
