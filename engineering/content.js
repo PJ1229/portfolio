@@ -3,7 +3,7 @@
 // repo, and do not add a jersey-number accuracy rate.
 module.exports = {
   headline: "Engineering",
-  summary: "Electrical engineering at the University of Michigan. Michigan Athletics creative video intern (Aug 2026–now) and Yazaki North America software engineering co-op (since May 2025).",
+  summary: "Electrical engineering at the University of Michigan. I make films first, and I build tools around that work: clip logging for Michigan Athletics, and wiring-harness software at Yazaki. I also research lung texture on chest CT in the Galbán Lab. Incoming: Boston Scientific in summer 2027, and Perot Jain TechLab in winter 2027.",
   projects: [
     {
       slug: "um-autolog",
@@ -45,6 +45,19 @@ module.exports = {
       repo: null,
       demo: "https://youtu.be/S6AR5nTcQ0s",
       videoId: "S6AR5nTcQ0s",
+    },
+    {
+      slug: "clip-index",
+      name: "clip-index",
+      status: "In development",
+      year: "Oct 2026–present",
+      context: "",
+      role: "",
+      description: "Started in October 2026, and still early.",
+      stack: [],
+      repo: null,
+      demo: null,
+      videoId: null,
     },
   ],
   honors: [

@@ -3,25 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>if not later, when? — PJ Kim</title>
-  <meta name="description" content="A short film by PJ Kim, scored to Ichiko Aoba. Shot on Fujifilm X-S20.">
-  <meta name="robots" content="noindex, nofollow">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="if not later, when? — PJ Kim">
-  <meta property="og:description" content="A short film by PJ Kim, scored to Ichiko Aoba. Shot on Fujifilm X-S20.">
+  <title>If not later, when? — PJ Kim</title>
+  <meta name="description" content="If not later, when? — a short written, directed, shot, and graded by PJ Kim. Belle Isle, August 2026.">
+  <meta property="og:type" content="video.other">
+  <meta property="og:title" content="If not later, when? — PJ Kim">
+  <meta property="og:description" content="A short about heartbreak, played in reverse. Belle Isle, August 2026.">
   <meta property="og:url" content="https://pjk1m.com/if-not-later-when">
   <meta property="og:image" content="https://pjk1m.com/images/if-not-later-when/hero.webp">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="if not later, when? — PJ Kim">
-  <meta name="twitter:description" content="A short film by PJ Kim, scored to Ichiko Aoba. Shot on Fujifilm X-S20.">
+  <meta name="twitter:title" content="If not later, when? — PJ Kim">
+  <meta name="twitter:description" content="A short about heartbreak, played in reverse.">
   <meta name="twitter:image" content="https://pjk1m.com/images/if-not-later-when/hero.webp">
   <link rel="canonical" href="https://pjk1m.com/if-not-later-when">
-  <link rel="icon" href="../images/logo.png" type="image/png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../film/film.css">
-  <link rel="stylesheet" href="../film/inlw.css">
+  <link rel="icon" href="/images/logo.png" type="image/png">
+  <link rel="stylesheet" href="/film/tokens.css">
+  <link rel="stylesheet" href="/film/film.css">
+  <link rel="stylesheet" href="/film/shell.css">
+  <link rel="stylesheet" href="/film/project.css">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-M0J8NYPG27"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -30,307 +28,177 @@
     gtag('config', 'G-M0J8NYPG27');
   </script>
 </head>
-
-<body class="film-page inlw-page">
-
-  <header class="nav dark-nav" style="padding: clamp(16px,3vw,28px) var(--gutter);">
-    <a href="/">WORK</a>
-    <div class="nav-links">
-      <a href="/writing">WRITING</a>
-      <a href="/#info">INFO</a>
-    </div>
-  </header>
-
+<body class="film-page site has-stage">
+  <!-- chrome:header -->
   <main>
-
-    <!-- 6.1 hero — postcard cover. The title is the only staggered text on the
-         page; the accent block behind the frame is the only accent block. -->
-    <section class="inlw-hero" aria-label="if not later, when?">
-      <div class="inlw-hero-inner">
-        <p class="inlw-stamp">26.08.26 &nbsp;·&nbsp; belle isle</p>
-        <h1 class="inlw-title">
-          <span class="inlw-line" style="--x: 0">if not later,</span>
-          <span class="inlw-line" style="--x: 18%">when?</span>
-        </h1>
-        <figure class="inlw-hero-frame inlw-panel">
-          <img src="../images/if-not-later-when/hero.webp"
-               alt="Two figures backlit by the sun in a field"
-               fetchpriority="high">
-        </figure>
-        <p class="inlw-stamp inlw-hero-tech">fujifilm x-s20 &nbsp;/&nbsp; f-log2 &nbsp;/&nbsp; ichiko aoba</p>
+    <section class="stage" aria-label="If not later, when?">
+      <div class="stage-frame">
+        <video class="stage-video" autoplay muted loop playsinline preload="metadata"
+               poster="/images/if-not-later-when/hero.webp">
+          <source src="/videos/inlw-hero.mp4" type="video/mp4">
+        </video>
       </div>
     </section>
 
-    <!-- 6.2 the story -->
-    <section class="inlw-story" aria-label="The story">
-      <div class="inlw-story-grid">
-        <figure class="inlw-story-media inlw-panel">
-          <img src="../images/if-not-later-when/story.webp"
-               alt="A boy standing by a tree in a field"
-               loading="lazy">
-        </figure>
-        <div class="inlw-story-paper">
-          <h2 class="inlw-story-heading">
-            <span class="inlw-story-folio" aria-hidden="true">01</span>
-            <span class="inlw-story-heading-text">the story</span>
-          </h2>
-          <p class="inlw-copy">I made this film inspired by <i>Call Me by Your Name</i>, using dialogue from the scene where Elio talks with his father after Oliver leaves. I wanted to evoke that same feeling of loss by reversing an intimate scene &mdash; as if going back in time, before the two characters knew each other.</p>
-        </div>
-      </div>
-    </section>
+    <div class="film">
+      <aside class="toc">
+        <p class="label">Contents</p>
+        <a href="#overview">Overview</a>
+        <a href="#grade">Grade</a>
+        <a href="#frames">Frames</a>
+        <a href="#film">Film</a>
+        <a href="#credits">Credits</a>
+      </aside>
 
-    <!-- 6.3 caption frames — six baked-in caption stills, in sequence.
-         They sit in a .stills grid so the lightbox can open them full-screen. -->
-    <section class="inlw-subtitles" aria-label="Caption frames from the film">
-      <div class="inlw-subtitles-head">
-        <p class="inlw-stamp">caption frames &nbsp;01—06</p>
-      </div>
-      <div class="stills inlw-subtitles-inner">
-        <figure class="inlw-sub-frame" tabindex="0" role="button"
-                aria-label="Film frame with the caption: and if you are really like me, then before you leave tomorrow,"
-                onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
-          <img src="../images/if-not-later-when/caption-01.webp"
-               alt="Film frame with the caption: and if you are really like me, then before you leave tomorrow,"
-               loading="lazy">
-        </figure>
-        <figure class="inlw-sub-frame" tabindex="0" role="button"
-                aria-label="Film frame with the caption: or when you're just ready to shut the door of the taxi and have already said goodbye"
-                onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
-          <img src="../images/if-not-later-when/caption-02.webp"
-               alt="Film frame with the caption: or when you're just ready to shut the door of the taxi and have already said goodbye"
-               loading="lazy">
-        </figure>
-        <figure class="inlw-sub-frame" tabindex="0" role="button"
-                aria-label="Film frame with the caption: and there's not a thing left to say in this life, then, just this once,"
-                onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
-          <img src="../images/if-not-later-when/caption-03.webp"
-               alt="Film frame with the caption: and there's not a thing left to say in this life, then, just this once,"
-               loading="lazy">
-        </figure>
-        <figure class="inlw-sub-frame" tabindex="0" role="button"
-                aria-label="Film frame with the caption: turn to me, even in jest, or as an afterthought, which would have meant everything to me"
-                onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
-          <img src="../images/if-not-later-when/caption-04.webp"
-               alt="Film frame with the caption: turn to me, even in jest, or as an afterthought, which would have meant everything to me"
-               loading="lazy">
-        </figure>
-        <figure class="inlw-sub-frame" tabindex="0" role="button"
-                aria-label="Film frame with the caption: and, as you did back then,"
-                onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
-          <img src="../images/if-not-later-when/caption-05.webp"
-               alt="Film frame with the caption: and, as you did back then,"
-               loading="lazy">
-        </figure>
-        <figure class="inlw-sub-frame" tabindex="0" role="button"
-                aria-label="Film frame with the caption: look me in the face, hold my gaze, and call me by your name"
-                onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
-          <img src="../images/if-not-later-when/caption-06.webp"
-               alt="Film frame with the caption: look me in the face, hold my gaze, and call me by your name"
-               loading="lazy">
-        </figure>
-      </div>
-    </section>
+      <article>
+        <h1>If not later, when?</h1>
+        <blockquote class="logline">
+          <p class="label">Logline</p>
+          <p>A short about heartbreak, played in reverse.</p>
+        </blockquote>
 
-    <!-- 6.4 watch -->
-    <section class="inlw-watch"
-             data-type="FILM"
-             data-client="self"
-             data-status="RELEASED"
-             data-year="2026">
-      <div class="inlw-inner">
-        <div class="inlw-watch-box">
-          <a class="inlw-watch-link"
-             href="https://www.youtube.com/watch?v=pjVgaL0igDM"
-             target="_blank" rel="noopener noreferrer">
-            <img src="../images/if-not-later-when/stack-03.webp"
-                 alt="A boy sitting on a bench"
-                 loading="lazy">
-          </a>
-          <p class="inlw-watch-label">Watch on YouTube</p>
-          <div data-project-meta></div>
-          <p class="inlw-watch-note">Scored to "Dawn in the Adan" by Ichiko Aoba.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- 6.5 inspiration — removed; the film's baked-in caption frames now carry
-         the Call Me By Your Name reference directly. -->
-
-    <!-- 6.6 the essay -->
-    <section class="inlw-essay">
-      <div class="inlw-essay-sheet">
-        <blockquote class="inlw-pullquote inlw-wide">Medium dictates narrative structure.</blockquote>
-        <p class="inlw-standfirst">Written for COMPLIT 382 — on what Guadagnino and Ivory gave up when they cut the novel's epilogue, and what silence, music and a held camera did in its place.</p>
-        <a class="inlw-essay-link"
-           href="https://substack.com/home/post/p-212360863"
-           target="_blank" rel="noopener noreferrer">Read on Substack</a>
-      </div>
-    </section>
-
-    <!-- 6.7 the grade -->
-    <section class="inlw-grade">
-      <div class="inlw-inner">
-        <h2 class="inlw-heading">the grade</h2>
-
-        <div class="inlw-look">
-          <figure class="inlw-look-frame">
-            <img src="../images/if-not-later-when/story.webp"
-                 alt="A boy standing by a tree in a field"
-                 loading="lazy">
-          </figure>
-          <div class="inlw-look-note">
-            <h3>afternoon</h3>
-            <p>Blacks lifted into a warm olive and the midtones pushed toward dry-grass yellow without letting the skin go sallow. The sky is held a half-step under the field so the light stays behind them.</p>
-            <div class="inlw-swatches" style="--look-accent: var(--look-day)">
-              <span class="inlw-swatch-bar" aria-hidden="true"></span>
-              <div class="inlw-swatch-row">
-                <div class="inlw-swatch"><span class="inlw-swatch-chip" style="background:#2E2D15"></span><span class="inlw-swatch-hex">#2E2D15</span></div>
-                <div class="inlw-swatch"><span class="inlw-swatch-chip" style="background:#A08833"></span><span class="inlw-swatch-hex">#A08833</span></div>
-                <div class="inlw-swatch"><span class="inlw-swatch-chip" style="background:#584B19"></span><span class="inlw-swatch-hex">#584B19</span></div>
-                <div class="inlw-swatch"><span class="inlw-swatch-chip" style="background:#7B5F24"></span><span class="inlw-swatch-hex">#7B5F24</span></div>
-                <div class="inlw-swatch"><span class="inlw-swatch-chip" style="background:#E3C1A4"></span><span class="inlw-swatch-hex">#E3C1A4</span></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="inlw-look">
-          <figure class="inlw-look-frame">
-            <img src="../images/if-not-later-when/look-dusk.webp"
-                 alt="A girl by the water at dusk"
-                 loading="lazy">
-          </figure>
-          <div class="inlw-look-note">
-            <h3>dusk</h3>
-            <p>Highlights graded amber and the blue in the water pulled back toward grey. Skin is kept a step warmer than the scene so the two figures separate from the sea instead of sinking into it.</p>
-            <div class="inlw-swatches" style="--look-accent: var(--look-dusk)">
-              <span class="inlw-swatch-bar" aria-hidden="true"></span>
-              <div class="inlw-swatch-row">
-                <div class="inlw-swatch"><span class="inlw-swatch-chip" style="background:#AC836F"></span><span class="inlw-swatch-hex">#AC836F</span></div>
-                <div class="inlw-swatch"><span class="inlw-swatch-chip" style="background:#382724"></span><span class="inlw-swatch-hex">#382724</span></div>
-                <div class="inlw-swatch"><span class="inlw-swatch-chip" style="background:#D5B5A1"></span><span class="inlw-swatch-hex">#D5B5A1</span></div>
-                <div class="inlw-swatch"><span class="inlw-swatch-chip" style="background:#E4C4B2"></span><span class="inlw-swatch-hex">#E4C4B2</span></div>
-                <div class="inlw-swatch"><span class="inlw-swatch-chip" style="background:#EBCAB7"></span><span class="inlw-swatch-hex">#EBCAB7</span></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="inlw-look">
-          <figure class="inlw-look-frame">
-            <img src="../images/if-not-later-when/look-night.webp"
-                 alt="A girl against the night sky"
-                 loading="lazy">
-          </figure>
-          <div class="inlw-look-note">
-            <h3>ember</h3>
-            <p>Chroma concentrated in the red-orange band and everything else desaturated toward near-black. The sky is left to fall off into the ember rather than corrected to neutral.</p>
-            <div class="inlw-swatches" style="--look-accent: var(--look-night)">
-              <span class="inlw-swatch-bar" aria-hidden="true"></span>
-              <div class="inlw-swatch-row">
-                <div class="inlw-swatch"><span class="inlw-swatch-chip" style="background:#3B302D"></span><span class="inlw-swatch-hex">#3B302D</span></div>
-                <div class="inlw-swatch"><span class="inlw-swatch-chip" style="background:#3C312F"></span><span class="inlw-swatch-hex">#3C312F</span></div>
-                <div class="inlw-swatch"><span class="inlw-swatch-chip" style="background:#3E3431"></span><span class="inlw-swatch-hex">#3E3431</span></div>
-                <div class="inlw-swatch"><span class="inlw-swatch-chip" style="background:#493C34"></span><span class="inlw-swatch-hex">#493C34</span></div>
-                <div class="inlw-swatch"><span class="inlw-swatch-chip" style="background:#1F1616"></span><span class="inlw-swatch-hex">#1F1616</span></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <dl class="inlw-grade-tech">
-          <div class="inlw-tech-row">
-            <dt>camera</dt>
-            <dd>Fujifilm X-S20</dd>
-          </div>
-          <div class="inlw-tech-row">
-            <dt>profile</dt>
-            <dd>F-Log2</dd>
-          </div>
-          <div class="inlw-tech-row">
-            <dt>grade</dt>
-            <dd>DaVinci Resolve</dd>
-          </div>
-          <div class="inlw-tech-row">
-            <dt>cut</dt>
-            <dd>Premiere Pro</dd>
-          </div>
-        </dl>
-      </div>
-    </section>
-
-    <!-- 6.8 frame index — captions sit under each frame now, so they're
-         readable on touch and never cover a photograph. -->
-    <section class="inlw-frames">
-      <div class="inlw-inner">
-        <h2 class="inlw-heading">every frame</h2>
-        <div class="stills inlw-frame-grid">
-        <figure tabindex="0" role="button" aria-label="Two figures backlit by the sun in a field"
-                onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
-          <img src="../images/if-not-later-when/hero.webp" alt="Two figures backlit by the sun in a field" loading="lazy">
-          <figcaption>two figures backlit by the sun</figcaption>
-        </figure>
-        <figure tabindex="0" role="button" aria-label="A girl at the edge of the water"
-                onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
-          <img src="../images/if-not-later-when/stack-01.webp" alt="A girl at the edge of the water" loading="lazy">
-          <figcaption>a girl at the edge of the water</figcaption>
-        </figure>
-        <figure tabindex="0" role="button" aria-label="A girl looking up at the sky"
-                onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
-          <img src="../images/if-not-later-when/stack-02.webp" alt="A girl looking up at the sky" loading="lazy">
-          <figcaption>a girl looking up at the sky</figcaption>
-        </figure>
-        <figure tabindex="0" role="button" aria-label="A boy sitting on a bench"
-                onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
-          <img src="../images/if-not-later-when/stack-03.webp" alt="A boy sitting on a bench" loading="lazy">
-          <figcaption>a boy sitting on a bench</figcaption>
-        </figure>
-        <figure tabindex="0" role="button" aria-label="Two figures backlit in a field"
-                onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
-          <img src="../images/if-not-later-when/inspiration-01.webp" alt="Two figures backlit in a field" loading="lazy">
-          <figcaption>two figures backlit in a field</figcaption>
-        </figure>
-        <figure tabindex="0" role="button" aria-label="A boy walking through tall grass"
-                onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
-          <img src="../images/if-not-later-when/inspiration-02.webp" alt="A boy walking through tall grass" loading="lazy">
-          <figcaption>a boy walking through tall grass</figcaption>
-        </figure>
-        <figure tabindex="0" role="button" aria-label="A girl by the water at dusk"
-                onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
-          <img src="../images/if-not-later-when/look-dusk.webp" alt="A girl by the water at dusk" loading="lazy">
-          <figcaption>a girl by the water at dusk</figcaption>
-        </figure>
-        <figure tabindex="0" role="button" aria-label="A girl under the sky"
-                onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}">
-          <img src="../images/if-not-later-when/frame-index-01.webp" alt="A girl under the sky" loading="lazy">
-          <figcaption>a girl under the sky</figcaption>
-        </figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- 6.9 credits -->
-    <section class="inlw-section inlw-credits">
-      <div class="inlw-inner">
-        <h2 class="inlw-heading">credits</h2>
         <div class="credits">
-          <div class="credit"><span class="role">Directed, shot, colored and edited by</span><span class="name">PJ Kim</span></div>
-          <div class="credit"><span class="role">On screen</span><span class="name">PJ Kim · Emma Cruz</span></div>
-          <div class="credit"><span class="role">Music</span><span class="name">"Dawn in the Adan" — Ichiko Aoba</span></div>
-          <div class="credit"><span class="role">Camera</span><span class="name">Fujifilm X-S20 · F-Log2</span></div>
-          <div class="credit"><span class="role">Post</span><span class="name">DaVinci Resolve · Premiere Pro</span></div>
-          <div class="credit"><span class="role">Released</span><span class="name">26 August 2026</span></div>
+          <div>
+            <p class="label">Role</p>
+            <ul>
+              <li>Writer</li>
+              <li>Director</li>
+              <li>Cinematographer</li>
+              <li>Editor</li>
+              <li>Colorist</li>
+            </ul>
+          </div>
+          <div>
+            <p class="label">Format</p>
+            <ul>
+              <li>Short · 0:31</li>
+              <li>Belle Isle</li>
+              <li class="spec">Fujifilm X-S20 · F-Log2</li>
+            </ul>
+          </div>
+          <div>
+            <p class="label">Status</p>
+            <ul>
+              <li>Released</li>
+              <li>Aug 2026</li>
+            </ul>
+          </div>
+          <div>
+            <p class="label">Toolkit</p>
+            <ul>
+              <li>Adobe Premiere Pro</li>
+              <li>DaVinci Resolve</li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </section>
+        <a class="btn" href="https://www.youtube.com/watch?v=pjVgaL0igDM" target="_blank" rel="noopener noreferrer">Watch the film ↗</a>
 
+        <section class="block" id="overview">
+          <h2>Going back to before they knew each other.</h2>
+          <div class="prose">
+            <p>I wrote, directed, shot, and graded this on Belle Isle in August 2026. It’s inspired by <i>Call Me by Your Name</i>, using dialogue from the scene where Elio talks with his father after Oliver leaves.</p>
+            <p>The picture plays in reverse, as if stepping back to before the two people knew each other. It’s scored with that dialogue and Ichiko Aoba’s “Dawn in the Adan.”</p>
+          </div>
+        </section>
+
+        <section class="block" id="grade">
+          <h2>Three looks: afternoon, dusk, ember.</h2>
+          <div class="prose">
+            <p>I graded three passes in DaVinci Resolve, from afternoon light through dusk into a darker ember. The cut is in Premiere.</p>
+          </div>
+          <div class="frames frames-3">
+            <figure>
+              <div class="frame-media"><img src="/images/if-not-later-when/story.webp" alt="Two people in a field in afternoon light" loading="lazy"></div>
+              <figcaption>01 · Afternoon</figcaption>
+            </figure>
+            <figure>
+              <div class="frame-media"><img src="/images/if-not-later-when/look-dusk.webp" alt="A girl by the water at dusk" loading="lazy"></div>
+              <figcaption>02 · Dusk</figcaption>
+            </figure>
+            <figure>
+              <div class="frame-media"><img src="/images/if-not-later-when/look-night.webp" alt="A darker ember grade of the short" loading="lazy"></div>
+              <figcaption>03 · Ember</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section class="block" id="frames">
+          <h2>The short, in stills.</h2>
+          <div class="stills frames">
+            <figure tabindex="0">
+              <div class="frame-media"><img src="/images/if-not-later-when/hero.webp" alt="Two figures backlit by the sun in a field" loading="lazy"></div>
+              <figcaption>01 · The field</figcaption>
+            </figure>
+            <figure tabindex="0">
+              <div class="frame-media"><img src="/images/if-not-later-when/stack-01.webp" alt="A girl at the edge of the water" loading="lazy"></div>
+              <figcaption>02 · The water</figcaption>
+            </figure>
+            <figure tabindex="0">
+              <div class="frame-media"><img src="/images/if-not-later-when/stack-02.webp" alt="A girl looking up at the sky" loading="lazy"></div>
+              <figcaption>03 · The sky</figcaption>
+            </figure>
+            <figure tabindex="0">
+              <div class="frame-media"><img src="/images/if-not-later-when/stack-03.webp" alt="A boy sitting on a bench" loading="lazy"></div>
+              <figcaption>04 · The bench</figcaption>
+            </figure>
+            <figure tabindex="0">
+              <div class="frame-media"><img src="/images/if-not-later-when/caption-01.webp" alt="A caption frame from the short" loading="lazy"></div>
+              <figcaption>05 · Caption</figcaption>
+            </figure>
+            <figure tabindex="0">
+              <div class="frame-media"><img src="/images/if-not-later-when/frame-index-01.webp" alt="A girl under the sky" loading="lazy"></div>
+              <figcaption>06 · Under the sky</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section class="block" id="film">
+          <h2>Watch it.</h2>
+          <a class="player" href="https://www.youtube.com/watch?v=pjVgaL0igDM" target="_blank" rel="noopener noreferrer">
+            <img src="/images/if-not-later-when/stack-03.webp" alt="A boy sitting on a bench">
+          </a>
+          <p class="player-caption"><span>YouTube</span><span class="spec">0:31</span></p>
+        </section>
+
+        <section class="block" id="credits">
+          <h2>Full credits</h2>
+          <div class="credit-list">
+            <div><span>Written, directed, shot, edited, colored by</span><strong>PJ Kim</strong></div>
+            <div><span>On screen</span><strong>PJ Kim · Emma Cruz</strong></div>
+            <div><span>Music</span><strong>“Dawn in the Adan” — Ichiko Aoba</strong></div>
+            <div><span>Dialogue</span><strong>Elio’s father, from Call Me by Your Name</strong></div>
+            <div><span>Camera</span><strong>Fujifilm X-S20 · F-Log2</strong></div>
+            <div><span>Place</span><strong>Belle Isle</strong></div>
+            <div><span>Released</span><strong>August 2026</strong></div>
+          </div>
+        </section>
+      </article>
+    </div>
+
+    <nav class="next-film" aria-label="More work">
+      <a href="/december"><span>Previous</span>December</a>
+      <span></span>
+    </nav>
   </main>
-
-  <footer class="monogram">
-    <a href="/inspo">INSPO</a> · PJK1M
-  </footer>
-
-  <script src="../film/projects.js"></script>
-  <script src="../film/lightbox.js"></script>
+  <!-- chrome:footer -->
+  <script src="/film/lightbox.js"></script>
+  <script src="/film/analytics.js"></script>
+  <script>
+    (function () {
+      var video = document.querySelector(".stage-video");
+      if (!video) return;
+      var reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
+      function apply() {
+        if (reduced.matches) {
+          video.pause();
+          video.removeAttribute("autoplay");
+        } else if (!document.hidden) {
+          video.play().catch(function () {});
+        }
+      }
+      apply();
+      if (reduced.addEventListener) reduced.addEventListener("change", apply);
+    })();
+  </script>
 </body>
 </html>
