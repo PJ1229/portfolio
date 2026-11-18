@@ -39,8 +39,7 @@
   object-fit: cover;
 }
 
-.work-kicker,
-.work-status {
+.work-kicker {
   color: var(--meta);
   font-size: var(--fs-small);
   letter-spacing: 0.08em;
@@ -61,8 +60,6 @@
   font-size: var(--fs-small);
   line-height: var(--lh-small);
 }
-
-.work-status { margin-top: 8px; }
 
 .home-info {
   padding: var(--s-8) 0 var(--s-9);
