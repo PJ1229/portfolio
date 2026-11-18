@@ -314,148 +314,96 @@
     }
   ];
 
-  var list = document.querySelector("[data-inspo-list]");
+  var grid = document.querySelector("[data-inspo-grid]");
   var count = document.querySelector("[data-inspo-count]");
-  var preview = document.querySelector(".inspo-preview");
+  var filters = document.querySelectorAll("[data-filter]");
+  var kinds = { film: "Film", video: "Video", song: "Song", site: "Site" };
 
-  function pad(number) {
-    return String(number).padStart(2, "0");
+  if (count) count.textContent = entries.length + " references";
+  if (!grid) return;
+
+  function sentence(value) {
+    var text = String(value || "");
+    return text ? text.charAt(0).toUpperCase() + text.slice(1) : "";
   }
 
-  function setCount() {
-    if (!count) return;
-    count.textContent = pad(entries.length) + " REFERENCES";
+  function metaLine(entry) {
+    var bits = [kinds[entry.type] || sentence(entry.type)];
+    if (entry.year) bits.push(entry.year);
+    if (entry.duration && entry.duration !== "—") bits.push(entry.duration);
+    if (entry.isKey) bits.push("Key");
+    return bits.join(" · ");
   }
 
-  // Write the count before preview wiring. A later throw used to leave the
-  // placeholder at "00 REFERENCES" after the rows had already been listed.
-  setCount();
-
-  if (!list || !preview) return;
-
-  var previewImage = preview.querySelector("[data-preview-image]");
-  var previewMedia = preview.querySelector(".inspo-preview-media");
-  var previewFallback = preview.querySelector("[data-preview-fallback]");
-  var previewType = preview.querySelector("[data-preview-type]");
-  var previewFallbackTitle = preview.querySelector("[data-preview-fallback-title]");
-  var previewNumber = preview.querySelector("[data-preview-number]");
-  var previewTitle = preview.querySelector("[data-preview-title]");
-  var previewDetail = preview.querySelector("[data-preview-detail]");
-  var rows = [];
-
-  function readableDate(value) {
-    if (!value) return "";
-    var parts = value.split("-");
-    var date = new Date(Date.UTC(Number(parts[0]), Number(parts[1]) - 1, Number(parts[2])));
-    return new Intl.DateTimeFormat("en-US", {
-      month: "short",
-      day: "numeric",
-      year: "numeric",
-      timeZone: "UTC"
-    }).format(date);
-  }
-
-  function detailFor(entry) {
-    if (entry.foundation) return "foundational film · " + entry.year;
-    return entry.type + (entry.date ? " · added " + readableDate(entry.date) : "");
-  }
-
-  function activate(entry, index, row) {
-    rows.forEach(function (item) {
-      item.classList.toggle("is-active", item === row);
-    });
-
-    previewNumber.textContent = pad(index + 1);
-    previewTitle.textContent = entry.title;
-    previewDetail.textContent = detailFor(entry);
-    preview.classList.toggle("is-key", !!entry.isKey);
-
-    if (entry.preview) {
-      previewImage.hidden = false;
-      previewFallback.hidden = true;
-      previewImage.src = entry.preview;
-      previewImage.alt = entry.previewAlt || "";
-      previewImage.dataset.fit = entry.previewFit || "cover";
-      previewImage.classList.toggle("is-contained", entry.previewFit === "contain");
-      previewMedia.classList.add("has-image");
-      previewMedia.style.backgroundImage = "url(\"" + entry.preview.replace(/\"/g, "\\\"") + "\")";
-      previewMedia.style.backgroundSize = entry.previewFit === "contain" ? "contain" : "cover";
-    } else {
-      previewImage.hidden = true;
-      previewFallback.hidden = false;
-      previewMedia.classList.remove("has-image");
-      previewMedia.style.backgroundImage = "none";
-      previewType.textContent = entry.type;
-      previewFallbackTitle.textContent = entry.title;
-    }
-  }
-
-  entries.forEach(function (entry, index) {
-    var item = document.createElement("li");
-    item.className = "inspo-item";
-
+  var cards = entries.map(function (entry, index) {
     var link = document.createElement("a");
+    link.className = "inspo-card";
     link.href = entry.url;
     link.target = "_blank";
     link.rel = "noopener noreferrer";
-    link.setAttribute("aria-label", entry.title + ", " + entry.type + ", opens in a new tab");
+    link.dataset.kind = entry.type;
+    link.dataset.key = entry.isKey ? "true" : "false";
+    link.setAttribute("aria-label", sentence(entry.title) + ", " + metaLine(entry) + ", opens in a new tab");
 
-    var number = document.createElement("span");
-    number.className = "inspo-number";
-    number.textContent = pad(index + 1);
+    var stage = document.createElement("span");
+    stage.className = "inspo-stage";
 
-    var title = document.createElement("span");
-    title.className = "inspo-row-title";
-    if (entry.isKey) {
-      var marker = document.createElement("span");
-      marker.className = "inspo-mark";
-      marker.setAttribute("aria-hidden", "true");
-      marker.textContent = "◆";
-      title.appendChild(marker);
+    if (entry.preview) {
+      var img = document.createElement("img");
+      img.src = entry.preview;
+      img.alt = entry.previewAlt || "";
+      img.decoding = "async";
+      if (index > 5) img.loading = "lazy";
+      if (entry.previewFit === "contain") img.className = "is-contained";
+      img.addEventListener("error", function () {
+        img.remove();
+        var fallback = document.createElement("span");
+        fallback.className = "inspo-fallback";
+        fallback.textContent = sentence(entry.title);
+        stage.appendChild(fallback);
+      });
+      stage.appendChild(img);
+    } else {
+      var fallback = document.createElement("span");
+      fallback.className = "inspo-fallback";
+      fallback.textContent = sentence(entry.title);
+      stage.appendChild(fallback);
     }
-    title.appendChild(document.createTextNode(entry.title));
-    if (entry.foundation) {
-      var foundation = document.createElement("small");
-      foundation.textContent = "FOUNDATIONAL";
-      title.appendChild(foundation);
+
+    var caption = document.createElement("span");
+    caption.className = "inspo-caption";
+    var meta = document.createElement("span");
+    meta.className = "inspo-meta";
+    meta.textContent = metaLine(entry);
+    if (entry.preview) {
+      var title = document.createElement("span");
+      title.className = "inspo-title";
+      title.textContent = sentence(entry.title);
+      caption.append(title, meta);
+    } else {
+      caption.append(meta);
     }
-
-    var type = document.createElement("span");
-    type.className = "inspo-kind";
-    type.textContent = entry.type;
-
-    var duration = document.createElement("span");
-    duration.className = "inspo-duration";
-    duration.textContent = entry.duration;
-
-    link.append(number, title, type, duration);
-    item.appendChild(link);
-    list.appendChild(item);
-    rows.push(item);
-
-    link.addEventListener("mouseenter", function () { activate(entry, index, item); });
-    link.addEventListener("focus", function () { activate(entry, index, item); });
+    link.append(stage, caption);
     link.addEventListener("click", function () {
       if (typeof window.gtag === "function") {
         window.gtag("event", "inspo_open", { title: entry.title, content_type: entry.type });
       }
     });
+    grid.appendChild(link);
+    return link;
   });
 
-  if (previewImage) {
-    previewImage.addEventListener("error", function () {
-      previewImage.hidden = true;
-      previewFallback.hidden = false;
-      previewMedia.classList.remove("has-image");
-      previewMedia.style.backgroundImage = "none";
-      var activeIndex = rows.findIndex(function (row) { return row.classList.contains("is-active"); });
-      var entry = entries[Math.max(activeIndex, 0)];
-      if (!entry) return;
-      previewType.textContent = entry.type;
-      previewFallbackTitle.textContent = entry.title;
+  function applyFilter(name) {
+    cards.forEach(function (card) {
+      var show = name === "all" || (name === "key" ? card.dataset.key === "true" : card.dataset.kind === name);
+      card.hidden = !show;
+    });
+    filters.forEach(function (button) {
+      button.setAttribute("aria-pressed", button.dataset.filter === name ? "true" : "false");
     });
   }
 
-  setCount();
-  if (rows[0]) activate(entries[0], 0, rows[0]);
+  filters.forEach(function (button) {
+    button.addEventListener("click", function () { applyFilter(button.dataset.filter); });
+  });
 })();
