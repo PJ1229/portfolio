@@ -29,31 +29,43 @@ var ATHLETICS = {
         {
           src: "/images/athletics/new-standard-01.webp",
           alt: "A Michigan player in a maize jersey, number 17, running past the sideline",
+          width: 1920,
+          height: 1080,
           caption: "01 · Number 17"
         },
         {
           src: "/images/athletics/new-standard-02.webp",
           alt: "A black-and-white close view of a soccer ball at a player’s feet",
+          width: 1920,
+          height: 1080,
           caption: "02 · The ball"
         },
         {
           src: "/images/athletics/new-standard-03.webp",
           alt: "A goalkeeper in black dives as the ball crosses the goal line",
+          width: 1920,
+          height: 1080,
           caption: "03 · The keeper"
         },
         {
           src: "/images/athletics/new-standard-04.webp",
           alt: "A motion-blurred player with a tracking overlay across the body",
+          width: 1920,
+          height: 1080,
           caption: "04 · Tracked"
         },
         {
           src: "/images/athletics/new-standard-05.webp",
           alt: "Michigan players in maize jerseys clapping along the sideline",
+          width: 1920,
+          height: 1080,
           caption: "05 · The sideline"
         },
         {
           src: "/images/athletics/new-standard-06.webp",
           alt: "A Michigan block M flag against a dark sky",
+          width: 1920,
+          height: 1080,
           caption: "06 · Block M"
         }
       ]

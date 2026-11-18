@@ -95,13 +95,11 @@
 /* ---- framed still ---- */
 .film-page .frame {
   border: var(--rule) solid rgba(0, 0, 0, 0.18);
-  aspect-ratio: 16 / 9;
   overflow: hidden;
 }
 .film-page .frame img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
 }
 
 /* ---- hero: title + rotated date stamp ---- */
