@@ -7,7 +7,9 @@ test("renders the three approved cards, demo embeds, and escaped HTML", () => {
   const data = structuredClone(content);
   data.projects[0].name = 'Changed <script>alert("x")</script>';
   const html = render(data);
-  assert.equal((html.match(/<article /g) || []).length, 3);
+  assert.equal((html.match(/<article /g) || []).length, 4);
+  assert.ok(html.includes("clip-index"));
+  assert.ok(html.includes("Started in October 2026, and still early."));
   assert.equal((html.match(/<iframe /g) || []).length, 3);
   assert.equal((html.match(/<h1 /g) || []).length, 1);
   assert.ok(html.includes("Changed &lt;script&gt;"));

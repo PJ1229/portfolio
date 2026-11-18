@@ -77,7 +77,6 @@ app.get("/unsanctioned", (req, res) => {
 });
 
 app.get("/if-not-later-when", (req, res) => {
-  res.set("X-Robots-Tag", "noindex, nofollow");
   sendFilmPage(res, "if-not-later-when.html");
 });
 

@@ -21,8 +21,11 @@
 .work-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 48px 20px;
+  gap: var(--s-7) var(--s-5);
 }
+
+/* Three films: December spans the row, the other two sit under it. */
+.work-card:first-child { grid-column: 1 / -1; }
 
 .work-card { display: flex; flex-direction: column; min-width: 0; color: inherit; }
 
