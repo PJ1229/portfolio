@@ -336,21 +336,18 @@
 .grade-compare .grade-compare-top {
   display: block;
   width: 100%;
-  object-fit: cover;
-  object-position: center center;
+  max-width: none;
+  height: auto;
 }
 
 .grade-compare .grade-compare-base {
   position: relative;
-  height: auto;
-  max-width: none;
 }
 
 .grade-compare .grade-compare-top {
   position: absolute;
   inset: 0;
   height: 100%;
-  max-width: none;
   clip-path: inset(0 calc(100% - var(--position, 50%)) 0 0);
 }
 
