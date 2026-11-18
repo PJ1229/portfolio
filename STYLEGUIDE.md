@@ -68,12 +68,10 @@ grid; client work is tagged, not split into its own section.
 - **reading time**: `feb 2026 · X min read` (use `min`, not `mins`).
 
 ### inspo page
-- **surface**: full-black archive; do not put `/inspo` back inside the paper card.
-- **content source**: add entries to `public/film/inspo.js`; foundational films stay first, then dated references run newest-first.
-- **preview**: use a local image when one is available and a deliberate type-led fallback when it is not. Hover/focus may change the preview, but the row itself remains the real outbound link.
-- **red marker**: set `isKey: true` on archive entries that changed how PJ thinks; the renderer supplies the diamond.
-- **weight**: keep font weight consistent; red should only change color.
-- **key mark**: `var(--signal)`, the shared tick color. Not a second red.
+- **surface**: the shared paper shell. References sit in a uniform 16:9 grid; footage and posters live on a black stage.
+- **content source**: add entries to `public/film/inspo.js`. Keep the array order. Foundational films carry `foundation: true` and a year. Dated references carry `date`.
+- **preview**: a local image when one exists, lazy-loaded after the first row. No image uses a type-led title on the stage. The card is the outbound link.
+- **key**: `isKey: true` marks a reference that changed how PJ thinks. The caption says Key. No diamond and no private red.
 
 ### home contact film
 - The Verci film is a native, lazy-loaded video behind `LET'S MAKE SOMETHING.`

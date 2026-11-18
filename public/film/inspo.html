@@ -24,40 +24,26 @@
   <!-- chrome:header -->
 
   <main class="inspo-main">
-    <section class="inspo-intro" aria-labelledby="inspo-title">
-      <p class="label">A living archive · <span data-inspo-count></span></p>
+    <header class="inspo-intro">
+      <p class="inspo-kicker">Inspiration · <span data-inspo-count></span></p>
       <h1 id="inspo-title">Things I return to.</h1>
-      <p class="inspo-deck">even this page itself was inspired by farza's inspo page.</p>
-      <p class="inspo-note"><span class="inspo-mark" aria-hidden="true">◆</span> marks the ones that changed how i think.</p>
-    </section>
+      <p class="inspo-deck">Even this page itself was inspired by farza's inspo page.</p>
+    </header>
 
-    <section class="inspo-archive" aria-label="Inspiration archive">
-      <figure class="inspo-preview" aria-live="polite">
-        <div class="inspo-preview-media has-image" style="background-image: url('/images/inspo/call-me-by-your-name.jpg'); background-size: contain;">
-          <img class="is-contained" data-preview-image data-fit="contain" src="/images/inspo/call-me-by-your-name.jpg" alt="Call Me by Your Name poster">
-          <div class="inspo-preview-fallback" data-preview-fallback hidden>
-            <span data-preview-type>SITE</span>
-            <strong data-preview-fallback-title>ADAM BRICKER — PROJECTS</strong>
-          </div>
-        </div>
-        <figcaption>
-          <span data-preview-number>01</span>
-          <strong data-preview-title>CALL ME BY YOUR NAME</strong>
-          <span data-preview-detail>FOUNDATIONAL FILM · 2017</span>
-        </figcaption>
-      </figure>
+    <div class="inspo-filters" role="toolbar" aria-label="Filter references">
+      <button type="button" data-filter="all" aria-pressed="true">All</button>
+      <button type="button" data-filter="film">Films</button>
+      <button type="button" data-filter="video">Videos</button>
+      <button type="button" data-filter="song">Music</button>
+      <button type="button" data-filter="site">Sites</button>
+      <button type="button" data-filter="key">Key</button>
+    </div>
 
-      <div class="inspo-register">
-        <div class="inspo-register-head" aria-hidden="true">
-          <span>NO</span><span>TITLE</span><span>TYPE</span><span>TIME</span>
-        </div>
-        <ol class="inspo-list" data-inspo-list></ol>
-      </div>
-    </section>
+    <div class="inspo-grid" data-inspo-grid></div>
   </main>
 
   <!-- chrome:footer -->
-  <script src="/film/inspo.js?v=20261108-1"></script>
+  <script src="/film/inspo.js?v=20261118-1"></script>
   <script src="/film/analytics.js"></script>
 </body>
 </html>
