@@ -34,9 +34,12 @@
 }
 
 .work-still img {
+  display: block;
   width: 100%;
+  max-width: none;
   height: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 .work-kicker {
@@ -108,6 +111,11 @@
 
 .home-contact {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: none;
   min-height: 640px;
   overflow: hidden;
   background: var(--stage);
@@ -117,7 +125,9 @@
 .contact-film-media { position: absolute; inset: 0; }
 
 .contact-film-video {
+  display: block;
   width: 100%;
+  max-width: none;
   height: 100%;
   object-fit: cover;
   object-position: center;
@@ -138,10 +148,26 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
   width: 100%;
+  min-height: 640px;
   padding: clamp(56px, 8vw, 104px) var(--gutter);
   text-align: center;
   transition: opacity var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out);
+}
+
+.home-contact-content::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  top: 50%;
+  width: min(640px, 140%);
+  height: 320px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.45), transparent 70%);
+  pointer-events: none;
 }
 
 .home-contact-content > p { color: var(--bone-2); }
@@ -197,14 +223,33 @@
 
 .contact-film-controls button,
 .contact-film-controls a {
-  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  height: 40px;
+  margin: 0;
+  padding: 0;
   border: 0;
   background: transparent;
   color: inherit;
-  font: inherit;
-  letter-spacing: inherit;
-  text-transform: inherit;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  text-transform: uppercase;
   cursor: pointer;
+  appearance: none;
+}
+
+.contact-film-controls a span {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 4px;
+  font-size: 12px;
+  line-height: 16px;
 }
 
 .contact-film-controls [data-contact-current],
@@ -229,20 +274,23 @@
   .work-grid,
   .info-row { grid-template-columns: 1fr; }
 
-  .home-contact { min-height: 520px; }
+  .home-contact,
+  .home-contact-content { min-height: 520px; }
 
   .contact-film-controls {
-    grid-template-columns: auto auto minmax(80px, 1fr) auto auto;
+    grid-template-columns: auto auto minmax(80px, 1fr) auto;
     row-gap: 8px;
   }
 
   .contact-film-controls [data-contact-mute],
+  .contact-film-controls [data-contact-fullscreen],
   .contact-film-controls > a,
   .contact-film-controls [data-contact-close] { grid-row: 2; }
 
   .contact-film-controls [data-contact-mute] { grid-column: 1; }
-  .contact-film-controls > a { grid-column: 2 / span 2; }
-  .contact-film-controls [data-contact-close] { grid-column: 5; }
+  .contact-film-controls [data-contact-fullscreen] { grid-column: 2; }
+  .contact-film-controls > a { grid-column: 3; }
+  .contact-film-controls [data-contact-close] { grid-column: 4; }
 }
 
 @media (prefers-reduced-motion: reduce) {

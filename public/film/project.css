@@ -23,8 +23,9 @@
 }
 
 .stage-frame {
-  width: min(100%, var(--stage-max));
-  margin: 0 auto;
+  width: 100%;
+  max-width: none;
+  margin: 0;
   background: transparent;
 }
 
@@ -38,9 +39,12 @@
 .stage-frame img {
   display: block;
   width: 100%;
+  max-width: none;
   height: auto;
   border: 0;
   background: none;
+  object-fit: cover;
+  object-position: center;
 }
 
 .stage-frame video,
@@ -245,8 +249,9 @@
 .film-page.site .stills {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--grid-gap);
-  margin-top: var(--rhythm-3);
+  align-items: start;
+  gap: var(--s-5);
+  margin-top: var(--s-5);
 }
 
 .film-page.site .frames.frames-3 {
