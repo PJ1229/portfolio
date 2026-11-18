@@ -84,6 +84,10 @@ app.get("/december", (req, res) => {
   sendFilmPage(res, "december.html");
 });
 
+app.get("/athletics", (req, res) => {
+  sendFilmPage(res, "athletics.html");
+});
+
 app.get("/filmic", (req, res) => {
   res.set("X-Robots-Tag", "noindex, nofollow");
   sendFilmPage(res, "filmic.html");
