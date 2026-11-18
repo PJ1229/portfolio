@@ -1,0 +1,60 @@
+/* Michigan Athletics videos.
+   Add one object to ATHLETICS.videos. The hub and /athletics/<slug> both read this list.
+   camera is the shooters for that video, not PJ's role. */
+var ATHLETICS = {
+  title: "Michigan Athletics",
+  role: "Videographer & Editor",
+  dates: "Aug 2026–present",
+  intro: "I edit varsity footage for Michigan Athletics.",
+  videos: [
+    {
+      slug: "new-standard",
+      title: "New Standard",
+      sport: "Soccer",
+      year: "2026",
+      logline: "A cinematic soccer edit for Michigan Athletics, shot on a Sony FX3.",
+      overview: "I edit varsity footage for Michigan Athletics. New Standard is the soccer edit.",
+      role: ["Editor"],
+      format: ["Sports edit"],
+      status: ["2026"],
+      toolkit: ["DaVinci Resolve"],
+      youtubeId: "ArtwsAm4quY",
+      runtime: "0:13",
+      poster: "/images/athletics/new-standard-01.webp",
+      posterAlt: "A Michigan player in a maize jersey, number 17, running past the sideline",
+      camera: ["Gabe Conn", "Megan Jones", "Quinton Kole"],
+      stills: [
+        {
+          src: "/images/athletics/new-standard-01.webp",
+          alt: "A Michigan player in a maize jersey, number 17, running past the sideline",
+          caption: "01 · Number 17"
+        },
+        {
+          src: "/images/athletics/new-standard-02.webp",
+          alt: "A black-and-white close view of a soccer ball at a player’s feet",
+          caption: "02 · The ball"
+        },
+        {
+          src: "/images/athletics/new-standard-03.webp",
+          alt: "A goalkeeper in black dives as the ball crosses the goal line",
+          caption: "03 · The keeper"
+        },
+        {
+          src: "/images/athletics/new-standard-04.webp",
+          alt: "A motion-blurred player with a tracking overlay across the body",
+          caption: "04 · Tracked"
+        },
+        {
+          src: "/images/athletics/new-standard-05.webp",
+          alt: "Michigan players in maize jerseys clapping along the sideline",
+          caption: "05 · The sideline"
+        },
+        {
+          src: "/images/athletics/new-standard-06.webp",
+          alt: "A Michigan block M flag against a dark sky",
+          caption: "06 · Block M"
+        }
+      ]
+    }
+  ]
+};

@@ -12,6 +12,23 @@ npm start
 
 Default port is `5050` unless `PORT` is set.
 
+## Athletics videos
+
+`/athletics` is a hub. Each video has a page at `/athletics/<slug>`. Both read `public/film/athletics-videos.js`.
+
+To add a video, append one object to `ATHLETICS.videos`:
+
+- `slug` — URL segment, lowercase letters, numbers, and hyphens
+- `title`, `sport`, `year`, `logline`, `overview`
+- `role` — PJ’s role on that video only (New Standard is `Editor`)
+- `format`, `status`, `toolkit`
+- `youtubeId` — 11-character id. The page shows a still first and loads a privacy-enhanced player on click
+- `runtime`, `poster`, `posterAlt`
+- `camera` — the shooters for that video, as an array of names
+- `stills` — `{ src, alt, caption }`, WebP frames from a public edit
+
+Do not commit raw game footage or Athletics-internal files. The hub header role (`Videographer & Editor`) is PJ’s overall Athletics title and is separate from each video’s `role`.
+
 ## documentation (markdown in this repo)
 
 | Doc | What it’s for |

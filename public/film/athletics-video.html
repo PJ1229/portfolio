@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Michigan Athletics — PJ Kim</title>
+  <meta name="description" content="A varsity edit by PJ Kim for Michigan Athletics.">
+  <link rel="icon" href="/images/logo.png" type="image/png">
+  <link rel="stylesheet" href="/film/tokens.css">
+  <link rel="stylesheet" href="/film/film.css">
+  <link rel="stylesheet" href="/film/shell.css">
+  <link rel="stylesheet" href="/film/project.css">
+  <link rel="stylesheet" href="/film/athletics.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-M0J8NYPG27"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-M0J8NYPG27');
+  </script>
+</head>
+<body class="film-page site has-stage">
+  <!-- chrome:header -->
+  <main data-athletics-video>
+    <section class="stage" aria-label="Edit">
+      <div class="stage-frame" data-field="stage"></div>
+    </section>
+
+    <div class="film">
+      <aside class="toc">
+        <p class="label">Contents</p>
+        <a href="#overview">Overview</a>
+        <a href="#film">Film</a>
+        <a href="#frames">Stills</a>
+        <a href="#credits">Credits</a>
+      </aside>
+
+      <article>
+        <h1 data-field="title"></h1>
+        <blockquote class="logline">
+          <p class="label">Logline</p>
+          <p data-field="logline"></p>
+        </blockquote>
+
+        <div class="credits">
+          <div>
+            <p class="label">Role</p>
+            <ul data-field="role"></ul>
+          </div>
+          <div>
+            <p class="label">Format</p>
+            <ul data-field="format"></ul>
+          </div>
+          <div>
+            <p class="label">Status</p>
+            <ul data-field="status"></ul>
+          </div>
+          <div>
+            <p class="label">Toolkit</p>
+            <ul data-field="toolkit"></ul>
+          </div>
+        </div>
+        <a class="btn" href="#film">Watch the film</a>
+
+        <section class="block" id="overview">
+          <h2>The edit.</h2>
+          <div class="prose">
+            <p data-field="overview"></p>
+            <p>The clips are logged with <a href="/engineering">um-autolog</a>.</p>
+          </div>
+        </section>
+
+        <section class="block" id="film">
+          <h2>Watch it.</h2>
+          <div class="player" data-field="player"></div>
+          <p class="player-caption"><span>YouTube</span><span class="tc" data-field="runtime"></span></p>
+        </section>
+
+        <section class="block" id="frames">
+          <h2>Stills from the edit.</h2>
+          <div class="stills frames" data-field="stills"></div>
+        </section>
+
+        <section class="block" id="credits">
+          <h2>Full credits</h2>
+          <div class="credit-list" data-field="credits"></div>
+        </section>
+      </article>
+    </div>
+
+    <nav class="next-film" aria-label="More work">
+      <a href="/athletics"><span>Hub</span>Michigan Athletics</a>
+      <span></span>
+    </nav>
+  </main>
+  <!-- chrome:footer -->
+  <script src="/film/athletics-videos.js"></script>
+  <script src="/film/athletics-video.js"></script>
+  <script src="/film/film-player.js"></script>
+  <script src="/film/lightbox.js"></script>
+  <script src="/film/analytics.js"></script>
+</body>
+</html>
