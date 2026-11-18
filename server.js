@@ -88,6 +88,11 @@ app.get("/athletics", (req, res) => {
   sendFilmPage(res, "athletics.html");
 });
 
+app.get("/athletics/:slug", (req, res, next) => {
+  if (!/^[a-z0-9-]+$/.test(req.params.slug)) return next();
+  sendFilmPage(res, "athletics-video.html");
+});
+
 app.get("/filmic", (req, res) => {
   res.set("X-Robots-Tag", "noindex, nofollow");
   sendFilmPage(res, "filmic.html");
