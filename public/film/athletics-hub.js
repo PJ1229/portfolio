@@ -23,7 +23,7 @@
     return parts.join(" · ");
   }
 
-  ATHLETICS.videos.forEach(function (video) {
+  ATHLETICS.videos.forEach(function (video, index) {
     var entry = document.createElement("article");
     entry.className = "athletics-entry";
     entry.id = video.slug;
@@ -38,8 +38,16 @@
       button.setAttribute("aria-label", "Play " + video.title);
       if (video.poster) {
         var poster = document.createElement("img");
+        poster.className = "player-poster";
         poster.src = video.poster;
         poster.alt = video.posterAlt || "";
+        poster.decoding = "async";
+        if (index === 0) {
+          poster.loading = "eager";
+          poster.setAttribute("fetchpriority", "high");
+        } else {
+          poster.loading = "lazy";
+        }
         button.appendChild(poster);
       }
       var play = document.createElement("span");
