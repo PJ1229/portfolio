@@ -90,7 +90,7 @@ app.get("/athletics", (req, res) => {
 
 app.get("/athletics/:slug", (req, res, next) => {
   if (!/^[a-z0-9-]+$/.test(req.params.slug)) return next();
-  sendFilmPage(res, "athletics-video.html");
+  res.redirect(301, "/athletics#" + req.params.slug);
 });
 
 app.get("/filmic", (req, res) => {
