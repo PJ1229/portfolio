@@ -6,33 +6,32 @@
   <meta name="robots" content="noindex, nofollow">
   <title>Not Found — PJ Kim</title>
   <meta name="description" content="The requested page could not be found.">
-  <link rel="icon" href="../images/logo.png" type="image/png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../film/film.css">
+  <link rel="icon" href="/images/logo.png" type="image/png">
+  <link rel="stylesheet" href="/film/tokens.css">
+  <link rel="stylesheet" href="/film/film.css">
+  <link rel="stylesheet" href="/film/shell.css">
+  <style>
+    .not-found-main {
+      display: grid;
+      place-items: center;
+      min-height: calc(100svh - var(--header-h) - var(--footer-h));
+      padding: 48px var(--gutter);
+      text-align: center;
+    }
+    .not-found-main p { max-width: 28em; margin: 16px auto 24px; color: var(--ink-2); }
+    .not-found-main a { text-decoration: underline; text-underline-offset: 4px; }
+  </style>
 </head>
-<body class="film-page not-found-page">
-  <header class="nav dark-nav" style="padding: clamp(16px,3vw,28px) var(--gutter);">
-    <a href="/">PJ KIM</a>
-    <nav class="nav-links" aria-label="Primary">
-      <a href="/">WORK</a>
-      <a href="/engineering">ENGINEERING</a>
-      <a href="/writing">WRITING</a>
-      <a href="/#info">INFO</a>
-      <a href="/inspo">INSPO</a>
-    </nav>
-  </header>
+<body class="film-page site not-found-page">
+  <!-- chrome:header -->
   <main class="not-found-main">
     <div>
-      <p class="not-found-code" aria-hidden="true">404</p>
-      <div class="not-found-copy">
-        <h1>THIS FRAME<br><i>DOESN'T EXIST.</i></h1>
-        <p>The page may have moved, or it was never part of the final cut.</p>
-        <a href="/">RETURN TO SELECTED WORK →</a>
-      </div>
+      <p class="label">404</p>
+      <h1>This frame doesn’t exist.</h1>
+      <p>The page may have moved, or it was never part of the final cut.</p>
+      <a href="/">Return to selected work</a>
     </div>
   </main>
-  <footer class="monogram">PJK1M</footer>
+  <!-- chrome:footer -->
 </body>
 </html>

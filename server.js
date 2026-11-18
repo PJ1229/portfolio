@@ -1,5 +1,6 @@
 // server.js
 const express = require("express");
+const fs = require("fs");
 const path = require("path");
 const nodemailer = require("nodemailer");
 const cors = require("cors");
@@ -50,17 +51,25 @@ function sendLabIndex(res) {
   res.sendFile(path.join(__dirname, "public", "lab", "index.html"));
 }
 
-function sendFilmPage(res, file) {
-  res.sendFile(path.join(__dirname, "public", "film", file));
+function sendFilmPage(res, file, current) {
+  const filePath = path.join(__dirname, "public", "film", file);
+  let html = fs.readFileSync(filePath, "utf8");
+  if (html.includes("<!-- chrome:header -->")) {
+    const chrome = require("./public/film/chrome");
+    html = html
+      .replace("<!-- chrome:header -->", chrome.renderHeader(current || ""))
+      .replace("<!-- chrome:footer -->", chrome.renderFooter());
+  }
+  res.type("html").send(html);
 }
 
 // Film portfolio (root)
 app.get("/", (req, res) => {
-  sendFilmPage(res, "index.html");
+  sendFilmPage(res, "index.html", "work");
 });
 
 app.get("/index.html", (req, res) => {
-  sendFilmPage(res, "index.html");
+  sendFilmPage(res, "index.html", "work");
 });
 
 app.get("/unsanctioned", (req, res) => {
@@ -283,7 +292,8 @@ app.use((req, res) => {
   if (req.path.startsWith("/api/")) {
     return res.status(404).json({ error: "Not found" });
   }
-  return res.status(404).sendFile(path.join(__dirname, "public", "film", "404.html"));
+  res.status(404);
+  return sendFilmPage(res, "404.html", "");
 });
 
 // --- Server startup ---

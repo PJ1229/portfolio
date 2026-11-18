@@ -1,0 +1,67 @@
+@import url("/fonts/sf-pro.css");
+@import url("/fonts/plex.css");
+
+/* One shell for the site. A film may override only --cover-mat. */
+:root {
+  --paper: #F8F7F3;
+  --paper-2: #EFEDE7;
+  --ink: #141413;
+  --ink-2: #4B4A46;
+  --meta: #6B6A65;
+  --line: #DDDBD3;
+  --hover-wash: rgba(20, 20, 19, 0.06);
+
+  --stage: #0B0B0C;
+  --stage-line: #2A2A2B;
+  --bone: #F2F0EA;
+  --bone-2: #B4B2AA;
+  --bone-3: #8C8A83;
+
+  --signal: #D8191F;
+  --cover-mat: var(--stage);
+
+  /* Text at UI sizes, Display from 20px up. Both are the self-hosted files. */
+  --font-sans: "SF Pro Text", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --font-display: "SF Pro Display", "SF Pro Text", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  --fs-label: 12px;   --lh-label: 16px;  --ls-label: 0.08em;
+  --fs-small: 14px;   --lh-small: 20px;
+  --fs-body: 17px;    --lh-body: 27px;   --ls-body: -0.01em;
+  --fs-lede: 20px;    --lh-lede: 28px;   --ls-lede: -0.02em;
+  --fs-h3: 20px;      --lh-h3: 28px;
+  --fs-h2: clamp(24px, 2.2vw, 28px);  --lh-h2: 1.2;  --ls-h2: -0.02em;
+  --fs-stat: 32px;    --lh-stat: 38px;   --ls-stat: -0.025em;
+  --fs-h1: clamp(36px, 4.6vw, 64px);  --lh-h1: 1.1;  --ls-h1: -0.03em;
+  --fw-text: 400;
+  --fw-ui: 500;
+
+  --s-1: 4px; --s-2: 8px; --s-3: 12px; --s-4: 16px; --s-5: 24px;
+  --s-6: 32px; --s-7: 48px; --s-8: 64px; --s-9: 96px; --s-10: 120px;
+  --cover-to-content: 72px;
+  --page-bottom: 96px;
+
+  --header-h: 64px;
+  --header-inner: 960px;
+  --page: 1146px;
+  --toc: 220px;
+  --col-gap: 64px;
+  --body: 862px;
+  --read: 720px;
+  --stage-max: 1440px;
+  --gutter: clamp(16px, 4vw, 56px);
+  --footer-h: 88px;
+
+  --dur-fast: 0.2s;
+  --dur-base: 0.45s;
+  --dur-slow: 0.9s;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 400 var(--fs-body) / var(--lh-body) var(--font-sans);
+  letter-spacing: var(--ls-body);
+}

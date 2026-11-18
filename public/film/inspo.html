@@ -7,11 +7,10 @@
   <meta name="description" content="A living archive of the films, videos, music, sites and ideas that shape how PJ Kim makes things.">
   <link rel="canonical" href="https://pjk1m.com/inspo">
   <link rel="icon" href="../images/logo.png" type="image/png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../film/film.css">
-  <link rel="stylesheet" href="../film/inspo.css?v=20260929-3">
+  <link rel="stylesheet" href="/film/tokens.css">
+  <link rel="stylesheet" href="/film/film.css">
+  <link rel="stylesheet" href="/film/shell.css">
+  <link rel="stylesheet" href="/film/inspo.css">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-M0J8NYPG27"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -21,22 +20,13 @@
   </script>
 </head>
 
-<body class="film-page inspo-page">
-  <header class="nav dark-nav inspo-nav">
-    <a class="inspo-identity" href="/">PJ KIM</a>
-    <nav class="nav-links" aria-label="Primary">
-      <a href="/">WORK</a>
-      <a href="/engineering">ENGINEERING</a>
-      <a href="/writing">WRITING</a>
-      <a href="/#info">INFO</a>
-      <span aria-current="page">INSPO</span>
-    </nav>
-  </header>
+<body class="film-page site inspo-page">
+  <!-- chrome:header -->
 
   <main class="inspo-main">
     <section class="inspo-intro" aria-labelledby="inspo-title">
-      <p class="mono">A LIVING ARCHIVE · <span data-inspo-count></span></p>
-      <h1 id="inspo-title">THINGS I<br><i>RETURN TO.</i></h1>
+      <p class="label">A living archive · <span data-inspo-count></span></p>
+      <h1 id="inspo-title">Things I return to.</h1>
       <p class="inspo-deck">even this page itself was inspired by farza's inspo page.</p>
       <p class="inspo-note"><span class="inspo-mark" aria-hidden="true">◆</span> marks the ones that changed how i think.</p>
     </section>
@@ -66,11 +56,8 @@
     </section>
   </main>
 
-  <footer class="monogram">
-    <span>INSPO</span> · PJK1M
-  </footer>
-
-  <script src="../film/inspo.js?v=20261108-1"></script>
-  <script src="../film/analytics.js"></script>
+  <!-- chrome:footer -->
+  <script src="/film/inspo.js?v=20261108-1"></script>
+  <script src="/film/analytics.js"></script>
 </body>
 </html>
