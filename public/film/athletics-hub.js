@@ -80,6 +80,8 @@
         var img = document.createElement("img");
         img.src = still.src;
         img.alt = still.alt || "";
+        if (still.width) img.width = still.width;
+        if (still.height) img.height = still.height;
         img.loading = "lazy";
         var caption = document.createElement("figcaption");
         caption.textContent = still.caption || "";
