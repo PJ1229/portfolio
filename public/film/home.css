@@ -111,6 +111,9 @@
 
 .home-contact {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   max-width: none;
   min-height: 640px;
@@ -145,7 +148,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
   width: 100%;
+  min-height: 640px;
   padding: clamp(56px, 8vw, 104px) var(--gutter);
   text-align: center;
   transition: opacity var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out);
@@ -255,7 +261,8 @@
   .work-grid,
   .info-row { grid-template-columns: 1fr; }
 
-  .home-contact { min-height: 520px; }
+  .home-contact,
+  .home-contact-content { min-height: 520px; }
 
   .contact-film-controls {
     grid-template-columns: auto auto minmax(80px, 1fr) auto;
