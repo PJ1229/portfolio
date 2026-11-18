@@ -157,6 +157,19 @@
   transition: opacity var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out);
 }
 
+.home-contact-content::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  top: 50%;
+  width: min(640px, 140%);
+  height: 320px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.45), transparent 70%);
+  pointer-events: none;
+}
+
 .home-contact-content > p { color: var(--bone-2); }
 
 .home-contact h2 {
