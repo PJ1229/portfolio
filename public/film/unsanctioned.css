@@ -1,2 +1,7 @@
 /* Unsanctioned may set only its cover mat. Red stays inside the stills. */
 .unsanctioned-page { --cover-mat: #090909; }
+
+/* Shared .stats is a four-column grid. This page keeps two figures, so they share the row. */
+.unsanctioned-page .stats {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
